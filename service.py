@@ -32,8 +32,42 @@ _state = {"last_run_started_at": None, "last_run_finished_at": None,
           "last_run_status": "starting", "last_run_error": None,
           "last_ingested_source_records": 0, "last_sources_succeeded": 0,
           "last_sources_failed": 0}
+def _restore_last_run():
+    report_path = Path(OUTPUT_DIR) / "run_report.json"
 
+    if not report_path.exists():
+        return
 
+    try:
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+
+        succeeded = int(report.get("sources_succeeded", 0))
+        failed = int(report.get("sources_failed", 0))
+
+        if succeeded == 0:
+            status = "failed"
+        elif failed:
+            status = "partial_failure"
+        else:
+            status = "succeeded"
+
+        with _state_lock:
+            _state.update(
+                last_run_finished_at=report.get("generated_at"),
+                last_run_status=status,
+                last_run_error=None,
+                last_ingested_source_records=int(
+                    report.get("ingested_source_records", 0)
+                ),
+                last_sources_succeeded=succeeded,
+                last_sources_failed=failed,
+            )
+
+        log.info("Restored previous ingestion report from disk")
+
+    except Exception:
+        log.exception("Could not restore previous ingestion report")
+_restore_last_run()
 def _db():
     Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH, timeout=20)
