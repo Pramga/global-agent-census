@@ -203,7 +203,24 @@ def mcp_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
         if cursor:
             params["cursor"] = cursor
         url = base.rstrip("/") + "/v0.1/servers?" + urllib.parse.urlencode(params)
-        _, payload, _ = fetch_json(url)
+        last_error = None
+        for attempt in range(3):
+            try:
+                _, payload, _ = fetch_json(url)
+                last_error = None
+                break
+            except (TimeoutError, urllib.error.URLError) as exc:
+                last_error = exc
+                log.warning(
+                    "MCP Registry page fetch failed (attempt %d/3): %s",
+                    attempt + 1,
+                    exc,
+                )
+                if attempt < 2:
+                    time.sleep(2 ** attempt)
+
+        if last_error is not None:
+            raise last_error
         if isinstance(payload, list):
             batch = payload
             next_cursor = None
