@@ -209,7 +209,7 @@ def mcp_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
                 _, payload, _ = fetch_json(url)
                 last_error = None
                 break
-            except (TimeoutError, urllib.error.URLError) as exc:
+            except except (TimeoutError, urllib.error.URLError, RuntimeError) as exc: as exc:
                 last_error = exc
                 log.warning(
                     "MCP Registry page fetch failed (attempt %d/3): %s",
