@@ -4,67 +4,528 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Global AI Agent Census</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      background: #0b1020;
-      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #090d18;
+      color: #f5f7ff;
     }
-    main {
-      max-width: 900px;
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
       margin: auto;
-      padding: 70px 24px;
     }
+
+    header {
+      border-bottom: 1px solid #20283a;
+      background: rgba(9,13,24,.94);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: #b8c1d9;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 82px 0 56px;
+    }
+
+    .eyebrow {
+      color: #8b7cff;
+      font-weight: 800;
+      letter-spacing: .12em;
+      font-size: 13px;
+    }
+
     h1 {
-      font-size: clamp(42px, 8vw, 72px);
-      line-height: 1;
-      margin-bottom: 20px;
+      font-size: clamp(44px, 8vw, 82px);
+      line-height: .98;
+      margin: 15px 0 24px;
+      max-width: 900px;
     }
-    .accent { color: #8b7cff; }
-    p {
-      color: #c5cad8;
-      font-size: 19px;
+
+    .hero-copy {
+      max-width: 760px;
+      color: #aeb8d0;
+      font-size: 20px;
       line-height: 1.6;
     }
-    .card {
-      margin-top: 40px;
-      padding: 28px;
-      background: #151b30;
-      border: 1px solid #29314d;
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 42px;
+    }
+
+    .stat,
+    .panel,
+    .agent {
+      border: 1px solid #232c42;
+      background: #111728;
       border-radius: 18px;
     }
-    a {
-      color: #9f94ff;
+
+    .stat {
+      padding: 22px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: #8f9ab4;
+      font-size: 13px;
+    }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .section-title {
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #8f9ab4;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      border: 1px solid #2a3550;
+      background: #0d1322;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button,
+    .button {
+      border: 0;
+      border-radius: 12px;
+      padding: 15px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #7867ff;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .secondary {
+      background: #1b2336;
+      border: 1px solid #2d3851;
+    }
+
+    #agents {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .agent {
+      padding: 20px;
+    }
+
+    .agent h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .agent p {
+      color: #9da8c1;
+      line-height: 1.5;
+      min-height: 45px;
+      margin: 8px 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      background: #1b2336;
+      border: 1px solid #2d3851;
+      color: #c5cde0;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+    }
+
+    .status-good {
+      color: #6ee7a8;
+    }
+
+    .status-warn {
+      color: #f5bf6c;
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 40px 0;
+      border-top: 1px solid #20283a;
+      color: #77829d;
+      font-size: 14px;
+    }
+
+    .loading {
+      color: #8f9ab4;
+    }
+
+    @media (max-width: 800px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #agents {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      nav .links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <main>
-    <p class="accent">GLOBAL AI AGENT CENSUS</p>
 
-    <h1>Mapping the world's AI agents.</h1>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">GLOBAL AI AGENT CENSUS</div>
 
-    <p>
-      An open, continuously updated registry for discovering,
-      tracking, and analyzing publicly accessible AI agents.
-    </p>
+      <div class="links">
+        <a href="#directory">Directory</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/healthz">Status</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-    <div class="card">
-      <h2>The Census is live.</h2>
-      <p>
-        We are building a searchable global dataset of AI agents,
-        their capabilities, providers, endpoints, and public metadata.
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+
+      <div class="eyebrow">LIVE PUBLIC AI INFRASTRUCTURE DATA</div>
+
+      <h1>Mapping the world's AI agents.</h1>
+
+      <p class="hero-copy">
+        A continuously updated census of publicly discoverable AI agents,
+        MCP servers and agent infrastructure across multiple public sources.
       </p>
-      <p>
-        API access, advanced search, analytics, and commercial data
-        products are coming next.
-      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong id="recordCount">—</strong>
+          <span>Unique records</span>
+        </div>
+
+        <div class="stat">
+          <strong id="sourceCount">—</strong>
+          <span>Sources contributing</span>
+        </div>
+
+        <div class="stat">
+          <strong id="reachableCount">—</strong>
+          <span>Validated & reachable</span>
+        </div>
+
+        <div class="stat">
+          <strong id="runStatus">Loading</strong>
+          <span>Latest census run</span>
+        </div>
+
+      </div>
+
     </div>
+  </section>
 
-    <p>
-      <a href="/healthz">Service Status</a>
-    </p>
-  </main>
+  <section id="directory">
+    <div class="wrap">
+
+      <div class="section-title">
+        <h2>Explore the Census</h2>
+        <p>Search the live Global AI Agent Census.</p>
+      </div>
+
+      <div class="search-box">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search agents, descriptions, protocols..."
+        >
+        <button id="searchButton">Search</button>
+      </div>
+
+      <p id="resultSummary" class="loading">
+        Loading agent records...
+      </p>
+
+      <div id="agents"></div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+
+      <div class="panel cta">
+        <div>
+          <div class="eyebrow">DATA ACCESS</div>
+          <h2>Build with the Census.</h2>
+
+          <p class="hero-copy" style="font-size:17px;">
+            API access, higher query limits and commercial data products
+            are being prepared for developers and businesses.
+          </p>
+        </div>
+
+        <div>
+          <a class="button" href="/pricing">
+            View API Pricing
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Global AI Agent Census · Public-source intelligence for the agent ecosystem.
+    · <a href="/privacy">Privacy</a>
+    · <a href="/terms">Terms</a>
+  </div>
+</footer>
+
+<script>
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  async function loadCounts() {
+    try {
+      const response = await fetch("/api/counts");
+      const data = await response.json();
+
+      document.getElementById("recordCount").textContent =
+        Number(data.listed_unique_records || 0).toLocaleString();
+
+      document.getElementById("sourceCount").textContent =
+        data.distinct_sources_contributing ?? "—";
+
+      document.getElementById("reachableCount").textContent =
+        Number(data.validated_reachable_records || 0).toLocaleString();
+
+      const status =
+        data.service?.last_run_status ||
+        data.last_run_status ||
+        "unknown";
+
+      const statusEl = document.getElementById("runStatus");
+      statusEl.textContent = status.replaceAll("_", " ");
+
+      if (status === "succeeded") {
+        statusEl.className = "status-good";
+      } else {
+        statusEl.className = "status-warn";
+      }
+
+    } catch (error) {
+      document.getElementById("runStatus").textContent = "Unavailable";
+    }
+  }
+
+  async function loadAgents(search = "") {
+    const agents = document.getElementById("agents");
+    const summary = document.getElementById("resultSummary");
+
+    agents.innerHTML = "";
+    summary.textContent = "Loading records...";
+
+    try {
+      const params = new URLSearchParams({
+        limit: "12",
+        offset: "0"
+      });
+
+      if (search) {
+        params.set("q", search);
+      }
+
+      const response = await fetch("/api/agents?" + params.toString());
+      const data = await response.json();
+
+      const results = Array.isArray(data.results) ? data.results : [];
+
+      summary.textContent =
+        `${Number(data.total || 0).toLocaleString()} matching records`;
+
+      if (!results.length) {
+        agents.innerHTML =
+          '<div class="panel">No matching records found.</div>';
+        return;
+      }
+
+      agents.innerHTML = results.map(agent => {
+
+        const name =
+          agent.display_name ||
+          agent.name ||
+          agent.agent_id ||
+          "Unnamed agent";
+
+        const description =
+          agent.description ||
+          "No public description available.";
+
+        const protocol =
+          agent.protocol ||
+          agent.kind ||
+          "Unspecified";
+
+        const verified =
+          agent.operator_verification ||
+          "unverified";
+
+        const sources =
+          Array.isArray(agent.sources)
+            ? agent.sources.length
+            : 0;
+
+        return `
+          <article class="agent">
+            <h3>${escapeHtml(name)}</h3>
+
+            <p>${escapeHtml(description)}</p>
+
+            <div class="tags">
+              <span class="tag">${escapeHtml(protocol)}</span>
+              <span class="tag">${escapeHtml(verified)}</span>
+              ${sources ? `<span class="tag">${sources} source${sources === 1 ? "" : "s"}</span>` : ""}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+    } catch (error) {
+      summary.textContent = "Could not load census records.";
+      agents.innerHTML =
+        '<div class="panel">The directory is temporarily unavailable.</div>';
+    }
+  }
+
+  function search() {
+    const value =
+      document.getElementById("searchInput").value.trim();
+
+    loadAgents(value);
+  }
+
+  document
+    .getElementById("searchButton")
+    .addEventListener("click", search);
+
+  document
+    .getElementById("searchInput")
+    .addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        search();
+      }
+    });
+
+  loadCounts();
+  loadAgents();
+</script>
+
 </body>
 </html>
