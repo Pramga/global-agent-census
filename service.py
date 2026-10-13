@@ -13,7 +13,10 @@ from pathlib import Path
 from urllib.parse import parse_qs
 
 from census import init_db, run_pipeline, counts
-
+try:
+    import psycopg
+except ImportError:
+    psycopg = None
 try:
     import stripe
 except ImportError:  # Billing routes return a clear setup error until the dependency is installed.
@@ -32,7 +35,107 @@ _state = {"last_run_started_at": None, "last_run_finished_at": None,
           "last_run_status": "starting", "last_run_error": None,
           "last_ingested_source_records": 0, "last_sources_succeeded": 0,
           "last_sources_failed": 0}
-def _restore_last_run():
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+def _pg_conn():
+    if not DATABASE_URL or psycopg is None:
+        return None
+    return psycopg.connect(DATABASE_URL)
+
+def _init_status_store():
+    conn = _pg_conn()
+    if conn is None:
+        return
+    try:
+        with conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS ingestion_status (
+                        id INTEGER PRIMARY KEY,
+                        last_run_started_at TEXT,
+                        last_run_finished_at TEXT,
+                        last_run_status TEXT,
+                        last_run_error TEXT,
+                        last_ingested_source_records INTEGER NOT NULL DEFAULT 0,
+                        last_sources_succeeded INTEGER NOT NULL DEFAULT 0,
+                        last_sources_failed INTEGER NOT NULL DEFAULT 0,
+                        updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+                    )
+                """)
+                cur.execute("""
+                    INSERT INTO ingestion_status (id)
+                    VALUES (1)
+                    ON CONFLICT (id) DO NOTHING
+                """)
+    finally:
+        conn.close()
+
+def _save_status_to_postgres():
+    conn = _pg_conn()
+    if conn is None:
+        return
+    try:
+        with _state_lock:
+            state = dict(_state)
+
+        with conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    UPDATE ingestion_status
+                    SET last_run_started_at = %s,
+                        last_run_finished_at = %s,
+                        last_run_status = %s,
+                        last_run_error = %s,
+                        last_ingested_source_records = %s,
+                        last_sources_succeeded = %s,
+                        last_sources_failed = %s,
+                        updated_at = NOW()
+                    WHERE id = 1
+                """, (
+                    state.get("last_run_started_at"),
+                    state.get("last_run_finished_at"),
+                    state.get("last_run_status"),
+                    state.get("last_run_error"),
+                    int(state.get("last_ingested_source_records", 0)),
+                    int(state.get("last_sources_succeeded", 0)),
+                    int(state.get("last_sources_failed", 0)),
+                ))
+    finally:
+        conn.close()
+
+def _restore_status_from_postgres():
+    conn = _pg_conn()
+    if conn is None:
+        return
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT last_run_started_at,
+                       last_run_finished_at,
+                       last_run_status,
+                       last_run_error,
+                       last_ingested_source_records,
+                       last_sources_succeeded,
+                       last_sources_failed
+                FROM ingestion_status
+                WHERE id = 1
+            """)
+            row = cur.fetchone()
+
+        if row:
+            with _state_lock:
+                _state.update(
+                    last_run_started_at=row[0],
+                    last_run_finished_at=row[1],
+                    last_run_status=row[2] or "starting",
+                    last_run_error=row[3],
+                    last_ingested_source_records=row[4] or 0,
+                    last_sources_succeeded=row[5] or 0,
+                    last_sources_failed=row[6] or 0,
+                )
+    finally:
+        conn.close()
+        def _restore_last_run():
     report_path = Path(OUTPUT_DIR) / "run_report.json"
 
     if not report_path.exists():
@@ -207,6 +310,7 @@ def run_once(force=False):
                           last_run_status=run_status, last_run_error=run_error,
                           last_ingested_source_records=report.get("ingested_source_records", 0),
                           last_sources_succeeded=succeeded, last_sources_failed=failed)
+        _save_status_to_postgres()
         log.info("Ingestion completed: %s", report)
         return {**report, "run_status": run_status}
     except Exception as exc:
@@ -214,6 +318,7 @@ def run_once(force=False):
         with _state_lock:
             _state.update(last_run_finished_at=datetime.now(timezone.utc).isoformat(),
                           last_run_status="failed", last_run_error=str(exc)[:500])
+        _save_status_to_postgres()
         return {"status": "failed", "error": str(exc)[:500]}
     finally:
         _lock.release()
