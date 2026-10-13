@@ -679,7 +679,9 @@ def validate_pending(conn: sqlite3.Connection, only_stale_hours: int = 24) -> in
       FROM agents
     """).fetchall()
     checked = 0
-    for row in rows:
+    for row in rows:   
+        if checked >= 25:
+            break
         (agent_id, name, desc, kind, identity, endpoint, metadata_url, protocol, proto_ver,
          op_name, op_domain, op_ver, op_evidence, raw_json, last_checked) = row
         if last_checked:
