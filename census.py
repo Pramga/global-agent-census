@@ -36,7 +36,7 @@ DEFAULT_DB = "census.sqlite3"
 DEFAULT_CONFIG = "sources.json"
 USER_AGENT = f"GlobalAgentCensus/{APP_VERSION} (+public-metadata-indexer)"
 MAX_BODY_BYTES = 2_000_000
-TIMEOUT_SECONDS = 12
+TIMEOUT_SECONDS = 20
 MAX_PAGES = 10000
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -194,7 +194,7 @@ def load_config(path: str) -> dict[str, Any]:
 def mcp_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
     """Read all public latest-version records from the official MCP Registry."""
     base = source.get("base_url", "https://registry.modelcontextprotocol.io")
-    page_size = int(source.get("page_size", 100))
+    page_size = int(source.get("page_size", 50))
     cursor = None
     records: list[dict[str, Any]] = []
     seen_cursors = set()
