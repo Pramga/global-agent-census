@@ -133,7 +133,7 @@ def _restore_status_from_postgres():
                     last_sources_succeeded=row[5] or 0,
                     last_sources_failed=row[6] or 0,
                 )
-        finally:
+    finally:
         conn.close()
 
 
@@ -171,6 +171,8 @@ def _restore_last_run():
 
     except Exception:
         log.exception("Could not restore previous ingestion report")
+_init_status_store()
+_restore_status_from_postgres()
 _restore_last_run()
 def _db():
     Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
