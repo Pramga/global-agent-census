@@ -755,7 +755,7 @@ def counts(conn: sqlite3.Connection) -> dict[str, Any]:
 
 
 def export_records(conn: sqlite3.Connection, output_dir: str) -> None:
-        out = Path(output_dir)
+    out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
 
     columns = [x[1] for x in conn.execute("PRAGMA table_info(agents)").fetchall()]
@@ -792,7 +792,6 @@ def export_records(conn: sqlite3.Connection, output_dir: str) -> None:
         encoding="utf-8",
     )
 
-    # Stream CSV as well instead of retaining all records in memory.
     import csv
 
     with (out / "agents.csv").open(
