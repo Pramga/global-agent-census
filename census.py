@@ -677,7 +677,7 @@ def validate_pending(conn: sqlite3.Connection, only_stale_hours: int = 24) -> in
              metadata_url, protocol, protocol_version, operator_name, operator_domain,
              operator_verification, operator_evidence, raw_json, last_checked_at
       FROM agents
-    """).fetchall()
+    """)
     checked = 0
     for row in rows:   
         if checked >= 25:
