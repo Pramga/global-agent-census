@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: global-agent-census
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    autoDeploy: true
+    disk:
+      name: census-data
+      mountPath: /var/data
+      sizeGB: 10
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/census.sqlite3
+      - key: OUTPUT_DIR
+        value: /var/data/public
+      - key: SOURCES_CONFIG
+        value: /app/sources.json
+      - key: REFRESH_SECONDS
+        value: "21600"
+
+      - key: APP_BASE_URL
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_PRICE_DEVELOPER
+        sync: false
+      - key: STRIPE_PRICE_BUSINESS
+        sync: false
+      - key: WAITLIST_ADMIN_TOKEN
+        sync: false
+      - key: WAITLIST_IP_SALT
+        sync: false

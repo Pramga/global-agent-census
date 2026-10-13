@@ -1,0 +1,56 @@
+{
+  "recheck_after_hours": 24,
+  "sources": [
+    {
+      "name": "Official MCP Registry",
+      "adapter": "mcp_registry",
+      "base_url": "https://registry.modelcontextprotocol.io",
+      "page_size": 100,
+      "version": "latest",
+      "enabled": true,
+      "scope": "Official paginated MCP server registry; servers are not necessarily autonomous agents.",
+      "coverage_status": "paginated_api"
+    },
+    {
+      "name": "Public A2A Registry (search discovery sample)",
+      "adapter": "a2a_registry_search",
+      "base_url": "https://api.a2a-registry.org",
+      "query_terms": ["assistant", "research", "search", "finance", "weather", "coding", "data", "travel", "productivity", "support", "business", "personal"],
+      "enabled": true,
+      "scope": "Public search endpoint queried with a bounded set of terms; API docs do not establish exhaustive pagination, so this is not a complete registry dump.",
+      "coverage_status": "search_sample_not_exhaustive"
+    },
+    {
+      "name": "Awesome MCP Servers (GitHub project directory)",
+      "adapter": "github_markdown_directory",
+      "url": "https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md",
+      "kind": "mcp_project",
+      "protocol": "MCP",
+      "enabled": true,
+      "scope": "Community-maintained project list; project entries are not counted as live endpoints and must be reviewed for repository/license policy.",
+      "coverage_status": "community_markdown_directory"
+    },
+    {
+      "name": "Glama MCP Connector Directory (API key required)",
+      "adapter": "glama_directory",
+      "base_url": "https://glama.ai/api/mcp",
+      "collection": "connectors",
+      "page_size": 100,
+      "token_env": "GLAMA_API_KEY",
+      "enabled": false,
+      "scope": "Curated connector catalog with cursor pagination. Requires GLAMA_API_KEY and visible attribution/link-back on every rendered listing under Glama's API data license.",
+      "coverage_status": "ready_but_requires_credentials_and_attribution"
+    },
+    {
+      "name": "Additional public JSON feed (template)",
+      "adapter": "json_feed",
+      "url": "https://example.org/public-agents.json",
+      "items_key": "agents",
+      "kind": "agent",
+      "protocol": "A2A",
+      "enabled": false,
+      "scope": "Template only; replace with a real directory API and confirm terms/schema before enabling.",
+      "coverage_status": "template_disabled"
+    }
+  ]
+}
