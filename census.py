@@ -755,27 +755,61 @@ def counts(conn: sqlite3.Connection) -> dict[str, Any]:
 
 
 def export_records(conn: sqlite3.Connection, output_dir: str) -> None:
-    out = Path(output_dir)
+        out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
+
     columns = [x[1] for x in conn.execute("PRAGMA table_info(agents)").fetchall()]
-    records = [dict(zip(columns, row)) for row in conn.execute("SELECT * FROM agents ORDER BY display_name COLLATE NOCASE")]
-    for record in records:
-        try:
-            record["raw_json"] = json.loads(record["raw_json"])
-        except Exception:
-            pass
-    (out / "agents.json").write_text(json.dumps(records, indent=2, ensure_ascii=False), encoding="utf-8")
-    (out / "counts.json").write_text(json.dumps(counts(conn), indent=2), encoding="utf-8")
-    # CSV is useful for downstream analysis; flatten raw JSON to a compact string.
+    select_sql = "SELECT * FROM agents"
+
+    # Stream JSON one record at a time to avoid loading the full census into RAM.
+    with (out / "agents.json").open("w", encoding="utf-8") as f:
+        f.write("[\n")
+        first = True
+
+        for row in conn.execute(select_sql):
+            record = dict(zip(columns, row))
+
+            try:
+                record["raw_json"] = json.loads(record["raw_json"])
+            except Exception:
+                pass
+
+            if not first:
+                f.write(",\n")
+
+            json.dump(
+                record,
+                f,
+                ensure_ascii=False,
+                sort_keys=True,
+            )
+            first = False
+
+        f.write("\n]\n")
+
+    (out / "counts.json").write_text(
+        json.dumps(counts(conn), indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # Stream CSV as well instead of retaining all records in memory.
     import csv
-    with (out / "agents.csv").open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=columns, extrasaction="ignore")
+
+    with (out / "agents.csv").open(
+        "w",
+        newline="",
+        encoding="utf-8",
+    ) as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=columns,
+            extrasaction="ignore",
+        )
         writer.writeheader()
-        for r in records:
-            r = dict(r)
-            if isinstance(r.get("raw_json"), (dict, list)):
-                r["raw_json"] = json.dumps(r["raw_json"], ensure_ascii=False)
-            writer.writerow(r)
+
+        for row in conn.execute(select_sql):
+            record = dict(zip(columns, row))
+            writer.writerow(record)
 
 
 def run_pipeline(config_path: str, db_path: str, output_dir: str, force_check: bool = False) -> dict[str, Any]:
