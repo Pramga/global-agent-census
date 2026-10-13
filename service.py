@@ -67,6 +67,28 @@ def _init_status_store():
                     VALUES (1)
                     ON CONFLICT (id) DO NOTHING
                 """)
+
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS agent_snapshot (
+                        agent_id TEXT PRIMARY KEY,
+                        display_name TEXT,
+                        description TEXT,
+                        protocol TEXT,
+                        operator_verification TEXT,
+                        record JSONB NOT NULL,
+                        updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+                    )
+                """)
+
+                cur.execute("""
+                    CREATE INDEX IF NOT EXISTS idx_agent_snapshot_display_name
+                    ON agent_snapshot (display_name)
+                """)
+
+                cur.execute("""
+                    CREATE INDEX IF NOT EXISTS idx_agent_snapshot_protocol
+                    ON agent_snapshot (protocol)
+                """)
     finally:
         conn.close()
 
