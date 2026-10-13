@@ -133,9 +133,11 @@ def _restore_status_from_postgres():
                     last_sources_succeeded=row[5] or 0,
                     last_sources_failed=row[6] or 0,
                 )
-    finally:
+        finally:
         conn.close()
-        def _restore_last_run():
+
+
+def _restore_last_run():
     report_path = Path(OUTPUT_DIR) / "run_report.json"
 
     if not report_path.exists():
@@ -153,7 +155,6 @@ def _restore_status_from_postgres():
             status = "partial_failure"
         else:
             status = "succeeded"
-
         with _state_lock:
             _state.update(
                 last_run_finished_at=report.get("generated_at"),
