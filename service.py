@@ -179,11 +179,18 @@ def _record_usage(conn, key_hash):
 def run_once(force=False):
     if not _lock.acquire(blocking=False):
         return {"status": "already_running"}
+
     started = datetime.now(timezone.utc).isoformat()
+
     with _state_lock:
-        _state.update(last_run_started_at=started, last_run_status="running", last_run_error=None)
+        _state.update(
+            last_run_started_at=started,
+            last_run_status="running",
+            last_run_error=None,
+        )
+
     try:
-        report = run_pipeline(CONFIG_PATH, DB_PATH, OUTPUT_DIR, force_check=force)
+        report = run_pipeline(CONFIG_PATH, DB_PATH, OUTPUT_DIR)
         succeeded = int(report.get("sources_succeeded", 0))
         failed = int(report.get("sources_failed", 0))
         if succeeded == 0:
