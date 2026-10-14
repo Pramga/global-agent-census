@@ -31,6 +31,7 @@ OUTPUT_DIR = os.getenv("OUTPUT_DIR", "/var/data/public")
 REFRESH_SECONDS = max(900, int(os.getenv("REFRESH_SECONDS", "21600")))
 _lock = threading.Lock()
 _state_lock = threading.Lock()
+_SQLITE_SCHEMA_READY = False
 _state = {"last_run_started_at": None, "last_run_finished_at": None,
           "last_run_status": "starting", "last_run_error": None,
           "last_ingested_source_records": 0, "last_sources_succeeded": 0,
@@ -197,6 +198,7 @@ _init_status_store()
 _restore_status_from_postgres()
 _restore_last_run()
 def _db():
+    global _SQLITE_SCHEMA_READY
     Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
 conn = sqlite3.connect(DB_PATH, timeout=20)
 conn.row_factory = sqlite3.Row
@@ -204,6 +206,8 @@ conn.execute("PRAGMA busy_timeout = 30000")
 conn.execute("PRAGMA journal_mode = WAL")
 conn.execute("PRAGMA synchronous = NORMAL")
 
+if _SQLITE_SCHEMA_READY:
+    return conn
 
 init_db(conn)
 conn.executescript("""
@@ -252,8 +256,11 @@ conn.executescript("""
     );
     """)
     conn.commit()
+    _SQLITE_SCHEMA_READY = True
     return conn
 
+_startup_db = _db()
+_startup_db.close()
 
 def _utcnow():
     return datetime.now(timezone.utc).isoformat()
