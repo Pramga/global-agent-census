@@ -252,9 +252,9 @@ conn.executescript("""
       submissions INTEGER NOT NULL DEFAULT 0,
       PRIMARY KEY (source_ip_hash, hour_bucket)
     );
-    """)
-    conn.commit()
-    return conn
+    """
+conn.commit()
+return conn
 
 
 def _utcnow():
