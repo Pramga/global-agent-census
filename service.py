@@ -259,8 +259,6 @@ conn.executescript("""
     _SQLITE_SCHEMA_READY = True
     return conn
 
-_startup_db = _db()
-_startup_db.close()
 
 def _utcnow():
     return datetime.now(timezone.utc).isoformat()
