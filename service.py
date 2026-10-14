@@ -208,7 +208,7 @@ if conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='waitli
     return conn
 
 init_db(conn)
-    conn.executescript("""
+conn.executescript("""
     CREATE TABLE IF NOT EXISTS billing_subscriptions (
       stripe_subscription_id TEXT PRIMARY KEY,
       stripe_customer_id TEXT NOT NULL,
