@@ -204,8 +204,6 @@ conn.execute("PRAGMA busy_timeout = 30000")
 conn.execute("PRAGMA journal_mode = WAL")
 conn.execute("PRAGMA synchronous = NORMAL")
 
-if conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='waitlist_submissions'").fetchone():
-    return conn
 
 init_db(conn)
 conn.executescript("""
