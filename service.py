@@ -198,9 +198,12 @@ _restore_status_from_postgres()
 _restore_last_run()
 def _db():
     Path(DB_PATH).parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(DB_PATH, timeout=20)
-    conn.row_factory = sqlite3.Row
-    init_db(conn)
+conn = sqlite3.connect(DB_PATH, timeout=20)
+conn.row_factory = sqlite3.Row
+conn.execute("PRAGMA busy_timeout = 30000")
+conn.execute("PRAGMA journal_mode = WAL")
+conn.execute("PRAGMA synchronous = NORMAL")
+init_db(conn)
     conn.executescript("""
     CREATE TABLE IF NOT EXISTS billing_subscriptions (
       stripe_subscription_id TEXT PRIMARY KEY,
