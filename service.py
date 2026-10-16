@@ -671,7 +671,7 @@ def app(environ, start_response):
         try:
             conn = _db()
             try:
-                            state = _public_run_state()
+            state = _public_run_state()
             snapshot_path = Path(OUTPUT_DIR) / "counts.json"
 
             if (
@@ -685,7 +685,7 @@ def app(environ, start_response):
                 data = counts(conn)
 
             data["service"] = state
-                return _response(start_response, "200 OK", data)
+            return _response(start_response, "200 OK", data)
             finally:
                 conn.close()
         except Exception:
