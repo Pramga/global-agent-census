@@ -671,8 +671,20 @@ def app(environ, start_response):
         try:
             conn = _db()
             try:
+                            state = _public_run_state()
+            snapshot_path = Path(OUTPUT_DIR) / "counts.json"
+
+            if (
+                state.get("last_run_status") in {"starting", "running"}
+                and snapshot_path.exists()
+            ):
+                data = json.loads(
+                    snapshot_path.read_text(encoding="utf-8")
+                )
+            else:
                 data = counts(conn)
-                data["service"] = _public_run_state()
+
+            data["service"] = state
                 return _response(start_response, "200 OK", data)
             finally:
                 conn.close()
