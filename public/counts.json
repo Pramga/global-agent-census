@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-10-16T15:47:26Z",
+  "listed_unique_records": 44756,
+  "validated_reachable_records": 8,
+  "independently_verified_operators": 0,
+  "distinct_sources_contributing": 3,
+  "most_recent_endpoint_check": "2026-10-16T15:47:23Z",
+  "definitions": {
+    "listed_unique_records": "Deduplicated entities retained from ingested public sources, including unvalidated entries.",
+    "validated_reachable_records": "Metadata passed adapter checks and its declared endpoint/Agent Card was reachable on last check; this does not prove safe behavior or full protocol functionality.",
+    "independently_verified_operators": "Distinct operator identities explicitly marked independently_verified with recorded evidence; source self-claims and endpoint reachability do not count."
+  },
+  "caveat": "This is a source-bounded census, not a claim to enumerate every AI agent on the internet."
+}
