@@ -33,7 +33,7 @@ jobs:
         run: |
           git config user.name "global-agent-census-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A
+          git add public/agents.csv public/agents.json public/counts.json public/run_report.json
           if git diff --cached --quiet; then
             echo "No census changes found."
           else
