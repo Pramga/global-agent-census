@@ -365,20 +365,7 @@ def a2a_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
             "raw": item,
             "source_url": url,
         }
-             seen[key] = {
-                "source_record_id": key, "name": name,
-                "description": item.get("description") or item.get("summary"),
-                "kind": "agent", "protocol": "A2A",
-                "protocol_version": item.get("protocolVersion"),
-                "primary_endpoint": endpoint,
-                "metadata_url": item.get("agentCardUrl") or item.get("agent_card_url") or item.get("manifest_url"),
-                "canonical_identity": "a2a:" + key.lower(),
-                "operator_name": item.get("publisher") or item.get("organization"),
-                "operator_domain": item.get("domain"),
-                "operator_verification": "source_claim",
-                "operator_evidence": "Listed by public A2A Registry; operator not independently verified by this census",
-                "raw": item, "source_url": url,
-            }
+                
     return list(seen.values())
 
 
