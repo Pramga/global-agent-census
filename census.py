@@ -195,11 +195,14 @@ def mcp_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
     """Read all public latest-version records from the official MCP Registry."""
     base = source.get("base_url", "https://registry.modelcontextprotocol.io")
     page_size = int(source.get("page_size", 50))
+    updated_since = source.get("updated_since")
     cursor = None
     records: list[dict[str, Any]] = []
     seen_cursors = set()
     for _ in range(MAX_PAGES):
-        params = {"limit": str(page_size), "version": source.get("version", "latest")}
+        params = {"limit": str(page_size), "version": "latest"}
+        if updated_since:
+            params["updated_since"] = updated_since
         if cursor:
             params["cursor"] = cursor
         url = base.rstrip("/") + "/v0.1/servers?" + urllib.parse.urlencode(params)
@@ -845,20 +848,41 @@ def run_pipeline(config_path: str, db_path: str, output_dir: str, force_check: b
         run_id = cur.lastrowid
         conn.commit()
         try:
-            records = ingest_source(source)
+            source_for_run = dict(source)
+
+            if source.get("adapter") == "mcp_registry":
+                row = conn.execute("""
+                    SELECT finished_at
+                    FROM source_runs
+                    WHERE source_name=?
+                      AND status='succeeded'
+                      AND finished_at IS NOT NULL
+                      AND run_id<>?
+                    ORDER BY run_id DESC
+                    LIMIT 1
+                """, (name, run_id)).fetchone()
+            
+                if row and row[0]:
+                    source_for_run["updated_since"] = row[0]
+            
+            records = ingest_source(source_for_run)
+            
             for rec in records:
                 rec["_source_name"] = name
                 save_record(conn, name, rec)
-            conn.execute("UPDATE source_runs SET finished_at=?, status=?, records_seen=? WHERE run_id=?",
-                         (now_iso(), "succeeded", len(records), run_id))
+            
+            conn.execute(
+                 "UPDATE source_runs SET finished_at=?, status=?, records_seen=? WHERE run_id=?",
+                (now_iso(), "succeeded", len(records), run_id))
             conn.commit()
             sources_succeeded += 1
             total_ingested += len(records)
             log.info("%s: ingested %d records", name, len(records))
         except Exception as exc:
             log.exception("Source %s failed", name)
-            conn.execute("UPDATE source_runs SET finished_at=?, status=?, error=? WHERE run_id=?",
-                         (now_iso(), "failed", str(exc)[:2000], run_id))
+            conn.execute(
+                 "UPDATE source_runs SET finished_at=?, status=?, error=? WHERE run_id=?",
+                (now_iso(), "failed", str(exc)[:2000], run_id))
             conn.commit()
             sources_failed += 1
     checked = validate_pending(conn, only_stale_hours=0 if force_check else int(config.get("recheck_after_hours", 24)))
