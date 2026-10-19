@@ -296,13 +296,11 @@ def a2a_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
     so this adapter deliberately reports a discovery sample, not a complete registry dump.
     """
     base = source.get("base_url", "https://api.a2a-registry.org").rstrip("/")
-    terms = source.get("query_terms", ["assistant", "research", "search", "finance", "weather", "coding", "data", "travel"])
     seen: dict[str, dict[str, Any]] = {}
-    for term in terms[:40]:
-        url = base + "/public/agents?" + urllib.parse.urlencode({"q": str(term)})
-        _, payload, _ = fetch_json(url)
-        items = _extract_items(payload, ("agents", "results", "items", "data"))
-        for item in items:
+    url = base + "/public/agents"
+    _, payload, _ = _fetch_json(url)
+    items = _extract_items(payload, ("agents", "items", "results", "data"))
+    for item in items:
             ident = item.get("id") or item.get("identifier") or item.get("package_name") or item.get("packageName")
             name = item.get("displayName") or item.get("name") or item.get("title") or ident
             if not ident and not name:
