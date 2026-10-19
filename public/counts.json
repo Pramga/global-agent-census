@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-18T15:12:54Z",
-  "listed_unique_records": 45926,
+  "generated_at": "2026-10-19T09:25:30Z",
+  "listed_unique_records": 46137,
   "validated_reachable_records": 9,
   "independently_verified_operators": 0,
-  "distinct_sources_contributing": 3,
-  "most_recent_endpoint_check": "2026-10-18T15:12:50Z",
+  "distinct_sources_contributing": 2,
+  "most_recent_endpoint_check": "2026-10-19T09:25:26Z",
   "definitions": {
     "listed_unique_records": "Deduplicated entities retained from ingested public sources, including unvalidated entries.",
     "validated_reachable_records": "Metadata passed adapter checks and its declared endpoint/Agent Card was reachable on last check; this does not prove safe behavior or full protocol functionality.",
