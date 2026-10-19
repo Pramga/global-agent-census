@@ -303,26 +303,68 @@ def a2a_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
     url = base + "/public/agents"
     _, payload, _ = fetch_json(url)
     items = _extract_items(payload, ("agents", "items", "results", "data"))
-    for item in items:
-            ident = item.get("id") or item.get("identifier") or item.get("package_name") or item.get("packageName")
-            name = item.get("displayName") or item.get("name") or item.get("title") or ident
-            if not ident and not name:
-                continue
-            key = str(ident or name).strip()
-            endpoint = (
-                 item.get("url")
-                 or item.get("endpoint")
-                 or item.get("agentUrl")
-                 or item.get("agent_url")
-                 or item.get("agentCardUrl")
-                 or item.get("manifest_url")
-                 or (
-                     item.get("supportedInterfaces", [{}])[0].get("url")
-                     if isinstance(item.get("supportedInterfaces"), list)
-                     and item.get("supportedInterfaces")
-                     else None
-                 )
-             )
+        for item in items:
+        ident = (
+            item.get("id")
+            or item.get("identifier")
+            or item.get("package_name")
+            or item.get("packageName")
+        )
+        name = (
+            item.get("displayName")
+            or item.get("name")
+            or item.get("title")
+            or ident
+        )
+
+        if not ident and not name:
+            continue
+
+        key = str(ident or name).strip()
+
+        interfaces = item.get("supportedInterfaces")
+        interface_url = None
+        if (
+            isinstance(interfaces, list)
+            and interfaces
+            and isinstance(interfaces[0], dict)
+        ):
+            interface_url = interfaces[0].get("url")
+
+        endpoint = (
+            item.get("url")
+            or item.get("endpoint")
+            or item.get("agentUrl")
+            or item.get("agent_url")
+            or item.get("agentCardUrl")
+            or item.get("manifest_url")
+            or interface_url
+        )
+
+        seen[key] = {
+            "source_record_id": key,
+            "name": name,
+            "description": item.get("description") or item.get("summary"),
+            "kind": "agent",
+            "protocol": "A2A",
+            "protocol_version": item.get("protocolVersion"),
+            "primary_endpoint": endpoint,
+            "metadata_url": (
+                item.get("agentCardUrl")
+                or item.get("agent_card_url")
+                or item.get("manifest_url")
+            ),
+            "canonical_identity": "a2a:" + key.lower(),
+            "operator_name": item.get("publisher") or item.get("organization"),
+            "operator_domain": item.get("domain"),
+            "operator_verification": "source_claim",
+            "operator_evidence": (
+                "Listed by public A2A Registry; operator not independently "
+                "verified by this census"
+            ),
+            "raw": item,
+            "source_url": url,
+        }
              seen[key] = {
                 "source_record_id": key, "name": name,
                 "description": item.get("description") or item.get("summary"),
