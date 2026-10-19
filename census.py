@@ -799,7 +799,7 @@ def export_records(conn: sqlite3.Connection, output_dir: str) -> None:
         "raw_json",
     ]
     
-        select_sql = """
+    select_sql = """
         SELECT
             agent_id,
             display_name,
