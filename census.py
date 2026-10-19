@@ -309,8 +309,20 @@ def a2a_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
             if not ident and not name:
                 continue
             key = str(ident or name).strip()
-            endpoint = (item.get("url") or item.get("endpoint") or item.get("agentUrl") or
-                        item.get("agent_url") or item.get("agentCardUrl") or item.get("manifest_url"))
+    endpoint = (
+        item.get("url")
+        or item.get("endpoint")
+        or item.get("agentUrl")
+        or item.get("agent_url")
+        or item.get("agentCardUrl")
+        or item.get("manifest_url")
+        or (
+            item.get("supportedInterfaces", [{}])[0].get("url")
+            if isinstance(item.get("supportedInterfaces"), list)
+            and item.get("supportedInterfaces")
+            else None
+        )
+    )
             seen[key] = {
                 "source_record_id": key, "name": name,
                 "description": item.get("description") or item.get("summary"),
