@@ -777,7 +777,7 @@ def export_records(conn: sqlite3.Connection, output_dir: str) -> None:
     out.mkdir(parents=True, exist_ok=True)
 
     columns = [x[1] for x in conn.execute("PRAGMA table_info(agents)").fetchall()]
-    select_sql = "SELECT * FROM agents"
+    select_sql = "SELECT * FROM agents ORDER BY agent_id"
 
     # Stream JSON one record at a time to avoid loading the full census into RAM.
     with (out / "agents.json").open("w", encoding="utf-8") as f:
