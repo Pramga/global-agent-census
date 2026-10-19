@@ -38,5 +38,6 @@ jobs:
             echo "No census changes found."
           else
             git commit -m "Automated census update"
+            git pull --rebase origin main
             git push
           fi
