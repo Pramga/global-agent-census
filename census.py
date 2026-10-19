@@ -303,7 +303,7 @@ def a2a_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
     url = base + "/public/agents"
     _, payload, _ = fetch_json(url)
     items = _extract_items(payload, ("agents", "items", "results", "data"))
-        for item in items:
+    for item in items:
         ident = (
             item.get("id")
             or item.get("identifier")
