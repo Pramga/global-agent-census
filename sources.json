@@ -33,7 +33,7 @@
     {
       "name": "mcpHQ Awesome MCP Servers",
       "adapter": "github_markdown_directory",
-        "url": "https://         raw.githubusercontent.com/mcpHQ/awesome-mcp-servers/main/README.md",
+        "url": "https://raw.githubusercontent.com/mcpHQ/awesome-mcp-servers/main/README.md",
       "enabled": true,
       "scope": "Curated public MCP server catalog from mcpHQ.",
       "coverage_status": "public_github_directory"
