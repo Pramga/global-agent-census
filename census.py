@@ -754,7 +754,7 @@ def validate_pending(
     pending = []
 
     for row in rows:
-        if len(pending) >= 500:
+        if len(pending) >= 1000:
             break
 
         (
