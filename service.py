@@ -671,26 +671,30 @@ def app(environ, start_response):
         try:
             conn = _db()
             try:
-            state = _public_run_state()
-            snapshot_path = Path(OUTPUT_DIR) / "counts.json"
+                state = _public_run_state()
+                snapshot_path = Path(OUTPUT_DIR) / "counts.json"
 
-            if (
-                state.get("last_run_status") != "succeeded"
-and snapshot_path.exists()
-            ):
-                data = json.loads(
-                    snapshot_path.read_text(encoding="utf-8")
-                )
-            else:
-                data = counts(conn)
+                if (
+                    state.get("last_run_status") != "succeeded"
+                    and snapshot_path.exists()
+                ):
+                    data = json.loads(
+                        snapshot_path.read_text(encoding="utf-8")
+                    )
+                else:
+                    data = counts(conn)
 
-            data["service"] = state
-            return _response(start_response, "200 OK", data)
+                data["service"] = state
+                return _response(start_response, "200 OK", data)
             finally:
                 conn.close()
         except Exception:
             log.exception("Census counts endpoint failed")
-            return _response(start_response, "503 Service Unavailable", {"error": "census_counts_unavailable"})
+            return _response(
+                start_response,
+                "503 Service Unavailable",
+                {"error": "census_counts_unavailable"},
+            )
     if path == "/api/agents":
         try:
             limit = min(200, max(1, int(query.get("limit", ["50"])[0])))
