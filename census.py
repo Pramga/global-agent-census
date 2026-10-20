@@ -897,9 +897,15 @@ def counts(conn: sqlite3.Connection) -> dict[str, Any]:
     """).fetchone()[0]
     sources = conn.execute("SELECT COUNT(DISTINCT source_name) FROM source_records").fetchone()[0]
     checked = conn.execute("SELECT MAX(last_checked_at) FROM agents").fetchone()[0]
+
+checked_records = conn.execute(
+    "SELECT COUNT(*) FROM agents WHERE last_checked_at IS NOT NULL"
+).fetchone()[0]
+
     return {
         "generated_at": now_iso(),
         "listed_unique_records": total,
+        "checked_records": checked_records,
         "metadata_valid_records": metadata_valid,
         "endpoint_reachable_records":     endpoint_reachable,
         "validated_reachable_records": valid_reachable,
