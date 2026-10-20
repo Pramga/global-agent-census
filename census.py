@@ -928,7 +928,9 @@ def run_pipeline(config_path: str, db_path: str, output_dir: str, force_check: b
             continue
         name = source.get("name") or source.get("adapter", "unknown")
         sources_attempted += 1
-        started = now_iso()
+        source_started = time.perf_counter()
+        log.info("Source %s starting", name)
+         started = now_iso()
         cur = conn.execute("INSERT INTO source_runs(source_name, started_at, status) VALUES(?,?,?)",
                            (name, started, "running"))
         run_id = cur.lastrowid
@@ -963,9 +965,18 @@ def run_pipeline(config_path: str, db_path: str, output_dir: str, force_check: b
             conn.commit()
             sources_succeeded += 1
             total_ingested += len(records)
-            log.info("%s: ingested %d records", name, len(records))
+            log.info(
+    "%s: ingested %d records in %.1fs",
+    name,
+    len(records),
+    time.perf_counter() - source_started,
+)
         except Exception as exc:
-            log.exception("Source %s failed", name)
+            log.exception(
+    "Source %s failed after %.1fs",
+    name,
+    time.perf_counter() - source_started,
+)
             conn.execute(
                  "UPDATE source_runs SET finished_at=?, status=?, error=? WHERE run_id=?",
                 (now_iso(), "failed", str(exc)[:2000], run_id))
