@@ -746,6 +746,9 @@ def validate_pending(
                operator_verification, operator_evidence,
                raw_json, last_checked_at
         FROM agents
+        ORDER BY
+            CASE WHEN last_checked_at IS NULL THEN 0 ELSE 1 END,
+            last_checked_at ASC
     """)
 
     pending = []
