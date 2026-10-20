@@ -30,7 +30,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
-
+from concurrent.futures import ThreadPoolExecutor, as_completed
 APP_VERSION = "0.2.0"
 DEFAULT_DB = "census.sqlite3"
 DEFAULT_CONFIG = "sources.json"
@@ -729,58 +729,148 @@ def save_record(conn: sqlite3.Connection, source_name: str, record: dict[str, An
     return agent_id
 
 
-def validate_pending(conn: sqlite3.Connection, only_stale_hours: int = 24) -> int:
-    cutoff = datetime.now(timezone.utc).timestamp() - only_stale_hours * 3600
+def validate_pending(
+    conn: sqlite3.Connection,
+    only_stale_hours: int = 24,
+) -> int:
+    cutoff = (
+        datetime.now(timezone.utc).timestamp()
+        - only_stale_hours * 3600
+    )
+
     rows = conn.execute("""
-      SELECT agent_id, display_name, description, kind, canonical_identity, primary_endpoint,
-             metadata_url, protocol, protocol_version, operator_name, operator_domain,
-             operator_verification, operator_evidence, raw_json, last_checked_at
-      FROM agents
+        SELECT agent_id, display_name, description, kind,
+               canonical_identity, primary_endpoint,
+               metadata_url, protocol, protocol_version,
+               operator_name, operator_domain,
+               operator_verification, operator_evidence,
+               raw_json, last_checked_at
+        FROM agents
     """)
-    checked = 0
-    for row in rows:   
-        if checked >= 100:
+
+    pending = []
+
+    for row in rows:
+        if len(pending) >= 100:
             break
-        (agent_id, name, desc, kind, identity, endpoint, metadata_url, protocol, proto_ver,
-         op_name, op_domain, op_ver, op_evidence, raw_json, last_checked) = row
+
+        (
+            agent_id, name, desc, kind, identity, endpoint,
+            metadata_url, protocol, proto_ver,
+            op_name, op_domain, op_ver, op_evidence,
+            raw_json, last_checked,
+        ) = row
+
         if last_checked:
             try:
-                last_ts = datetime.fromisoformat(last_checked.replace("Z", "+00:00")).timestamp()
+                last_ts = datetime.fromisoformat(
+                    last_checked.replace("Z", "+00:00")
+                ).timestamp()
+
                 if last_ts >= cutoff:
                     continue
             except ValueError:
                 pass
+
         rec = {
-            "name": name, "description": desc, "kind": kind, "canonical_identity": identity,
-            "primary_endpoint": endpoint, "metadata_url": metadata_url, "protocol": protocol,
-            "protocol_version": proto_ver, "operator_name": op_name, "operator_domain": op_domain,
-            "operator_verification": op_ver, "operator_evidence": op_evidence,
+            "name": name,
+            "description": desc,
+            "kind": kind,
+            "canonical_identity": identity,
+            "primary_endpoint": endpoint,
+            "metadata_url": metadata_url,
+            "protocol": protocol,
+            "protocol_version": proto_ver,
+            "operator_name": op_name,
+            "operator_domain": op_domain,
+            "operator_verification": op_ver,
+            "operator_evidence": op_evidence,
             "raw": json.loads(raw_json),
         }
-        valid, reachable, status, notes, enriched = validate_record(rec)
-        checked_at = now_iso()
-        conn.execute("""
-          UPDATE agents SET metadata_valid=?, endpoint_reachable=?, endpoint_status=?,
-          validation_notes=?, last_checked_at=?,
-          display_name=COALESCE(?, display_name),
-          description=COALESCE(?, description),
-          primary_endpoint=COALESCE(?, primary_endpoint),
-          metadata_url=COALESCE(?, metadata_url),
-          protocol=COALESCE(?, protocol),
-          protocol_version=COALESCE(?, protocol_version)
-          WHERE agent_id=?
-        """, (valid, reachable, status, notes, checked_at, enriched.get("name"),
-              enriched.get("description"), canonical_url(enriched.get("primary_endpoint")),
-              canonical_url(enriched.get("metadata_url")), enriched.get("protocol"),
-              enriched.get("protocol_version"), agent_id))
-        conn.execute("INSERT INTO change_events(agent_id, changed_at, event_type, details) VALUES(?,?,?,?)",
-                     (agent_id, checked_at, "validation_check",
-                      json.dumps({"metadata_valid": valid, "endpoint_reachable": reachable,
-                                  "http_status": status, "notes": notes})))
-        checked += 1
+
+        pending.append((agent_id, rec))
+
+    def validate_one(item):
+        agent_id, rec = item
+        try:
+            result = validate_record(rec)
+            return agent_id, result
+        except Exception as exc:
+            return agent_id, (
+                0,
+                0,
+                None,
+                f"Validation error: {str(exc)[:300]}",
+                rec,
+            )
+
+    checked = 0
+
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = [
+            executor.submit(validate_one, item)
+            for item in pending
+        ]
+
+        for future in as_completed(futures):
+            agent_id, result = future.result()
+
+            valid, reachable, status, notes, enriched = result
+            checked_at = now_iso()
+
+            conn.execute("""
+                UPDATE agents SET
+                    metadata_valid=?,
+                    endpoint_reachable=?,
+                    endpoint_status=?,
+                    validation_notes=?,
+                    last_checked_at=?,
+                    display_name=COALESCE(?, display_name),
+                    description=COALESCE(?, description),
+                    primary_endpoint=COALESCE(?, primary_endpoint),
+                    metadata_url=COALESCE(?, metadata_url),
+                    protocol=COALESCE(?, protocol),
+                    protocol_version=COALESCE(?, protocol_version)
+                WHERE agent_id=?
+            """, (
+                valid,
+                reachable,
+                status,
+                notes,
+                checked_at,
+                enriched.get("name"),
+                enriched.get("description"),
+                canonical_url(enriched.get("primary_endpoint")),
+                canonical_url(enriched.get("metadata_url")),
+                enriched.get("protocol"),
+                enriched.get("protocol_version"),
+                agent_id,
+            ))
+
+            conn.execute(
+                """INSERT INTO change_events(
+                    agent_id,
+                    changed_at,
+                    event_type,
+                    details
+                ) VALUES(?,?,?,?)""",
+                (
+                    agent_id,
+                    checked_at,
+                    "validation_check",
+                    json.dumps({
+                        "metadata_valid": valid,
+                        "endpoint_reachable": reachable,
+                        "http_status": status,
+                        "notes": notes,
+                    }),
+                ),
+            )
+
+            checked += 1
+
     conn.commit()
     return checked
-
 
 def counts(conn: sqlite3.Connection) -> dict[str, Any]:
     total = conn.execute("SELECT COUNT(*) FROM agents").fetchone()[0]
