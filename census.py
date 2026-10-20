@@ -878,12 +878,12 @@ def counts(conn: sqlite3.Connection) -> dict[str, Any]:
         "SELECT COUNT(*) FROM agents WHERE metadata_valid=1 AND endpoint_reachable=1"
     ).fetchone()[0]
     metadata_valid = conn.execute(
-    "SELECT COUNT(*) FROM agents WHERE metadata_valid=1"
-).fetchone()[0]
+        "SELECT COUNT(*) FROM agents WHERE metadata_valid=1"
+    ).fetchone()[0]
 
-endpoint_reachable = conn.execute(
-    "SELECT COUNT(*) FROM agents WHERE endpoint_reachable=1"
-).fetchone()[0]
+    endpoint_reachable = conn.execute(
+        "SELECT COUNT(*) FROM agents WHERE    endpoint_reachable=1"
+    ).fetchone()[0]
     # Deliberately only count explicitly adjudicated independent evidence; source claims
     # and successful HTTP checks do not qualify.
     verified_operators = conn.execute("""
