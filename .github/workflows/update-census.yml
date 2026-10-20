@@ -43,11 +43,26 @@ jobs:
         run: |
           git config user.name "global-agent-census-bot"
           git config user.email "actions@users.noreply.github.com"
+
+          mkdir -p /tmp/census-output
+          cp public/agents.csv /tmp/census-output/agents.csv
+          cp public/agents.json /tmp/census-output/agents.json
+          cp public/counts.json /tmp/census-output/counts.json
+          cp public/run_report.json /tmp/census-output/run_report.json
+
+          git fetch origin main
+          git reset --hard origin/main
+
+          cp /tmp/census-output/agents.csv public/agents.csv
+          cp /tmp/census-output/agents.json public/agents.json
+          cp /tmp/census-output/counts.json public/counts.json
+          cp /tmp/census-output/run_report.json public/run_report.json
+
           git add public/agents.csv public/agents.json public/counts.json public/run_report.json
+
           if git diff --cached --quiet; then
             echo "No census changes found."
           else
             git commit -m "Automated census update"
-            git pull --rebase origin main
-            git push
+            git push origin main
           fi
