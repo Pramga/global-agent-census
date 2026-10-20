@@ -930,7 +930,7 @@ def run_pipeline(config_path: str, db_path: str, output_dir: str, force_check: b
         sources_attempted += 1
         source_started = time.perf_counter()
         log.info("Source %s starting", name)
-         started = now_iso()
+        started = now_iso()
         cur = conn.execute("INSERT INTO source_runs(source_name, started_at, status) VALUES(?,?,?)",
                            (name, started, "running"))
         run_id = cur.lastrowid
