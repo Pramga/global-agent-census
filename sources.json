@@ -31,6 +31,15 @@
       "coverage_status": "community_markdown_directory"
     },
     {
+      "name": "mcpHQ Awesome MCP Servers",
+      "adapter": "github_markdown_directory",
+        "url": "https://         raw.githubusercontent.com/mcpHQ/awesome-mcp-servers/main/README.md",
+      "enabled": true,
+      "scope": "Curated public MCP server catalog from mcpHQ.",
+      "coverage_status": "public_github_directory"
+},
+{
+
       "name": "Glama MCP Connector Directory (API key required)",
       "adapter": "glama_directory",
       "base_url": "https://glama.ai/api/mcp",
