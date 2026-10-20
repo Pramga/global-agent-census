@@ -15,7 +15,13 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
+      - name: Restore census database
+        uses: actions/cache/restore@v4
+        with:
+          path: census.sqlite3
+          key: census-db-${{ github.run_id }}
+          restore-keys: |
+            census-db-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -28,7 +34,11 @@ jobs:
 
       - name: Run census updater
         run: python census.py
-
+      - name: Save census database
+        uses: actions/cache/save@v4
+        with:
+          path: census.sqlite3
+          key: census-db-${{ github.run_id }}
       - name: Save updated census data
         run: |
           git config user.name "global-agent-census-bot"
