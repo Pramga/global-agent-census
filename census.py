@@ -877,6 +877,13 @@ def counts(conn: sqlite3.Connection) -> dict[str, Any]:
     valid_reachable = conn.execute(
         "SELECT COUNT(*) FROM agents WHERE metadata_valid=1 AND endpoint_reachable=1"
     ).fetchone()[0]
+    metadata_valid = conn.execute(
+    "SELECT COUNT(*) FROM agents WHERE metadata_valid=1"
+).fetchone()[0]
+
+endpoint_reachable = conn.execute(
+    "SELECT COUNT(*) FROM agents WHERE endpoint_reachable=1"
+).fetchone()[0]
     # Deliberately only count explicitly adjudicated independent evidence; source claims
     # and successful HTTP checks do not qualify.
     verified_operators = conn.execute("""
@@ -890,12 +897,16 @@ def counts(conn: sqlite3.Connection) -> dict[str, Any]:
     return {
         "generated_at": now_iso(),
         "listed_unique_records": total,
+        "metadata_valid_records": metadata_valid,
+        "endpoint_reachable_records":     endpoint_reachable,
         "validated_reachable_records": valid_reachable,
         "independently_verified_operators": verified_operators,
         "distinct_sources_contributing": sources,
         "most_recent_endpoint_check": checked,
         "definitions": {
             "listed_unique_records": "Deduplicated entities retained from ingested public sources, including unvalidated entries.",
+            "metadata_valid_records": "Records whose metadata passed the census validation checks.",
+            "endpoint_reachable_records": "Records with a declared endpoint or Agent Card that returned a reachable HTTP response.",
             "validated_reachable_records": "Metadata passed adapter checks and its declared endpoint/Agent Card was reachable on last check; this does not prove safe behavior or full protocol functionality.",
             "independently_verified_operators": "Distinct operator identities explicitly marked independently_verified with recorded evidence; source self-claims and endpoint reachability do not count.",
         },
