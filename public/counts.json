@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-10-20T19:45:40Z",
-  "listed_unique_records": 47175,
+  "generated_at": "2026-10-20T20:21:18Z",
+  "listed_unique_records": 47192,
+  "checked_records": 100,
   "metadata_valid_records": 10,
   "endpoint_reachable_records": 10,
   "validated_reachable_records": 10,
   "independently_verified_operators": 0,
   "distinct_sources_contributing": 4,
-  "most_recent_endpoint_check": "2026-10-20T19:45:36Z",
+  "most_recent_endpoint_check": "2026-10-20T20:21:14Z",
   "definitions": {
     "listed_unique_records": "Deduplicated entities retained from ingested public sources, including unvalidated entries.",
     "metadata_valid_records": "Records whose metadata passed the census validation checks.",
