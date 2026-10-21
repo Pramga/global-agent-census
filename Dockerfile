@@ -8,6 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 COPY census.py service.py sources.json requirements.txt ./
 COPY site/ ./site/
+COPY public/ ./public/
 RUN pip install --no-cache-dir -r requirements.txt \
     && useradd --create-home --uid 10001 census \
     && mkdir -p /var/data \
