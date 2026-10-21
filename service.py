@@ -683,14 +683,80 @@ def app(environ, start_response):
                     },
                 )
         
+                    pg_conn = _pg_conn()
+
+        if pg_conn is not None:
+            try:
+                with pg_conn.cursor() as cur:
+                    cur.execute("""
+                        SELECT
+                            lead_id,
+                            email,
+                            role,
+                            use_case,
+                            consent_at,
+                            created_at
+                        FROM waitlist_leads
+                        ORDER BY created_at DESC
+                        LIMIT 1000
+                    """)
+
+                    rows = cur.fetchall()
+
+                    leads = [
+                        {
+                            "lead_id": row[0],
+                            "email": row[1],
+                            "role": row[2],
+                            "use_case": row[3],
+                            "consent_at": row[4],
+                            "created_at": row[5],
+                        }
+                        for row in rows
+                    ]
+
+                return _response(
+                    start_response,
+                    "200 OK",
+                    {
+                        "count": len(leads),
+                        "leads": leads,
+                    },
+                )
+
+            finally:
+                pg_conn.close()
+
+        else:
+            conn = _db()
+
+            try:
+                rows = conn.execute(
+                    """
+                    SELECT
+                        lead_id,
+                        email,
+                        role,
+                        use_case,
+                        consent_at,
+                        created_at
+                    FROM waitlist_leads
+                    ORDER BY created_at DESC
+                    LIMIT 1000
+                    """
+                ).fetchall()
+
+                return _response(
+                    start_response,
+                    "200 OK",
+                    {
+                        "count": len(rows),
+                        "leads": [dict(row) for row in rows],
+                    },
+                )
+
             finally:
                 conn.close()
-    if path == "/api/waitlist" and environ.get("REQUEST_METHOD", "GET").upper() == "GET":
-        expected = os.getenv("WAITLIST_ADMIN_TOKEN", "")
-        supplied = environ.get("HTTP_AUTHORIZATION", "")
-        if not expected or not supplied.startswith("Bearer ") or not hmac.compare_digest(supplied[7:].strip(), expected):
-            return _response(start_response, "401 Unauthorized", {"error": "admin_token_required"})
-        conn = _db()
         try:
             rows = conn.execute("SELECT lead_id,email,role,use_case,consent_at,created_at FROM waitlist_leads ORDER BY created_at DESC LIMIT 1000").fetchall()
             return _response(start_response, "200 OK", {"count": len(rows), "leads": [dict(row) for row in rows]})
