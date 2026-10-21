@@ -229,8 +229,9 @@ async function loadLeads() {
         `).join("");
 
     } catch (error) {
-        statusEl.textContent = "Could not load leads. Check the admin token and try again.";
-    }
+    statusEl.textContent =
+        "Could not load leads: " + error.message;
+}
 }
 
 document.getElementById("loadButton").addEventListener("click", loadLeads);
