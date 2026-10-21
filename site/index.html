@@ -319,8 +319,10 @@
 
       </div>
 
-    </div>
-  </section>
+<p id="lastUpdated" class="last-updated">Last updated: loading...</p>
+
+</div>
+</section>
 
   <section id="directory">
     <div class="wrap">
@@ -405,7 +407,13 @@
 
       document.getElementById("reachableCount").textContent =
         Number(data.validated_reachable_records || 0).toLocaleString();
+const generatedAt = data.generated_at;
 
+if (generatedAt) {
+    const updatedDate = new Date(generatedAt);
+    document.getElementById("lastUpdated").textContent =
+        "Last updated: " + updatedDate.toLocaleString();
+}
       const status =
         data.service?.last_run_status ||
         data.last_run_status ||
