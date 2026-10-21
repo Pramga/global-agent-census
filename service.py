@@ -553,138 +553,138 @@ def app(environ, start_response):
         hour_bucket = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H")
         pg_conn = _pg_conn()
 
-if pg_conn is not None:
-    try:
-        with pg_conn.cursor() as cur:
-            cur.execute(
-                """
-                INSERT INTO waitlist_submissions
-                    (source_ip_hash, hour_bucket, submissions)
-                VALUES (%s, %s, 1)
-                ON CONFLICT (source_ip_hash, hour_bucket)
-                DO UPDATE SET submissions =
-                    waitlist_submissions.submissions + 1
-                RETURNING submissions
-                """,
-                (ip_hash, hour_bucket),
-            )
-
-            used = cur.fetchone()[0]
-
-            if used > 5:
-                pg_conn.rollback()
+        if pg_conn is not None:
+            try:
+                with pg_conn.cursor() as cur:
+                    cur.execute(
+                        """
+                        INSERT INTO waitlist_submissions
+                            (source_ip_hash, hour_bucket, submissions)
+                        VALUES (%s, %s, 1)
+                        ON CONFLICT (source_ip_hash, hour_bucket)
+                        DO UPDATE SET submissions =
+                            waitlist_submissions.submissions + 1
+                        RETURNING submissions
+                        """,
+                        (ip_hash, hour_bucket),
+                    )
+        
+                    used = cur.fetchone()[0]
+        
+                    if used > 5:
+                        pg_conn.rollback()
+                        return _response(
+                            start_response,
+                            "429 Too Many Requests",
+                            {"error": "submission_rate_limit_exceeded"},
+                        )
+        
+                    now = _utcnow()
+        
+                    cur.execute(
+                        """
+                        INSERT INTO waitlist_leads
+                            (
+                                email,
+                                role,
+                                use_case,
+                                consent_at,
+                                created_at,
+                                source_ip_hash
+                            )
+                        VALUES (%s, %s, %s, %s, %s, %s)
+                        ON CONFLICT (email)
+                        DO UPDATE SET
+                            role = EXCLUDED.role,
+                            use_case = EXCLUDED.use_case,
+                            consent_at = EXCLUDED.consent_at
+                        """,
+                        (email, role, use_case, now, now, ip_hash),
+                    )
+        
+                    pg_conn.commit()
+        
                 return _response(
                     start_response,
-                    "429 Too Many Requests",
-                    {"error": "submission_rate_limit_exceeded"},
+                    "201 Created",
+                    {
+                        "ok": True,
+                        "message": "Thanks. Your early-access request has been recorded.",
+                    },
                 )
-
-            now = _utcnow()
-
-            cur.execute(
-                """
-                INSERT INTO waitlist_leads
-                    (
-                        email,
-                        role,
-                        use_case,
-                        consent_at,
-                        created_at,
-                        source_ip_hash
+        
+            finally:
+                pg_conn.close()
+        
+        else:
+            conn = _db()
+        
+            try:
+                conn.execute(
+                    """
+                    INSERT INTO waitlist_submissions
+                        (source_ip_hash, hour_bucket, submissions)
+                    VALUES (?, ?, 1)
+                    ON CONFLICT(source_ip_hash, hour_bucket)
+                    DO UPDATE SET submissions = submissions + 1
+                    """,
+                    (ip_hash, hour_bucket),
+                )
+        
+                used = conn.execute(
+                    """
+                    SELECT submissions
+                    FROM waitlist_submissions
+                    WHERE source_ip_hash = ?
+                      AND hour_bucket = ?
+                    """,
+                    (ip_hash, hour_bucket),
+                ).fetchone()[0]
+        
+                if used > 5:
+                    conn.rollback()
+                    return _response(
+                        start_response,
+                        "429 Too Many Requests",
+                        {"error": "submission_rate_limit_exceeded"},
                     )
-                VALUES (%s, %s, %s, %s, %s, %s)
-                ON CONFLICT (email)
-                DO UPDATE SET
-                    role = EXCLUDED.role,
-                    use_case = EXCLUDED.use_case,
-                    consent_at = EXCLUDED.consent_at
-                """,
-                (email, role, use_case, now, now, ip_hash),
-            )
-
-            pg_conn.commit()
-
-        return _response(
-            start_response,
-            "201 Created",
-            {
-                "ok": True,
-                "message": "Thanks. Your early-access request has been recorded.",
-            },
-        )
-
-    finally:
-        pg_conn.close()
-
-else:
-    conn = _db()
-
-    try:
-        conn.execute(
-            """
-            INSERT INTO waitlist_submissions
-                (source_ip_hash, hour_bucket, submissions)
-            VALUES (?, ?, 1)
-            ON CONFLICT(source_ip_hash, hour_bucket)
-            DO UPDATE SET submissions = submissions + 1
-            """,
-            (ip_hash, hour_bucket),
-        )
-
-        used = conn.execute(
-            """
-            SELECT submissions
-            FROM waitlist_submissions
-            WHERE source_ip_hash = ?
-              AND hour_bucket = ?
-            """,
-            (ip_hash, hour_bucket),
-        ).fetchone()[0]
-
-        if used > 5:
-            conn.rollback()
-            return _response(
-                start_response,
-                "429 Too Many Requests",
-                {"error": "submission_rate_limit_exceeded"},
-            )
-
-        now = _utcnow()
-
-        conn.execute(
-            """
-            INSERT INTO waitlist_leads
-                (
-                    email,
-                    role,
-                    use_case,
-                    consent_at,
-                    created_at,
-                    source_ip_hash
+        
+                now = _utcnow()
+        
+                conn.execute(
+                    """
+                    INSERT INTO waitlist_leads
+                        (
+                            email,
+                            role,
+                            use_case,
+                            consent_at,
+                            created_at,
+                            source_ip_hash
+                        )
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(email)
+                    DO UPDATE SET
+                        role = excluded.role,
+                        use_case = excluded.use_case,
+                        consent_at = excluded.consent_at
+                    """,
+                    (email, role, use_case, now, now, ip_hash),
                 )
-            VALUES (?, ?, ?, ?, ?, ?)
-            ON CONFLICT(email)
-            DO UPDATE SET
-                role = excluded.role,
-                use_case = excluded.use_case,
-                consent_at = excluded.consent_at
-            """,
-            (email, role, use_case, now, now, ip_hash),
-        )
-
-        conn.commit()
-
-        return _response(
-            start_response,
-            "201 Created",
-            {
-                "ok": True,
-                "message": "Thanks. Your early-access request has been recorded.",
-            },
-        )
-
-    finally:
-        conn.close()
+        
+                conn.commit()
+        
+                return _response(
+                    start_response,
+                    "201 Created",
+                    {
+                        "ok": True,
+                        "message": "Thanks. Your early-access request has been recorded.",
+                    },
+                )
+        
+            finally:
+                conn.close()
     if path == "/api/waitlist" and environ.get("REQUEST_METHOD", "GET").upper() == "GET":
         expected = os.getenv("WAITLIST_ADMIN_TOKEN", "")
         supplied = environ.get("HTTP_AUTHORIZATION", "")
