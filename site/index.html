@@ -482,7 +482,37 @@ if (generatedAt) {
       document.getElementById("runStatus").textContent = "Unavailable";
     }
   }
+async function loadSources() {
+    const container = document.getElementById("sourceCoverage");
 
+    try {
+        const response = await fetch("/api/sources");
+        const data = await response.json();
+
+        const sources = Array.isArray(data.sources) ? data.sources : [];
+
+        if (!sources.length) {
+            container.innerHTML =
+                '<p class="loading">No source coverage available.</p>';
+            return;
+        }
+
+        container.innerHTML = sources
+            .filter(source => source.enabled !== false)
+            .map(source => `
+                <div class="source-card">
+                    <h3>${source.name || "Unnamed source"}</h3>
+                    <p>${source.scope || "Public source"}</p>
+                    <p><strong>Coverage:</strong> ${source.coverage_status || "unspecified"}</p>
+                    <span class="source-status">Active</span>
+                </div>
+            `)
+            .join("");
+    } catch (error) {
+        container.innerHTML =
+            '<p class="loading">Source coverage unavailable.</p>';
+    }
+}
   async function loadAgents(search = "") {
     const agents = document.getElementById("agents");
     const summary = document.getElementById("resultSummary");
