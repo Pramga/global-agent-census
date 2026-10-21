@@ -5,7 +5,7 @@
       "name": "Official MCP Registry",
       "adapter": "mcp_registry",
       "base_url": "https://registry.modelcontextprotocol.io",
-      "page_size": 100,
+      "page_size": 25,
       "version": "latest",
       "enabled": true,
       "scope": "Official paginated MCP server registry; servers are not necessarily autonomous agents.",
