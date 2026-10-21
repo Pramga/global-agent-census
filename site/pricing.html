@@ -411,8 +411,9 @@ document.getElementById("waitlistForm").addEventListener("submit", async event =
         document.getElementById("waitlistForm").reset();
 
     } catch (error) {
-        status.textContent = "Could not submit your request. Please try again.";
-    }
+    status.textContent =
+        "Could not submit your request: " + error.message;
+}
 });
 </script>
 
