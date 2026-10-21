@@ -207,7 +207,7 @@ def mcp_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
             params["cursor"] = cursor
         url = base.rstrip("/") + "/v0.1/servers?" + urllib.parse.urlencode(params)
         last_error = None
-        for attempt in range(2):
+        for attempt in range(3):
             try:
                 _, payload, _ = fetch_json(url)
                 last_error = None
