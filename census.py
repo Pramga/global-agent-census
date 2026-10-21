@@ -581,8 +581,7 @@ def ingest_source(source: dict[str, Any]) -> list[dict[str, Any]]:
         return glama_directory_records(source)
     if kind == "truespar_directory":
         return truespar_directory_records(source)
-    raise ValueError(f"Unsupported adapter {kind!r}; supported: mcp_registry, a2a_registry_search, github_markdown_directory, glama_directory, truespar_directory, json_feed
-
+        raise ValueError(f"Unsupported adapter {kind!r}; supported: mcp_registry, a2a_registry_search, github_markdown_directory, glama_directory, truespar_directory, json_feed")
 
 def normalized_identity(record: dict[str, Any]) -> str | None:
     identity = clean_text(record.get("canonical_identity"), 1000)
