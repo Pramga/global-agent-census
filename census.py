@@ -507,7 +507,66 @@ def json_feed_records(source: dict[str, Any]) -> list[dict[str, Any]]:
         })
     return out
 
+def truespar_directory_records(source: dict[str, Any]) -> list[dict[str, Any]]:
+    base = source.get("base_url", "https://registry.truespar.com/v1/servers")
+    page_size = int(source.get("page_size", 100))
+    max_records = int(source.get("max_records", 1000))
 
+    records = []
+    offset = 0
+
+    while len(records) < max_records:
+        params = {
+            "limit": min(page_size, 100),
+            "offset": offset,
+        }
+        url = base + "?" + urllib.parse.urlencode(params)
+        _, payload, _ = fetch_json(url)
+
+        if not isinstance(payload, dict):
+            break
+
+        items = payload.get("results", [])
+        if not isinstance(items, list) or not items:
+            break
+
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+
+            endpoints = item.get("remoteEndpoints") or []
+            endpoint = None
+            if endpoints and isinstance(endpoints[0], dict):
+                endpoint = endpoints[0].get("url")
+
+            records.append({
+                "source_record_id": str(item.get("key") or stable_hash(item)),
+                "name": item.get("name"),
+                "description": item.get("description"),
+                "kind": "mcp_server",
+                "protocol": "MCP",
+                "protocol_version": None,
+                "primary_endpoint": endpoint,
+                "metadata_url": item.get("homepage") or item.get("repoUrl"),
+                "canonical_identity": item.get("key"),
+                "operator_name": None,
+                "operator_domain": item.get("domain"),
+                "operator_verification": "unverified",
+                "operator_evidence": None,
+                "raw": item,
+                "source_url": url,
+            })
+
+            if len(records) >= max_records:
+                break
+
+        offset += len(items)
+
+        total = int(payload.get("total", 0))
+        if offset >= total:
+            break
+
+    return records
 def ingest_source(source: dict[str, Any]) -> list[dict[str, Any]]:
     kind = source.get("adapter")
     if kind == "mcp_registry":
@@ -520,7 +579,9 @@ def ingest_source(source: dict[str, Any]) -> list[dict[str, Any]]:
         return github_markdown_directory_records(source)
     if kind == "glama_directory":
         return glama_directory_records(source)
-    raise ValueError(f"Unsupported adapter {kind!r}; supported: mcp_registry, a2a_registry_search, github_markdown_directory, glama_directory, json_feed")
+    if kind == "truespar_directory":
+        return truespar_directory_records(source)
+    raise ValueError(f"Unsupported adapter {kind!r}; supported: mcp_registry, a2a_registry_search, github_markdown_directory, glama_directory, truespar_directory, json_feed
 
 
 def normalized_identity(record: dict[str, Any]) -> str | None:
