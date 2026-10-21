@@ -91,6 +91,26 @@
   "scope": "Direct public A2A agent catalog containing Agent Cards, endpoints, conformance and health metadata.",
   "coverage_status": "direct_public_agent_catalog"
 },
+{
+  "name": "Global A2A Registry",
+  "adapter": "json_feed",
+  "url": "https://api.a2a-registry.org/public/agents",
+  "items_key": "agents",
+  "kind": "agent",
+  "protocol": "A2A",
+  "field_map": {
+    "source_record_id": "id",
+    "name": "displayName",
+    "description": "description",
+    "metadata_url": "manifestUrl",
+    "canonical_identity": "id",
+    "operator_name": "orgId",
+    "protocol": "protocolStd"
+  },
+  "enabled": true,
+  "scope": "Public global A2A agent registry with Agent Card manifests, verification metadata, and organization identifiers.",
+  "coverage_status": "direct_public_a2a_registry"
+},
     {
       "name": "Additional public JSON feed (template)",
       "adapter": "json_feed",
