@@ -503,7 +503,12 @@ async function loadSources() {
                 <div class="source-card">
                     <h3>${source.name || "Unnamed source"}</h3>
                     <p>${source.scope || "Public source"}</p>
-                    <p><strong>Coverage:</strong> ${source.coverage_status || "unspecified"}</p>
+                    <p><strong>Coverage:</strong> ${
+    (source.coverage_status || "unspecified")
+        .replaceAll("_", " ")
+        .replace(/\b\w/g, char => char.toUpperCase())
+        .replace("Api", "API")
+}</p>
                     <span class="source-status">Active</span>
                 </div>
             `)
