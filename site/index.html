@@ -64,7 +64,30 @@
     font-weight: 700;
     color: #7ee2a8;
     }
+    .api-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    }
 
+    .api-card {
+    padding: 20px;
+    border: 1px solid #20283a;
+    border-radius: 18px;
+    background: #111728;
+    }
+
+    .api-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    }
+
+    .api-card p {
+    margin: 0;
+    color: #9aa4bd;
+    line-height: 1.5;
+    }
     header {
       border-bottom: 1px solid #20283a;
       background: rgba(9,13,24,.94);
