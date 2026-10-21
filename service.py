@@ -91,6 +91,37 @@ def _init_status_store():
                 """)
     finally:
         conn.close()
+        
+def _init_waitlist_store():
+    conn = _pg_conn()
+    if conn is None:
+        return
+
+    try:
+        with conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS waitlist_leads (
+                        lead_id BIGSERIAL PRIMARY KEY,
+                        email TEXT NOT NULL UNIQUE,
+                        role TEXT NOT NULL DEFAULT '',
+                        use_case TEXT NOT NULL DEFAULT '',
+                        consent_at TEXT NOT NULL,
+                        created_at TEXT NOT NULL,
+                        source_ip_hash TEXT NOT NULL
+                    )
+                """)
+
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS waitlist_submissions (
+                        source_ip_hash TEXT NOT NULL,
+                        hour_bucket TEXT NOT NULL,
+                        submissions INTEGER NOT NULL DEFAULT 0,
+                        PRIMARY KEY (source_ip_hash, hour_bucket)
+                    )
+                """)
+    finally:
+        conn.close()
 
 def _save_status_to_postgres():
     conn = _pg_conn()
