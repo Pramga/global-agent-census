@@ -61,6 +61,16 @@
       "coverage_status": "public_json_registry"
     },
     {
+  "name": "Truespar MCP Registry",
+  "adapter": "truespar_directory",
+  "base_url": "https://registry.truespar.com/v1/servers",
+  "page_size": 100,
+  "max_records": 1000,
+  "enabled": true,
+  "scope": "Public MCP registry aggregated from public sources with provenance and liveness metadata.",
+  "coverage_status": "paginated_public_api"
+},
+    {
       "name": "Additional public JSON feed (template)",
       "adapter": "json_feed",
       "url": "https://example.org/public-agents.json",
