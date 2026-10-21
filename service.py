@@ -447,19 +447,19 @@ def app(environ, start_response):
         except Exception:
             return _response(start_response, "503 Service Unavailable", {"error": "pricing_page_unavailable"})
     if path == "/admin":
-    try:
-        return _html(
-            start_response,
-            "200 OK",
-            _site_page("admin.html"),
-            cache="no-store",
-        )
-    except Exception:
-        return _response(
-            start_response,
-            "503 Service Unavailable",
-            {"error": "admin_page_unavailable"},
-        )
+        try:
+            return _html(
+                start_response,
+                "200 OK",
+                _site_page("admin.html"),
+                cache="no-store",
+            )
+        except Exception:
+            return _response(
+                start_response,
+                "503 Service Unavailable",
+                {"error": "admin_page_unavailable"},
+            )
     if path == "/privacy":
         try:
             return _html(start_response, "200 OK", _site_page("privacy.html"), cache="public, max-age=300")
