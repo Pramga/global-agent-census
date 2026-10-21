@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Leads — Global AI Agent Census</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #090d18;
+            color: #f5f7ff;
+        }
+
+        .wrap {
+            width: min(1100px, calc(100% - 32px));
+            margin: auto;
+        }
+
+        header {
+            border-bottom: 1px solid #20283a;
+            background: #090d18;
+        }
+
+        nav {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .04em;
+        }
+
+        a {
+            color: #9aa4bd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        main {
+            padding: 48px 0 80px;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(38px, 8vw, 64px);
+        }
+
+        .intro {
+            color: #9aa4bd;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .panel {
+            padding: 24px;
+            border: 1px solid #20283a;
+            border-radius: 20px;
+            background: #111728;
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #30394f;
+            border-radius: 12px;
+            background: #090d18;
+            color: #f5f7ff;
+            font: inherit;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 14px;
+            padding: 14px;
+            border: 0;
+            border-radius: 12px;
+            background: #7161ef;
+            color: white;
+            font: inherit;
+            font-weight: 800;
+        }
+
+        #status {
+            margin-top: 14px;
+            color: #9aa4bd;
+        }
+
+        .lead {
+            padding: 20px;
+            border: 1px solid #20283a;
+            border-radius: 18px;
+            background: #111728;
+            margin-bottom: 16px;
+        }
+
+        .lead h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            word-break: break-word;
+        }
+
+        .lead p {
+            margin: 7px 0;
+            color: #c2c9da;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .meta {
+            color: #9aa4bd;
+            font-size: 14px;
+        }
+
+        .empty {
+            color: #9aa4bd;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="wrap">
+        <nav>
+            <div class="brand">GLOBAL AI AGENT CENSUS</div>
+            <a href="/">Back to Census</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="wrap">
+        <h1>Lead Dashboard</h1>
+        <p class="intro">
+            Private view of early-access requests submitted through the Global AI Agent Census pricing page.
+        </p>
+
+        <div class="panel">
+            <label for="adminToken">Admin token</label>
+            <input
+                id="adminToken"
+                type="password"
+                autocomplete="off"
+                placeholder="Enter WAITLIST_ADMIN_TOKEN"
+            >
+            <button id="loadButton">Load Leads</button>
+            <div id="status">Enter your admin token to view leads.</div>
+        </div>
+
+        <div id="leads"></div>
+    </div>
+</main>
+
+<script>
+const statusEl = document.getElementById("status");
+const leadsEl = document.getElementById("leads");
+const tokenEl = document.getElementById("adminToken");
+
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+async function loadLeads() {
+    const token = tokenEl.value.trim();
+
+    if (!token) {
+        statusEl.textContent = "Enter your admin token first.";
+        return;
+    }
+
+    statusEl.textContent = "Loading leads...";
+    leadsEl.innerHTML = "";
+
+    try {
+        const response = await fetch("/api/waitlist", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            },
+            cache: "no-store"
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Request failed");
+        }
+
+        const leads = Array.isArray(data.leads) ? data.leads : [];
+
+        statusEl.textContent = `${leads.length} lead${leads.length === 1 ? "" : "s"} loaded.`;
+
+        if (!leads.length) {
+            leadsEl.innerHTML = '<p class="empty">No leads found yet.</p>';
+            return;
+        }
+
+        leadsEl.innerHTML = leads.map(lead => `
+            <div class="lead">
+                <h2>${escapeHtml(lead.email)}</h2>
+                <p><strong>Role:</strong> ${escapeHtml(lead.role || "—")}</p>
+                <p><strong>Use case:</strong> ${escapeHtml(lead.use_case || "—")}</p>
+                <p class="meta"><strong>Created:</strong> ${escapeHtml(lead.created_at || "—")}</p>
+                <p class="meta"><strong>Consent:</strong> ${escapeHtml(lead.consent_at || "—")}</p>
+            </div>
+        `).join("");
+
+    } catch (error) {
+        statusEl.textContent = "Could not load leads. Check the admin token and try again.";
+    }
+}
+
+document.getElementById("loadButton").addEventListener("click", loadLeads);
+
+tokenEl.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        loadLeads();
+    }
+});
+</script>
+
+</body>
+</html>
