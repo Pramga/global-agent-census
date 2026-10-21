@@ -163,6 +163,15 @@ def _restore_last_run():
     report_path = Path(OUTPUT_DIR) / "run_report.json"
 
     if not report_path.exists():
+        bundled_report = (
+            Path(__file__).resolve().parent
+            / "public"
+            / "run_report.json"
+        )
+        if bundled_report.exists():
+            report_path = bundled_report
+
+    if not report_path.exists():
         return
 
     try:
