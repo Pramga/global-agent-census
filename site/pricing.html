@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pricing — Global AI Agent Census</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #090d18;
+            color: #f5f7ff;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .wrap {
+            width: min(1180px, calc(100% - 32px));
+            margin: auto;
+        }
+
+        header {
+            border-bottom: 1px solid #20283a;
+            background: rgba(9, 13, 24, .94);
+        }
+
+        nav {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .04em;
+        }
+
+        .back-link {
+            color: #9aa4bd;
+            font-weight: 600;
+        }
+
+        .hero {
+            padding: 72px 0 32px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            color: #8f7cff;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 16px 0;
+            font-size: clamp(42px, 8vw, 76px);
+            line-height: 1;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #9aa4bd;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            padding: 36px 0 72px;
+        }
+
+        .plan {
+            position: relative;
+            padding: 28px;
+            border: 1px solid #20283a;
+            border-radius: 22px;
+            background: #111728;
+        }
+
+        .plan.featured {
+            border-color: #7967ff;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(126, 226, 168, .12);
+            color: #7ee2a8;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        .plan h2 {
+            margin: 0 0 10px;
+            font-size: 28px;
+        }
+
+        .price {
+            margin: 18px 0;
+            font-size: 46px;
+            font-weight: 800;
+        }
+
+        .price span {
+            font-size: 16px;
+            color: #9aa4bd;
+            font-weight: 500;
+        }
+
+        .plan-copy {
+            color: #9aa4bd;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: #c2c9da;
+            line-height: 1.8;
+        }
+
+        .button {
+            display: block;
+            margin-top: 24px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 800;
+            background: #7161ef;
+        }
+
+        .button.secondary {
+            background: #20283a;
+        }
+
+        .waitlist {
+            padding: 0 0 80px;
+        }
+
+        .waitlist-box {
+            max-width: 760px;
+            margin: auto;
+            padding: 28px;
+            border: 1px solid #20283a;
+            border-radius: 22px;
+            background: #111728;
+        }
+
+        .waitlist-box h2 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .waitlist-box p {
+            color: #9aa4bd;
+            line-height: 1.6;
+        }
+
+        .field {
+            margin: 16px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #30394f;
+            border-radius: 12px;
+            background: #090d18;
+            color: #f5f7ff;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .consent {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: #9aa4bd;
+        }
+
+        .consent input {
+            width: auto;
+            margin-top: 4px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 15px;
+            border: 0;
+            border-radius: 12px;
+            background: #7161ef;
+            color: white;
+            font: inherit;
+            font-weight: 800;
+        }
+
+        #formStatus {
+            margin-top: 14px;
+            color: #7ee2a8;
+        }
+
+        footer {
+            padding: 30px 0 50px;
+            color: #9aa4bd;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="wrap">
+        <nav>
+            <div class="brand">GLOBAL AI AGENT CENSUS</div>
+            <a class="back-link" href="/">← Back to Census</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="wrap">
+        <div class="eyebrow">Launch Pricing</div>
+        <h1>Turn live AI infrastructure data into an advantage.</h1>
+        <p>
+            Start with the public census, integrate live data through the API,
+            or use business access for deeper research and commercial workflows.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="wrap pricing-grid">
+
+        <div class="plan">
+            <div class="badge">Public</div>
+            <h2>Free</h2>
+            <div class="price">$0</div>
+            <p class="plan-copy">
+                For researchers, builders, and anyone exploring the public AI agent ecosystem.
+            </p>
+
+            <ul>
+                <li>Live public census dashboard</li>
+                <li>Agent directory search</li>
+                <li>Public source coverage</li>
+                <li>Current census counts</li>
+                <li>Basic public API endpoints</li>
+            </ul>
+
+            <a class="button secondary" href="/">Explore the Census</a>
+        </div>
+
+        <div class="plan featured">
+            <div class="badge">API</div>
+            <h2>Developer</h2>
+            <div class="price">$49 <span>/ month</span></div>
+            <p class="plan-copy">
+                For developers and small teams integrating census data into products and research.
+            </p>
+
+            <ul>
+                <li>Everything in Free</li>
+                <li>Paid API access</li>
+                <li>Higher request limits</li>
+                <li>Search and pagination</li>
+                <li>Source and validation metadata</li>
+                <li>Commercial use</li>
+            </ul>
+
+            <a class="button" href="#early-access">Request API Access</a>
+        </div>
+
+        <div class="plan">
+            <div class="badge">Business</div>
+            <h2>Business</h2>
+            <div class="price">$149 <span>/ month</span></div>
+            <p class="plan-copy">
+                For companies using AI agent intelligence for strategy, sourcing, monitoring, or analysis.
+            </p>
+
+            <ul>
+                <li>Everything in Developer</li>
+                <li>Expanded API limits</li>
+                <li>Downloadable datasets</li>
+                <li>Source coverage reporting</li>
+                <li>Priority support</li>
+                <li>Early access to new census features</li>
+            </ul>
+
+            <a class="button" href="#early-access">Request Business Access</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="early-access" class="waitlist">
+    <div class="wrap">
+        <div class="waitlist-box">
+            <h2>Request early access</h2>
+            <p>
+                Tell us how you want to use the Global AI Agent Census.
+                Early customers will help shape the commercial API and business product.
+            </p>
+
+            <form id="waitlistForm">
+
+                <div class="field">
+                    <label for="email">Work email</label>
+                    <input id="email" type="email" required placeholder="you@company.com">
+                </div>
+
+                <div class="field">
+                    <label for="role">Role</label>
+                    <select id="role">
+                        <option value="developer">Developer</option>
+                        <option value="founder">Founder</option>
+                        <option value="researcher">Researcher</option>
+                        <option value="investor">Investor</option>
+                        <option value="enterprise">Business / Enterprise</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="useCase">How would you use the census?</label>
+                    <textarea id="useCase" placeholder="API integration, market research, sourcing agents, competitive intelligence..."></textarea>
+                </div>
+
+                <label class="consent">
+                    <input id="consent" type="checkbox" required>
+                    <span>I agree to be contacted about Global AI Agent Census access and product updates.</span>
+                </label>
+
+                <button type="submit">Request Access</button>
+
+                <div id="formStatus"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="wrap">
+        Global AI Agent Census — live public AI infrastructure data.
+    </div>
+</footer>
+
+<script>
+document.getElementById("waitlistForm").addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const status = document.getElementById("formStatus");
+    status.textContent = "Submitting...";
+
+    try {
+        const response = await fetch("/api/waitlist", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: document.getElementById("email").value.trim(),
+                role: document.getElementById("role").value,
+                use_case: document.getElementById("useCase").value.trim(),
+                consent: document.getElementById("consent").checked
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Request failed");
+        }
+
+        status.textContent = "Thanks — your early-access request was received.";
+        document.getElementById("waitlistForm").reset();
+
+    } catch (error) {
+        status.textContent = "Could not submit your request. Please try again.";
+    }
+});
+</script>
+
+</body>
+</html>
