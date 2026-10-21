@@ -46,7 +46,7 @@
       "collection": "connectors",
       "page_size": 100,
       "token_env": "GLAMA_API_KEY",
-      "enabled": false,
+      "enabled": true,
       "scope": "Curated connector catalog with cursor pagination. Requires GLAMA_API_KEY and visible attribution/link-back on every rendered listing under Glama's API data license.",
       "coverage_status": "ready_but_requires_credentials_and_attribution"
     },
