@@ -51,6 +51,16 @@
       "coverage_status": "ready_but_requires_credentials_and_attribution"
     },
     {
+      "name": "Casdoor Public MCP Server Registry",
+      "adapter": "json_feed",
+      "url": "https://mcp.casdoor.org/registry.json",
+      "kind": "mcp_server",
+      "protocol": "MCP",
+      "enabled": true,
+      "scope": "Curated public MCP server registry with declared public endpoints.",
+      "coverage_status": "public_json_registry"
+    },
+    {
       "name": "Additional public JSON feed (template)",
       "adapter": "json_feed",
       "url": "https://example.org/public-agents.json",
