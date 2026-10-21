@@ -71,6 +71,27 @@
   "coverage_status": "paginated_public_api"
 },
     {
+  "name": "A2A Registry Direct Agent Catalog",
+  "adapter": "json_feed",
+  "url": "https://a2aregistry.org/api/agents",
+  "items_key": "agents",
+  "kind": "agent",
+  "protocol": "A2A",
+  "field_map": {
+    "source_record_id": "id",
+    "name": "name",
+    "description": "description",
+    "primary_endpoint": "url",
+    "metadata_url": "wellKnownURI",
+    "canonical_identity": "id",
+    "operator_name": "provider.organization",
+    "protocol_version": "protocolVersion"
+  },
+  "enabled": true,
+  "scope": "Direct public A2A agent catalog containing Agent Cards, endpoints, conformance and health metadata.",
+  "coverage_status": "direct_public_agent_catalog"
+},
+    {
       "name": "Additional public JSON feed (template)",
       "adapter": "json_feed",
       "url": "https://example.org/public-agents.json",
