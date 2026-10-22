@@ -76,7 +76,10 @@ def canonical_url(url: Any) -> str | None:
         # Keep path and query because endpoint paths may distinguish agents.
         return urllib.parse.urlunsplit((p.scheme.lower(), netloc, path, p.query, ""))
     except (ValueError, AttributeError):
-def request_bytes(
+        return None
+
+
+    def request_bytes(
     url: str,
     headers: dict[str, str] | None = None,
     timeout_seconds: int = TIMEOUT_SECONDS,
