@@ -1216,7 +1216,7 @@ def run_pipeline(config_path: str, db_path: str, output_dir: str, force_check: b
         checked,
         time.perf_counter() - validation_started,
     )
-
+    adjudicate_operator_verification(conn)
     export_records(conn, output_dir)
     result = {"ingested_source_records": total_ingested, "validated_checks_run": checked,
               "sources_attempted": sources_attempted, "sources_succeeded": sources_succeeded,
