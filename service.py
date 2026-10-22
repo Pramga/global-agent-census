@@ -683,7 +683,7 @@ def app(environ, start_response):
                     },
                 )
         
-                    pg_conn = _pg_conn()
+        pg_conn = _pg_conn()
 
         if pg_conn is not None:
             try:
