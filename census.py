@@ -75,11 +75,11 @@ def canonical_url(url: Any) -> str | None:
         path = p.path or "/"
         # Keep path and query because endpoint paths may distinguish agents.
         return urllib.parse.urlunsplit((p.scheme.lower(), netloc, path, p.query, ""))
-    except (ValueError, AttributeError):
+        except (ValueError, AttributeError):
         return None
 
 
-    def request_bytes(
+def request_bytes(
     url: str,
     headers: dict[str, str] | None = None,
     timeout_seconds: int = TIMEOUT_SECONDS,
@@ -87,6 +87,7 @@ def canonical_url(url: Any) -> str | None:
     url = canonical_url(url)
     if not url:
         raise ValueError("URL must be absolute HTTP(S)")
+        
     req_headers = {"User-Agent": USER_AGENT, "Accept": "application/json, */*;q=0.5"}
     if headers:
         req_headers.update(headers)
