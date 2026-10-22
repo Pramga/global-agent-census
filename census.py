@@ -945,7 +945,47 @@ def validate_pending(
 
     conn.commit()
     return checked
+def adjudicate_operator_verification(conn: sqlite3.Connection) -> int:
+    rows = conn.execute("""
+        SELECT
+            agent_id,
+            operator_name,
+            operator_domain,
+            operator_verification,
+            operator_evidence
+        FROM agents
+        WHERE operator_verification='independently_verified'
+    """).fetchall()
 
+    verified = 0
+
+    for (
+        agent_id,
+        operator_name,
+        operator_domain,
+        operator_verification,
+        operator_evidence,
+    ) in rows:
+        has_identity = bool(operator_domain or operator_name)
+        has_evidence = bool(
+            operator_evidence and operator_evidence.strip()
+        )
+
+        if has_identity and has_evidence:
+            verified += 1
+            continue
+
+        conn.execute(
+            """
+            UPDATE agents
+            SET operator_verification='unverified'
+            WHERE agent_id=?
+            """,
+            (agent_id,),
+        )
+
+    conn.commit()
+    return verified
 def counts(conn: sqlite3.Connection) -> dict[str, Any]:
     total = conn.execute("SELECT COUNT(*) FROM agents").fetchone()[0]
     valid_reachable = conn.execute(
