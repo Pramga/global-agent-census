@@ -51,7 +51,7 @@ jobs:
           cp public/agents.json /tmp/census-output/agents.json
           cp public/counts.json /tmp/census-output/counts.json
           cp public/run_report.json /tmp/census-output/run_report.json
-
+          cp public/verified_operator_candidates.json /tmp/census-output/verified_operator_candidates.json
           git fetch origin main
           git reset --hard origin/main
 
@@ -59,8 +59,8 @@ jobs:
           cp /tmp/census-output/agents.json public/agents.json
           cp /tmp/census-output/counts.json public/counts.json
           cp /tmp/census-output/run_report.json public/run_report.json
-
-          git add public/agents.csv public/agents.json public/counts.json public/run_report.json
+          cp /tmp/census-output/verified_operator_candidates.json public/verified_operator_candidates.json
+          git add public/agents.csv public/agents.json public/counts.json public/run_report.json public/verified_operator_candidates.json
 
           if git diff --cached --quiet; then
             echo "No census changes found."
