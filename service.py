@@ -682,7 +682,8 @@ def app(environ, start_response):
                         "message": "Thanks. Your early-access request has been recorded.",
                     },
                 )
-        
+            finally:
+                conn.close()
         pg_conn = _pg_conn()
 
         if pg_conn is not None:
