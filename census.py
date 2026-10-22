@@ -76,10 +76,11 @@ def canonical_url(url: Any) -> str | None:
         # Keep path and query because endpoint paths may distinguish agents.
         return urllib.parse.urlunsplit((p.scheme.lower(), netloc, path, p.query, ""))
     except (ValueError, AttributeError):
-        return None
-
-
-def request_bytes(url: str, headers: dict[str, str] | None = None) -> tuple[int, dict[str, str], bytes]:
+def request_bytes(
+    url: str,
+    headers: dict[str, str] | None = None,
+    timeout_seconds: int = TIMEOUT_SECONDS,
+) -> tuple[int, dict[str, str], bytes]:
     url = canonical_url(url)
     if not url:
         raise ValueError("URL must be absolute HTTP(S)")
@@ -88,7 +89,7 @@ def request_bytes(url: str, headers: dict[str, str] | None = None) -> tuple[int,
         req_headers.update(headers)
     req = urllib.request.Request(url, headers=req_headers, method="GET")
     try:
-        with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as response:
+        with urllib.request.urlopen(req, timeout=timeout_seconds) as response:
             body = response.read(MAX_BODY_BYTES + 1)
             if len(body) > MAX_BODY_BYTES:
                 raise ValueError(f"Response exceeds {MAX_BODY_BYTES} bytes")
@@ -99,8 +100,14 @@ def request_bytes(url: str, headers: dict[str, str] | None = None) -> tuple[int,
         return e.code, dict(e.headers.items()), body[:MAX_BODY_BYTES]
 
 
-def fetch_json(url: str, headers: dict[str, str] | None = None) -> tuple[int, Any, dict[str, str]]:
-    status, response_headers, body = request_bytes(url, headers)
+def fetch_json(
+    url: str,
+    headers: dict[str, str] | None = None,
+    timeout_seconds: int = TIMEOUT_SECONDS,
+) -> tuple[int, Any, dict[str, str]]:
+    status, response_headers, body = request_bytes(
+    url, headers, timeout_seconds=timeout_seconds
+)
     if status < 200 or status >= 300:
         raise RuntimeError(f"HTTP {status} fetching {url}")
     content_type = response_headers.get("Content-Type", response_headers.get("content-type", ""))
@@ -209,7 +216,7 @@ def mcp_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
         last_error = None
         for attempt in range(3):
             try:
-                _, payload, _ = fetch_json(url)
+                _, payload, _ = fetch_json(url, timeout_seconds=20)
                 last_error = None
                 break
             except (TimeoutError, urllib.error.URLError, RuntimeError) as exc:
