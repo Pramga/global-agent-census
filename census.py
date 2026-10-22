@@ -34,6 +34,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 APP_VERSION = "0.2.0"
 DEFAULT_DB = "census.sqlite3"
 DEFAULT_CONFIG = "sources.json"
+VERIFIED_OPERATORS_FILE = "verified_operators.json"
 USER_AGENT = f"GlobalAgentCensus/{APP_VERSION} (+public-metadata-indexer)"
 MAX_BODY_BYTES = 2_000_000
 TIMEOUT_SECONDS = 5
@@ -46,6 +47,28 @@ log = logging.getLogger("agent-census")
 def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
+def load_verified_operators(
+    path: str = VERIFIED_OPERATORS_FILE,
+) -> list[dict[str, Any]]:
+    file_path = Path(path)
+
+    if not file_path.exists():
+        return []
+
+    try:
+        data = json.loads(file_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        log.exception("Failed to load verified operators from %s", path)
+        return []
+
+    if not isinstance(data, list):
+        log.warning(
+            "Verified operators file must contain a JSON list: %s",
+            path,
+        )
+        return []
+
+    return [item for item in data if isinstance(item, dict)]
 
 def stable_hash(value: Any) -> str:
     raw = json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
@@ -945,13 +968,73 @@ def validate_pending(
 
     conn.commit()
     return checked
-def adjudicate_operator_verification(conn: sqlite3.Connection) -> int:
+def adjudicate_operator_verification(
+    conn: sqlite3.Connection,
+    path: str = VERIFIED_OPERATORS_FILE,
+) -> int:
+    adjudications = load_verified_operators(path)
+
+    for item in adjudications:
+        operator_domain = clean_text(
+            item.get("operator_domain"), 500
+        )
+        operator_name = clean_text(
+            item.get("operator_name"), 500
+        )
+        evidence = clean_text(
+            item.get("evidence"), 1500
+        )
+        evidence_url = clean_text(
+            item.get("evidence_url"), 500
+        )
+
+        if not (operator_domain or operator_name):
+            log.warning(
+                "Skipping verified operator without identity"
+            )
+            continue
+
+        if not evidence:
+            log.warning(
+                "Skipping verified operator without evidence"
+            )
+            continue
+
+        evidence_text = evidence
+        if evidence_url:
+            evidence_text += f" Evidence: {evidence_url}"
+
+        clauses = []
+        params = []
+
+        if operator_domain:
+            clauses.append(
+                "LOWER(operator_domain)=LOWER(?)"
+            )
+            params.append(operator_domain)
+
+        if operator_name:
+            clauses.append(
+                "LOWER(operator_name)=LOWER(?)"
+            )
+            params.append(operator_name)
+
+        conn.execute(
+            f"""
+            UPDATE agents
+            SET
+                operator_verification='independently_verified',
+                operator_evidence=?
+            WHERE {" OR ".join(clauses)}
+            """,
+            (evidence_text, *params),
+        )
+
     rows = conn.execute("""
         SELECT
             agent_id,
             operator_name,
             operator_domain,
-            operator_verification,
             operator_evidence
         FROM agents
         WHERE operator_verification='independently_verified'
@@ -963,12 +1046,14 @@ def adjudicate_operator_verification(conn: sqlite3.Connection) -> int:
         agent_id,
         operator_name,
         operator_domain,
-        operator_verification,
         operator_evidence,
     ) in rows:
-        has_identity = bool(operator_domain or operator_name)
+        has_identity = bool(
+            operator_domain or operator_name
+        )
         has_evidence = bool(
-            operator_evidence and operator_evidence.strip()
+            operator_evidence
+            and operator_evidence.strip()
         )
 
         if has_identity and has_evidence:
