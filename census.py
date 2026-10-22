@@ -75,7 +75,7 @@ def canonical_url(url: Any) -> str | None:
         path = p.path or "/"
         # Keep path and query because endpoint paths may distinguish agents.
         return urllib.parse.urlunsplit((p.scheme.lower(), netloc, path, p.query, ""))
-        except (ValueError, AttributeError):
+    except (ValueError, AttributeError):
         return None
 
 
