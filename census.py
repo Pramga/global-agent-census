@@ -1220,7 +1220,49 @@ def export_records(conn: sqlite3.Connection, output_dir: str) -> None:
             record = dict(zip(columns, row))
             writer.writerow(record)
 
+    candidate_sql = """
+        SELECT
+            agent_id,
+            display_name,
+            canonical_identity,
+            primary_endpoint,
+            operator_name,
+            operator_domain,
+            operator_verification,
+            operator_evidence
+        FROM agents
+        WHERE
+            (operator_name IS NOT NULL AND TRIM(operator_name) != '')
+            OR
+            (operator_domain IS NOT NULL AND TRIM(operator_domain) != '')
+        ORDER BY operator_domain, operator_name, agent_id
+        LIMIT 500
+    """
 
+    candidates = []
+
+    for row in conn.execute(candidate_sql):
+        candidates.append({
+            "agent_id": row[0],
+            "display_name": row[1],
+            "canonical_identity": row[2],
+            "primary_endpoint": row[3],
+            "operator_name": row[4],
+            "operator_domain": row[5],
+            "operator_verification": row[6],
+            "operator_evidence": row[7],
+        })
+
+    (out / "verified_operator_candidates.json").write_text(
+        json.dumps(
+            candidates,
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    ) 
+    
+    
 def run_pipeline(config_path: str, db_path: str, output_dir: str, force_check: bool = False) -> dict[str, Any]:
     config = load_config(config_path)
     conn = sqlite3.connect(db_path)
