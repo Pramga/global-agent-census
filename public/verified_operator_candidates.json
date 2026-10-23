@@ -580,6 +580,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "6725dfbd1f6d09add6d8eb5c",
+    "display_name": "CloudCrane",
+    "canonical_identity": "glama:hgw7yqf941",
+    "primary_endpoint": null,
+    "operator_name": "ai.cloudcrane",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "3fd89b22ce5c100941a7c5af",
     "display_name": "CNAPS.ai MCP Server",
     "canonical_identity": "glama:j8r3f9c4os",
@@ -1575,6 +1585,16 @@
     "canonical_identity": "glama:rcazpcsiud",
     "primary_endpoint": null,
     "operator_name": "ai.x70.signals",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "d5ccff102df3c5336e416a7a",
+    "display_name": "Zentrik",
+    "canonical_identity": "glama:axi05q5rtr",
+    "primary_endpoint": null,
+    "operator_name": "ai.zentrik",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4975,26 +4995,6 @@
     "canonical_identity": "glama:zb50hczcwi",
     "primary_endpoint": null,
     "operator_name": "com.logimu",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "c575d7a5fd19f08c3406676c",
-    "display_name": "logimu-shopping-mcp",
-    "canonical_identity": "glama:qeo5wwwjgl",
-    "primary_endpoint": null,
-    "operator_name": "com.logimu.api",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "53e278177e3af3e442d5ce05",
-    "display_name": "Logospell",
-    "canonical_identity": "glama:iktuw6v1vj",
-    "primary_endpoint": null,
-    "operator_name": "com.logospell",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
