@@ -910,6 +910,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "95b93f44b3a9871447cca373",
+    "display_name": "HalalGen",
+    "canonical_identity": "glama:ap2sskbzhv",
+    "primary_endpoint": null,
+    "operator_name": "ai.halalgen.mcp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "cd327234d830f50833b07bd7",
     "display_name": "Hypotize",
     "canonical_identity": "glama:m5ghkqtnvv",
@@ -1895,6 +1905,16 @@
     "canonical_identity": "glama:rcazpcsiud",
     "primary_endpoint": null,
     "operator_name": "ai.x70.signals",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "a0b53163a0b0420a7a662172",
+    "display_name": "Xorventa",
+    "canonical_identity": "glama:tdwhcxqhkg",
+    "primary_endpoint": null,
+    "operator_name": "ai.xorventa",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4300,6 +4320,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "374bf3dd560abcb18f6eba2c",
+    "display_name": "BotGathering recipes",
+    "canonical_identity": "glama:t6vraxgs53",
+    "primary_endpoint": null,
+    "operator_name": "com.botgathering",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "51e5b8ebd5836776d31319a1",
     "display_name": "BotGathering recipes",
     "canonical_identity": "glama:lsh8k170ah",
@@ -4570,6 +4600,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "ce56c621e64d391e7ed04b65",
+    "display_name": "Compute Screener",
+    "canonical_identity": "glama:ydgq2525mp",
+    "primary_endpoint": null,
+    "operator_name": "com.computescreener",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "f827139c701a75c02eac4db1",
     "display_name": "Singapore Buying Desk (Connective Labs)",
     "canonical_identity": "glama:nzixtpxadl",
@@ -4650,6 +4690,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "a02cd3c3f3b6d5db0409f7ae",
+    "display_name": "The Crawler Zoo Arena",
+    "canonical_identity": "glama:mg1aj0dq08",
+    "primary_endpoint": null,
+    "operator_name": "com.crawlerzoo",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "eb98ec16634ebaf44ed2a521",
     "display_name": "Criora: climate & disaster risk for any place",
     "canonical_identity": "glama:ceocruvwav",
@@ -4675,6 +4725,16 @@
     "canonical_identity": "glama:fas1olz9kr",
     "primary_endpoint": null,
     "operator_name": "com.cutshed",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "fd545216cbcbdbefc1c6a96e",
+    "display_name": "CVEmber",
+    "canonical_identity": "glama:xp70cl2scn",
+    "primary_endpoint": null,
+    "operator_name": "com.cvember",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4830,6 +4890,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "66c3d3dd98a6aafa8850660d",
+    "display_name": "Duo Data Utilities: IBAN, ISIN, VAT and Tax ID, Barcode, Timezone, Geo APIs",
+    "canonical_identity": "glama:cfbsh7txlv",
+    "primary_endpoint": null,
+    "operator_name": "com.duoleads.api",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "2c066d8c9fe78203b1ceb3f2",
     "display_name": "Dynamic Document API",
     "canonical_identity": "glama:f1rxs6zxa6",
@@ -4923,76 +4993,6 @@
     "agent_id": "22ef0492e5e568fcb04d2282",
     "display_name": "Faceabot Web page reader",
     "canonical_identity": "glama:npifq5qmc4",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "298f8b1fe15dc3ee0112f01c",
-    "display_name": "Faceabot Translate",
-    "canonical_identity": "glama:rzwe1ldi0r",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "318915956b2683b462106cd1",
-    "display_name": "Faceabot PDF text extractor",
-    "canonical_identity": "glama:q6y8e9u0q5",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "3ffe520b1e1b0f0824a837c6",
-    "display_name": "Faceabot Rail Finland (VR)",
-    "canonical_identity": "glama:buy7v1177h",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "6e8ae637e894796ddcd94a87",
-    "display_name": "Faceabot Transit Switzerland (SBB/CFF)",
-    "canonical_identity": "glama:sozspj0meu",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "a77646760d2c9a08b8cf5071",
-    "display_name": "Faceabot Rail Ireland (Irish Rail, DART)",
-    "canonical_identity": "glama:uyo6s5qv2v",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "c53d30ea5ab4c85c5c997683",
-    "display_name": "Faceabot Rail Belgium (SNCB/NMBS)",
-    "canonical_identity": "glama:q2cyeo0ob8",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "dd97d70e3b2f13afc7acd5e2",
-    "display_name": "Faceabot YouTube transcript",
-    "canonical_identity": "glama:ze4rd2id72",
     "primary_endpoint": null,
     "operator_name": "com.faceabot",
     "operator_domain": null,
