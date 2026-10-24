@@ -670,6 +670,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "d81d723c9ecb9d80dc348809",
+    "display_name": "CommerceAI",
+    "canonical_identity": "glama:ov81ito4t2",
+    "primary_endpoint": null,
+    "operator_name": "ai.commerceai",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "37b1abc896ffff7426c95c89",
     "display_name": "Condux error monitoring",
     "canonical_identity": "glama:n7pa3asf1o",
@@ -995,6 +1005,16 @@
     "canonical_identity": "glama:u9xv899dcz",
     "primary_endpoint": null,
     "operator_name": "ai.kosmodrom",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "8496cd74e9b0f79be5a886b5",
+    "display_name": "Lianex — Australian price comparison",
+    "canonical_identity": "glama:dz4wlyei81",
+    "primary_endpoint": null,
+    "operator_name": "ai.lianex",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -3270,6 +3290,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "226db0609956b09f2dfd6d95",
+    "display_name": "Antevo Trademark",
+    "canonical_identity": "glama:xjlu7w971x",
+    "primary_endpoint": null,
+    "operator_name": "ch.antevo",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "c338e3da17e0985c682bf113",
     "display_name": "FunkyJobs",
     "canonical_identity": "glama:z1pmlzrv8r",
@@ -4520,6 +4550,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "994a768caaed326e6b321603",
+    "display_name": "CPF Mortgage Home Values",
+    "canonical_identity": "glama:yf9vdkyqii",
+    "primary_endpoint": null,
+    "operator_name": "com.cpfloans.api.hvr",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "a897e03fe0925bf36d3cda84",
     "display_name": "CrateWire",
     "canonical_identity": "glama:mh5p9ztfhg",
@@ -4955,46 +4995,6 @@
     "canonical_identity": "glama:x49fcyy91y",
     "primary_endpoint": null,
     "operator_name": "com.filingspy",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "7aaf1d6641d1889de46c6e60",
-    "display_name": "Final POS – Custom POS Builder",
-    "canonical_identity": "glama:bdvoz0ixs0",
-    "primary_endpoint": null,
-    "operator_name": "com.finalpos",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "99cd3d26d32d2525d3e66b52",
-    "display_name": "FinChiefs",
-    "canonical_identity": "glama:z2efg2lbpc",
-    "primary_endpoint": null,
-    "operator_name": "com.finchiefs",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "dcb6d31bfa7adc431f54dcca",
-    "display_name": "Findabis",
-    "canonical_identity": "glama:nqckt70btf",
-    "primary_endpoint": null,
-    "operator_name": "com.findabis",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "18200fbbc03aa7a21b8e27fd",
-    "display_name": "FindEnergyRates Electricity Rates",
-    "canonical_identity": "glama:tfbkcbd3hu",
-    "primary_endpoint": null,
-    "operator_name": "com.findenergyrates",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
