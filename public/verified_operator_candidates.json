@@ -580,6 +580,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "22ea0e11f5cacf154afab11e",
+    "display_name": "Buzzmark",
+    "canonical_identity": "glama:sfzdoa8vyk",
+    "primary_endpoint": null,
+    "operator_name": "ai.buzzmark",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "a357fd1dfa7919056f3c4420",
     "display_name": "Celesto Computer",
     "canonical_identity": "glama:jf6412gyar",
@@ -1305,6 +1315,16 @@
     "canonical_identity": "glama:cosx40bbrt",
     "primary_endpoint": null,
     "operator_name": "ai.plith",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "206cc23cd36aa9e53604d4d3",
+    "display_name": "Postey",
+    "canonical_identity": "glama:idpqzetrag",
+    "primary_endpoint": null,
+    "operator_name": "ai.postey",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -3580,6 +3600,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "c4a1678bb4f21343cd448142",
+    "display_name": "FastAF",
+    "canonical_identity": "glama:iw2tnwutkx",
+    "primary_endpoint": null,
+    "operator_name": "co.fastaf",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "db3f49458791b139b5fe8ae4",
     "display_name": "Forever In Our Hearts",
     "canonical_identity": "glama:qkzshg2542",
@@ -4965,36 +4995,6 @@
     "canonical_identity": "glama:wi2bkq70cp",
     "primary_endpoint": null,
     "operator_name": "com.dns-data.mcp",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "fc0d6ab0fff150d005049596",
-    "display_name": "DogsLife",
-    "canonical_identity": "glama:urjpvnygp4",
-    "primary_endpoint": null,
-    "operator_name": "com.dogslifeapp",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "77cf1a2d8129609625e9d875",
-    "display_name": "Dominick Prevete: Instant Fix-and-Flip Term Sheet",
-    "canonical_identity": "glama:vt21wjina0",
-    "primary_endpoint": null,
-    "operator_name": "com.dominickprevete",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "7ed7c9c6ef1018fa33ade493",
-    "display_name": "DPOLens",
-    "canonical_identity": "glama:r8lfv2mahh",
-    "primary_endpoint": null,
-    "operator_name": "com.dpolens",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
