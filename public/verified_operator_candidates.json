@@ -1700,6 +1700,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "5abf66873ae23b51a1a5f428",
+    "display_name": "Tommos",
+    "canonical_identity": "glama:x0t1s3ibp1",
+    "primary_endpoint": null,
+    "operator_name": "ai.tommos",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "2ba2a1f1855eeb9bf9fae3de",
     "display_name": "SEO Trends MCP",
     "canonical_identity": "glama:jxtddwy3dk",
@@ -3660,6 +3670,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "49b124df1bf572743d7712fa",
+    "display_name": "ToolFit + MCPCheck",
+    "canonical_identity": "glama:nxakl43r4b",
+    "primary_endpoint": null,
+    "operator_name": "co.youraitools",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "5074e3afb4672de80382baf8",
     "display_name": "PerpRadar",
     "canonical_identity": "glama:lki7bht5im",
@@ -3683,6 +3703,16 @@
     "agent_id": "58a839a7e0fb463f9d23982b",
     "display_name": "InjectScan",
     "canonical_identity": "glama:qilfsgh5gm",
+    "primary_endpoint": null,
+    "operator_name": "co.youraitools",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "6ddb5c6375e7e32a34879c1b",
+    "display_name": "ToolRoute",
+    "canonical_identity": "glama:ucrcfocsbf",
     "primary_endpoint": null,
     "operator_name": "co.youraitools",
     "operator_domain": null,
@@ -3921,7 +3951,7 @@
   },
   {
     "agent_id": "9debd6c33e5d06b8b86abb4b",
-    "display_name": "ADF: EU Tenders, Funding, Medicines, Product Recalls, Sanctions, CVE KEV EPSS, CERT, Events",
+    "display_name": "ADF: EU/UK Tenders, EU Law, Funding, Medicines, Shortages, Recalls, Sanctions, CVE, CERT, Holidays",
     "canonical_identity": "glama:q71zfb8c5g",
     "primary_endpoint": null,
     "operator_name": "com.agentdatafeed",
@@ -4310,6 +4340,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "3fdc72286af1a42e20d9ce7d",
+    "display_name": "Deadline Desk",
+    "canonical_identity": "glama:vty7bl5b7l",
+    "primary_endpoint": null,
+    "operator_name": "com.bot2botlabs.deadline",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "b66d29508c4dbd011c3049b4",
     "display_name": "botcherlor",
     "canonical_identity": "glama:pak8hgo38y",
@@ -4385,6 +4425,16 @@
     "canonical_identity": "glama:ao4lmz3hhb",
     "primary_endpoint": null,
     "operator_name": "com.cambouch",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "8765675ab1a57e71386a3183",
+    "display_name": "Canvas64",
+    "canonical_identity": "glama:yl66dqysgz",
+    "primary_endpoint": null,
+    "operator_name": "com.canvas64",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4860,6 +4910,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "fc0d6ab0fff150d005049596",
+    "display_name": "DogsLife",
+    "canonical_identity": "glama:urjpvnygp4",
+    "primary_endpoint": null,
+    "operator_name": "com.dogslifeapp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "77cf1a2d8129609625e9d875",
     "display_name": "Dominick Prevete: Instant Fix-and-Flip Term Sheet",
     "canonical_identity": "glama:vt21wjina0",
@@ -4900,6 +4960,26 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "e504af48972c1c21589b3d97",
+    "display_name": "Crypto Derivatives Data: Perp Funding Rates, Open Interest, Basis, IV",
+    "canonical_identity": "glama:d3rl34s2w2",
+    "primary_endpoint": null,
+    "operator_name": "com.duoleads.derivs",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "3c41c5ce139974efe9d3f438",
+    "display_name": "Keyword Search Volume, CPC, Keyword Ideas and Google Trends API",
+    "canonical_identity": "glama:kuqzwpnsqb",
+    "primary_endpoint": null,
+    "operator_name": "com.duoleads.keywords",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "2c066d8c9fe78203b1ceb3f2",
     "display_name": "Dynamic Document API",
     "canonical_identity": "glama:f1rxs6zxa6",
@@ -4915,86 +4995,6 @@
     "canonical_identity": "glama:tuz25afhl2",
     "primary_endpoint": null,
     "operator_name": "com.efon",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "63a44a99328e3c7f3dc7e948",
-    "display_name": "ElevenFlo MCP",
-    "canonical_identity": "glama:efn8jgxdlp",
-    "primary_endpoint": null,
-    "operator_name": "com.elevenflo",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "cfdca888c9a85528630cf5b6",
-    "display_name": "AgentsX",
-    "canonical_identity": "glama:k1w4zitgep",
-    "primary_endpoint": null,
-    "operator_name": "com.emmanuelbenami.www",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "c51db2d58c9bcd68042b319a",
-    "display_name": "Emora Health",
-    "canonical_identity": "glama:i5tr8mzf6d",
-    "primary_endpoint": null,
-    "operator_name": "com.emorahealth",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "b0542ffbc491586183fc2f58",
-    "display_name": "EZ QR Generator",
-    "canonical_identity": "glama:j1v4763v78",
-    "primary_endpoint": null,
-    "operator_name": "com.ez-qr-generator",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ad555d6398c1ef13390a2580",
-    "display_name": "Faable — Deploy & Auth",
-    "canonical_identity": "glama:iib577qo1i",
-    "primary_endpoint": null,
-    "operator_name": "com.faable",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "0a3897ee1322712b8e9f8da2",
-    "display_name": "Faceabot Transit Norway (Vy, Entur)",
-    "canonical_identity": "glama:iv1juoovkr",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "0f0004864fc069de505f2293",
-    "display_name": "Faceabot Latest news",
-    "canonical_identity": "glama:g62m7lxi73",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "22ef0492e5e568fcb04d2282",
-    "display_name": "Faceabot Web page reader",
-    "canonical_identity": "glama:npifq5qmc4",
-    "primary_endpoint": null,
-    "operator_name": "com.faceabot",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
