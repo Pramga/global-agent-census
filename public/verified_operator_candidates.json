@@ -480,6 +480,16 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "b788848bd6e41ab82c74c692",
+    "display_name": "agent-media",
+    "canonical_identity": "glama:fsigr328sx",
+    "primary_endpoint": null,
+    "operator_name": "ai.agent-media.api",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "315bfdb75fef032f7d75c9af",
     "display_name": "LifeClaw",
     "canonical_identity": "glama:bfbbdt18wx",
@@ -963,6 +973,16 @@
     "agent_id": "788af0da926b86096431e19e",
     "display_name": "INITE",
     "canonical_identity": "glama:iha7p31aow",
+    "primary_endpoint": null,
+    "operator_name": "ai.inite",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "f0373c61282e682f4827597d",
+    "display_name": "INITE Directory",
+    "canonical_identity": "glama:embbclv893",
     "primary_endpoint": null,
     "operator_name": "ai.inite",
     "operator_domain": null,
@@ -3090,6 +3110,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "3eb803983789435f51cf9d48",
+    "display_name": "SingIt x402",
+    "canonical_identity": "glama:zctn151uxa",
+    "primary_endpoint": null,
+    "operator_name": "app.singitai",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "7abf7cf2aa9bba15ea6eb4fb",
     "display_name": "Speakeroo speaking coach",
     "canonical_identity": "glama:beyt8m90sr",
@@ -3555,6 +3585,16 @@
     "canonical_identity": "glama:foiwh4dopj",
     "primary_endpoint": null,
     "operator_name": "cn.com.xiaozhaobao",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "1209ebe780b7a5a63c3b1849",
+    "display_name": "Narracore Screenplay Formatter",
+    "canonical_identity": "glama:ap4ewng04y",
+    "primary_endpoint": null,
+    "operator_name": "cn.narracore",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4955,46 +4995,6 @@
     "canonical_identity": "glama:cw5los3hlv",
     "primary_endpoint": null,
     "operator_name": "com.develust.ai",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "f1aaf6c2c1de28872b6eab01",
-    "display_name": "Deyaho Phone Calls",
-    "canonical_identity": "glama:owzz6w9nbl",
-    "primary_endpoint": null,
-    "operator_name": "com.deyaho",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "40f291b082b1553b0a6ea78d",
-    "display_name": "Did You SEO - MCP",
-    "canonical_identity": "glama:w3s5mzt3xe",
-    "primary_endpoint": null,
-    "operator_name": "com.didyouseo",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "0ad1346d1bbdc2f980fc16fa",
-    "display_name": "DMARKOFF — DMARC, SPF & DKIM Analytics",
-    "canonical_identity": "glama:f3h2uzs2nw",
-    "primary_endpoint": null,
-    "operator_name": "com.dmarkoff",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "07f623bef45631dd7266c364",
-    "display_name": "DNS-DATA Remote",
-    "canonical_identity": "glama:wi2bkq70cp",
-    "primary_endpoint": null,
-    "operator_name": "com.dns-data.mcp",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
