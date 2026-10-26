@@ -970,6 +970,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "85ffbc669d68eed4306faa23",
+    "display_name": "Hookbird",
+    "canonical_identity": "glama:caok1zp3gs",
+    "primary_endpoint": null,
+    "operator_name": "ai.hookbird.app",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "72d455919343918a9f720531",
     "display_name": "HotRepo",
     "canonical_identity": "glama:m2j1shy9o6",
@@ -1425,6 +1435,16 @@
     "canonical_identity": "glama:jrmjby9l6p",
     "primary_endpoint": null,
     "operator_name": "ai.pubfi",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "b0503d8007fe4a1c7c384d4c",
+    "display_name": "PubSpace",
+    "canonical_identity": "glama:zu0s78xcey",
+    "primary_endpoint": null,
+    "operator_name": "ai.pubspace",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -3780,6 +3800,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "f6974d9a64c933a7a4d55200",
+    "display_name": "eSIMCompare: travel eSIM prices",
+    "canonical_identity": "glama:g2qnp5xzrg",
+    "primary_endpoint": null,
+    "operator_name": "co.esimcompare",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "c4a1678bb4f21343cd448142",
     "display_name": "FastAF",
     "canonical_identity": "glama:iw2tnwutkx",
@@ -4190,6 +4220,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "124a70e0e519659f584b169b",
+    "display_name": "a 1000 watts",
+    "canonical_identity": "glama:x8oa7qqscl",
+    "primary_endpoint": null,
+    "operator_name": "com.a1000watts",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "3ceee35997297034e40730e0",
     "display_name": "Account Executive Jobs",
     "canonical_identity": "glama:d5b9l6u7lf",
@@ -4535,6 +4575,16 @@
     "canonical_identity": "glama:xynw18nl60",
     "primary_endpoint": null,
     "operator_name": "com.attachpage",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "9bd18a185c219380fde91acb",
+    "display_name": "AurasPay Merchant MCP",
+    "canonical_identity": "glama:pfeag0p04m",
+    "primary_endpoint": null,
+    "operator_name": "com.auraspay",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4945,56 +4995,6 @@
     "canonical_identity": "glama:zt5gewz1gh",
     "primary_endpoint": null,
     "operator_name": "com.codetrendy",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "5e1b27cd1ec097a53c52b6c1",
-    "display_name": "CommonRig",
-    "canonical_identity": "glama:xhjl4yrqo3",
-    "primary_endpoint": null,
-    "operator_name": "com.commonrig",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ce56c621e64d391e7ed04b65",
-    "display_name": "Compute Screener",
-    "canonical_identity": "glama:ydgq2525mp",
-    "primary_endpoint": null,
-    "operator_name": "com.computescreener",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "f827139c701a75c02eac4db1",
-    "display_name": "Singapore Buying Desk (Connective Labs)",
-    "canonical_identity": "glama:nzixtpxadl",
-    "primary_endpoint": null,
-    "operator_name": "com.connective-labs",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "fbb998c4df7de54f63a2255e",
-    "display_name": "Content Drifter",
-    "canonical_identity": "glama:b8oaa8nac3",
-    "primary_endpoint": null,
-    "operator_name": "com.contentdrifter",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "93dfb182794e44f40a4e5fd5",
-    "display_name": "Context Pill",
-    "canonical_identity": "glama:ptw6mr6b17",
-    "primary_endpoint": null,
-    "operator_name": "com.contextpill",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
