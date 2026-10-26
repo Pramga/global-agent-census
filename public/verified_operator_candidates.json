@@ -1150,6 +1150,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "c9252f3d6690ae093cce518e",
+    "display_name": "mailmcp",
+    "canonical_identity": "glama:uymib4qz7t",
+    "primary_endpoint": null,
+    "operator_name": "ai.mailmcp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "3b5c33f6bf421ee5b0667e5d",
     "display_name": "Memocore",
     "canonical_identity": "glama:gun1ozir18",
@@ -3470,6 +3480,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "a173ad1e6fcc105dc2eb59a0",
+    "display_name": "StarTap Directory Search",
+    "canonical_identity": "glama:kdsilrkdev",
+    "primary_endpoint": null,
+    "operator_name": "cc.startap",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "226db0609956b09f2dfd6d95",
     "display_name": "Antevo Trademark",
     "canonical_identity": "glama:xjlu7w971x",
@@ -3973,6 +3993,16 @@
     "agent_id": "f7e0403ef622e3224014297e",
     "display_name": "SmartPerps",
     "canonical_identity": "glama:kwa7sso947",
+    "primary_endpoint": null,
+    "operator_name": "co.youraitools",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "fdb3f4a7858ae8e1de713dab",
+    "display_name": "Transcribe (speech-to-text)",
+    "canonical_identity": "glama:kceemm8avc",
     "primary_endpoint": null,
     "operator_name": "co.youraitools",
     "operator_domain": null,
@@ -4540,6 +4570,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "12a25650c5a4b7dbf2f95eaa",
+    "display_name": "UK Leads",
+    "canonical_identity": "glama:jzp9sibuss",
+    "primary_endpoint": null,
+    "operator_name": "com.byhubo.ukleads",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "ed891839b3dc32df8727e05e",
     "display_name": "Calmido Phone Number Lookup",
     "canonical_identity": "glama:ufnn02k5gx",
@@ -4955,46 +4995,6 @@
     "canonical_identity": "glama:f538rt6687",
     "primary_endpoint": null,
     "operator_name": "com.debyko",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "25dcde5c74fa9cc391290a6c",
-    "display_name": "mcp",
-    "canonical_identity": "glama:hx879y4n5t",
-    "primary_endpoint": null,
-    "operator_name": "com.dechonet",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "cb74b204e010ea74917ae748",
-    "display_name": "defrr",
-    "canonical_identity": "glama:l9gb5ue1g7",
-    "primary_endpoint": null,
-    "operator_name": "com.defrr",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "1b64bd0c3f780719298ba367",
-    "display_name": "DesarrolloMCP",
-    "canonical_identity": "glama:u76mn8v676",
-    "primary_endpoint": null,
-    "operator_name": "com.desarrollomcp",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "70242b6f1cb1ed75b9a331d7",
-    "display_name": "Develust",
-    "canonical_identity": "glama:cw5los3hlv",
-    "primary_endpoint": null,
-    "operator_name": "com.develust.ai",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
