@@ -60,6 +60,16 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "75277d1ba6beabd194f49f78",
+    "display_name": "Checkpoint402",
+    "canonical_identity": "ab4b34bc-b029-4bc0-a60b-6d17fffee305",
+    "primary_endpoint": "https://api.checkpoint402.com/a2a",
+    "operator_name": "Checkpoint402",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "f8279c246a36446aaa71e68d",
     "display_name": "Citiview Agent Market",
     "canonical_identity": "0b013240-b0fb-4a3e-b990-880756df11a3",
@@ -560,6 +570,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "daaca6b8e1da296962b4b6b5",
+    "display_name": "Blaze",
+    "canonical_identity": "glama:hj3wcqupi8",
+    "primary_endpoint": null,
+    "operator_name": "ai.blaze.app",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "e445534cccccf9ee5338faea",
     "display_name": "Brain Memory",
     "canonical_identity": "glama:hke16va3hh",
@@ -935,6 +955,16 @@
     "canonical_identity": "glama:ap2sskbzhv",
     "primary_endpoint": null,
     "operator_name": "ai.halalgen.mcp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "72d455919343918a9f720531",
+    "display_name": "HotRepo",
+    "canonical_identity": "glama:m2j1shy9o6",
+    "primary_endpoint": null,
+    "operator_name": "ai.hotrepo",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -1365,6 +1395,16 @@
     "canonical_identity": "glama:so1j233pb9",
     "primary_endpoint": null,
     "operator_name": "ai.povver",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "b07466d37e340329f024c0fc",
+    "display_name": "PubFi MCP",
+    "canonical_identity": "glama:jrmjby9l6p",
+    "primary_endpoint": null,
+    "operator_name": "ai.pubfi",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4955,46 +4995,6 @@
     "canonical_identity": "glama:xp70cl2scn",
     "primary_endpoint": null,
     "operator_name": "com.cvember",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "c533d02e8c46f9f587a62d05",
-    "display_name": "Dapper",
-    "canonical_identity": "glama:ay969omde1",
-    "primary_endpoint": null,
-    "operator_name": "com.dapperglobal",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "9ab557dd4b6007c8bdc108ed",
-    "display_name": "datatomcp",
-    "canonical_identity": "glama:n9krsw19en",
-    "primary_endpoint": null,
-    "operator_name": "com.datatomcp.app",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "0184e9bd07e19d37b5f593c3",
-    "display_name": "datawebot",
-    "canonical_identity": "glama:zq1hbxipgh",
-    "primary_endpoint": null,
-    "operator_name": "com.datawebot",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "962dc32f64bf06580db2f98c",
-    "display_name": "DEBYKO",
-    "canonical_identity": "glama:f538rt6687",
-    "primary_endpoint": null,
-    "operator_name": "com.debyko",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
