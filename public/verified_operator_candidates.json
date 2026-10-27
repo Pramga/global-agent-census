@@ -620,6 +620,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "2086c3e7f1dda5d8ce3dcef4",
+    "display_name": "Cardboard AI",
+    "canonical_identity": "glama:szgzd2kpvu",
+    "primary_endpoint": null,
+    "operator_name": "ai.cardboard",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "a357fd1dfa7919056f3c4420",
     "display_name": "Celesto Computer",
     "canonical_identity": "glama:jf6412gyar",
@@ -860,6 +870,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "7b5edfa3236ddda7b5877032",
+    "display_name": "ENYAL by Greenland AI",
+    "canonical_identity": "glama:cnruewoxwe",
+    "primary_endpoint": null,
+    "operator_name": "ai.enyal",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "2ee615cce7815c2f13f6dd30",
     "display_name": "eroq — AI video, images, voice and music",
     "canonical_identity": "glama:s1vpme2q40",
@@ -955,6 +975,16 @@
     "canonical_identity": "glama:eyy8dyoauy",
     "primary_endpoint": null,
     "operator_name": "ai.glassflow",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "7299284bb4d9cbe961035519",
+    "display_name": "GREENLANDAI",
+    "canonical_identity": "glama:e4q6xlx5h8",
+    "primary_endpoint": null,
+    "operator_name": "ai.greenlandai",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -2310,6 +2340,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "9aa6c5565fdf6a35516e86ec",
+    "display_name": "Letterly",
+    "canonical_identity": "glama:s930xuttd4",
+    "primary_endpoint": null,
+    "operator_name": "app.letterly",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "157074ae0be3aebc9d5bbe11",
     "display_name": "Local Commander",
     "canonical_identity": "glama:zihudnve7y",
@@ -3550,6 +3590,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "63412b2f5518acea3fec6ce1",
+    "display_name": "Star Wars MCP",
+    "canonical_identity": "glama:ilofuo98ta",
+    "primary_endpoint": null,
+    "operator_name": "build.swapi",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "fccc3d1598a72004fa3cf5c8",
     "display_name": "AssetLab",
     "canonical_identity": "glama:vj1aah2v1t",
@@ -3935,6 +3985,16 @@
     "canonical_identity": "glama:aou6ivbz7l",
     "primary_endpoint": null,
     "operator_name": "co.thecoindaily",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "52a5f61eae364b7b75b25d61",
+    "display_name": "The Old Ways Library",
+    "canonical_identity": "glama:wxmdixghvz",
+    "primary_endpoint": null,
+    "operator_name": "co.theoldways",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4935,66 +4995,6 @@
     "canonical_identity": "glama:oqn1cus68d",
     "primary_endpoint": null,
     "operator_name": "com.citreasurehunt",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "41163a5dec10d9f0a410052d",
-    "display_name": "CI Treasure Hunt",
-    "canonical_identity": "glama:x75drtm1db",
-    "primary_endpoint": null,
-    "operator_name": "com.citreasurehunt",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "2da766e02f4b5db21dded5c6",
-    "display_name": "CorroborateMe",
-    "canonical_identity": "glama:xrwr8logon",
-    "primary_endpoint": null,
-    "operator_name": "com.cnrcode",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "dc776bac00e7735d5536609d",
-    "display_name": "Tillpad",
-    "canonical_identity": "glama:qbnl5tstxf",
-    "primary_endpoint": null,
-    "operator_name": "com.cnrcode",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "fa90854c33a9f053782f26a2",
-    "display_name": "China Visa & Regulation Data",
-    "canonical_identity": "glama:arwlo2q7wm",
-    "primary_endpoint": null,
-    "operator_name": "com.cnregwatch",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "8c46e1d1e2fafb1cc9890b66",
-    "display_name": "FX Context",
-    "canonical_identity": "glama:kt9h00zfyz",
-    "primary_endpoint": null,
-    "operator_name": "com.coco-pier",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "89cd73942d4922f64f9fc601",
-    "display_name": "CodeTrendy",
-    "canonical_identity": "glama:zt5gewz1gh",
-    "primary_endpoint": null,
-    "operator_name": "com.codetrendy",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
