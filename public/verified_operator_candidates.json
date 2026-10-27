@@ -560,6 +560,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "59e8d00249f0d506cfdf68c0",
+    "display_name": "Bankrolled.ai Agent Hub",
+    "canonical_identity": "glama:x5ew3yuxdy",
+    "primary_endpoint": null,
+    "operator_name": "ai.bankrolled",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "cfb78f4ab9743483aa799a8e",
     "display_name": "baseray",
     "canonical_identity": "glama:ui3uoaivr5",
@@ -2165,6 +2175,16 @@
     "canonical_identity": "glama:efwvbk7re6",
     "primary_endpoint": null,
     "operator_name": "al.digitalhelp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "a9705b0dae4bd1fe4a77e19f",
+    "display_name": "AgentNexus.App",
+    "canonical_identity": "glama:pygbjv69pt",
+    "primary_endpoint": null,
+    "operator_name": "app.agentnexus",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4470,6 +4490,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "4d21497a899c497f469e9093",
+    "display_name": "Airparser",
+    "canonical_identity": "glama:p20li3n556",
+    "primary_endpoint": null,
+    "operator_name": "com.airparser",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "06745db011e78b3bb5cfeed7",
     "display_name": "Airport Pickups London",
     "canonical_identity": "glama:pzr8ddgn3t",
@@ -4965,36 +4995,6 @@
     "canonical_identity": "glama:khdrts96tu",
     "primary_endpoint": null,
     "operator_name": "com.certopolis",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "bc4e387388a643944a0c1159",
-    "display_name": "Chief",
-    "canonical_identity": "glama:v88k84o02p",
-    "primary_endpoint": null,
-    "operator_name": "com.chiefisnext",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "071ea0b524de31d13f95a4fd",
-    "display_name": "CitadelHosts",
-    "canonical_identity": "glama:t3nyioaq5p",
-    "primary_endpoint": null,
-    "operator_name": "com.citadelhosts",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "4229a17cf8bbbbfaeb44c83b",
-    "display_name": "CitedTravel",
-    "canonical_identity": "glama:md0i75iri0",
-    "primary_endpoint": null,
-    "operator_name": "com.citedtravel",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
