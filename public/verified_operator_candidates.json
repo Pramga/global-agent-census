@@ -230,6 +230,16 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "7ac56529621be0d157f0a803",
+    "display_name": "Landing en 24h",
+    "canonical_identity": "81da4b23-7910-4210-87c7-5077619ad773",
+    "primary_endpoint": "https://landingen24h.com/a2a",
+    "operator_name": "Landing en 24h",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "2b70bd4844bcda37f52607a3",
     "display_name": "Synap by Linkrra",
     "canonical_identity": "8ff2a0a1-faf8-4b40-b902-dd11ad6303cb",
@@ -970,6 +980,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "7176a9342ece257fb1f8148d",
+    "display_name": "Galatic.ai",
+    "canonical_identity": "glama:hj4214uqnt",
+    "primary_endpoint": null,
+    "operator_name": "ai.galatic",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "93cf0db31844ee157ea1d5b1",
     "display_name": "GigHQ.ai",
     "canonical_identity": "glama:qgrg15s9uy",
@@ -1315,6 +1335,16 @@
     "canonical_identity": "glama:h96ucxwshj",
     "primary_endpoint": null,
     "operator_name": "ai.newzai.api",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "d43b58f3b16acb79a62eb029",
+    "display_name": "Shop Nobi",
+    "canonical_identity": "glama:t8uf2rbiyw",
+    "primary_endpoint": null,
+    "operator_name": "ai.nobi",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -1713,6 +1743,16 @@
     "agent_id": "d02e2860d4c2db9a85e15c29",
     "display_name": "Customer Intelligence & Segmentation",
     "canonical_identity": "glama:irayhl81z5",
+    "primary_endpoint": null,
+    "operator_name": "ai.saifs",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "f104259a7e705215dbb3cc43",
+    "display_name": "Mastery Pathing",
+    "canonical_identity": "glama:rdelp1vb9s",
     "primary_endpoint": null,
     "operator_name": "ai.saifs",
     "operator_domain": null,
@@ -2375,6 +2415,16 @@
     "canonical_identity": "glama:s930xuttd4",
     "primary_endpoint": null,
     "operator_name": "app.letterly",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "77f7d08d19a0f721d2d87af7",
+    "display_name": "livediagram",
+    "canonical_identity": "glama:qcyprnl9au",
+    "primary_endpoint": null,
+    "operator_name": "app.livediagram.mcp",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -3820,6 +3870,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "2722ff7cd9459a8f2666ed47",
+    "display_name": "PostData",
+    "canonical_identity": "glama:fwyia4blsr",
+    "primary_endpoint": null,
+    "operator_name": "cloud.postdata",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "6c2913ada207881d3e0a0784",
     "display_name": "The Dinner Table Club",
     "canonical_identity": "glama:t011c000l0",
@@ -3935,6 +3995,16 @@
     "canonical_identity": "glama:w239krz110",
     "primary_endpoint": null,
     "operator_name": "co.getvalyou",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "d04c30fa886b34920fa8b49e",
+    "display_name": "InduSpec — Industrial Materials Database",
+    "canonical_identity": "glama:fk4yty33z1",
+    "primary_endpoint": null,
+    "operator_name": "co.induspec",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4350,6 +4420,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "ab2a044c2d56b61f1a4cf5d8",
+    "display_name": "Achriom",
+    "canonical_identity": "glama:hsrn0k2wvk",
+    "primary_endpoint": null,
+    "operator_name": "com.achriom.mcp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "80d928088e802dac1fbcf0fb",
     "display_name": "ActivitySmith",
     "canonical_identity": "glama:aqhxafppdh",
@@ -4575,6 +4655,16 @@
     "canonical_identity": "glama:pbwrbb2gby",
     "primary_endpoint": null,
     "operator_name": "com.app-clap",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "6a578ec7f3f27bd137538f5c",
+    "display_name": "Argosor — Unified SEO, SERP, Clean Markdown & GEO (AI Citation Visibility) MCP Server",
+    "canonical_identity": "glama:n6d9kri28j",
+    "primary_endpoint": null,
+    "operator_name": "com.argosor",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4860,6 +4950,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "23585cbfe3e3d07dcb37ee18",
+    "display_name": "Browse Bridge",
+    "canonical_identity": "glama:hzyvvkxdnp",
+    "primary_endpoint": null,
+    "operator_name": "com.browsebridge",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "0fa1f8712975f77c308e22ff",
     "display_name": "BrowserPair",
     "canonical_identity": "glama:s8htz71ksi",
@@ -4895,106 +4995,6 @@
     "canonical_identity": "glama:ao4lmz3hhb",
     "primary_endpoint": null,
     "operator_name": "com.cambouch",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "8765675ab1a57e71386a3183",
-    "display_name": "Canvas64",
-    "canonical_identity": "glama:yl66dqysgz",
-    "primary_endpoint": null,
-    "operator_name": "com.canvas64",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "6ca56047020bef3c9f4c43f6",
-    "display_name": "Career Bhavan — Indian courses & colleges",
-    "canonical_identity": "glama:cxqb00dqb1",
-    "primary_endpoint": null,
-    "operator_name": "com.careerbhavan",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "4f7e0e620c3309ebc4fc6b92",
-    "display_name": "CarHauler247 Car Shipping Quotes",
-    "canonical_identity": "glama:n8lm9a4nza",
-    "primary_endpoint": null,
-    "operator_name": "com.carhauler247",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "d84fe887a60a644278094133",
-    "display_name": "Car Rental Brain",
-    "canonical_identity": "glama:d98xpjwlju",
-    "primary_endpoint": null,
-    "operator_name": "com.carrentalbrain",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "46562f0417ddc9d7e3bcb6b8",
-    "display_name": "Casafari Location Lookup",
-    "canonical_identity": "glama:sponcoc5et",
-    "primary_endpoint": null,
-    "operator_name": "com.casafari",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ada715cb4fa53dcb3bf9e031",
-    "display_name": "Casafari Area Insights",
-    "canonical_identity": "glama:ptf4e9n3j2",
-    "primary_endpoint": null,
-    "operator_name": "com.casafari",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "b57454588eaf504f3c5dc525",
-    "display_name": "Casafari Comparables",
-    "canonical_identity": "glama:s64s1v3kla",
-    "primary_endpoint": null,
-    "operator_name": "com.casafari",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "c37bfcbd9afb46df44326feb",
-    "display_name": "Casafari AgentGraph AI",
-    "canonical_identity": "glama:nscdrbwsw9",
-    "primary_endpoint": null,
-    "operator_name": "com.casafari",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "eaa3aed4fe562da3349283cb",
-    "display_name": "Claro AI by Casafari",
-    "canonical_identity": "glama:zvx9zz2qgr",
-    "primary_endpoint": null,
-    "operator_name": "com.casafari",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "910d7fe5ae50cccb50646901",
-    "display_name": "Certopolis",
-    "canonical_identity": "glama:khdrts96tu",
-    "primary_endpoint": null,
-    "operator_name": "com.certopolis",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
