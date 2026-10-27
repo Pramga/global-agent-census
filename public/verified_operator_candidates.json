@@ -570,6 +570,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "31295e196f461af28c610b98",
+    "display_name": "BeliefState",
+    "canonical_identity": "glama:jtg5nj7ow6",
+    "primary_endpoint": null,
+    "operator_name": "ai.beliefstate",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "daaca6b8e1da296962b4b6b5",
     "display_name": "Blaze",
     "canonical_identity": "glama:hj3wcqupi8",
@@ -3350,6 +3360,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "f5863b63e71508edb9fb2cdb",
+    "display_name": "Super Artifacts",
+    "canonical_identity": "glama:e2ddda3d1p",
+    "primary_endpoint": null,
+    "operator_name": "app.superartifacts",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "a29f777c05d9ccd9fcdfa84e",
     "display_name": "Typebar (formerly SuperDocs)",
     "canonical_identity": "glama:g0rklv9ezg",
@@ -3591,7 +3611,7 @@
   },
   {
     "agent_id": "63412b2f5518acea3fec6ce1",
-    "display_name": "Star Wars MCP",
+    "display_name": "Star Wars API & MCP server (swapi.build)",
     "canonical_identity": "glama:ilofuo98ta",
     "primary_endpoint": null,
     "operator_name": "build.swapi",
@@ -4975,26 +4995,6 @@
     "canonical_identity": "glama:md0i75iri0",
     "primary_endpoint": null,
     "operator_name": "com.citedtravel",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ce2d74a6b21a30f522ed254d",
-    "display_name": "CiteLadder",
-    "canonical_identity": "glama:sr04il8mnz",
-    "primary_endpoint": null,
-    "operator_name": "com.citeladder",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "2e5a4332e8bc42b6be6b9709",
-    "display_name": "CI Treasure Hunt",
-    "canonical_identity": "glama:oqn1cus68d",
-    "primary_endpoint": null,
-    "operator_name": "com.citreasurehunt",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
