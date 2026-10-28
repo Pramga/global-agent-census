@@ -1,0 +1,59 @@
+
+name: Test Census Agent Importer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test importer in temporary database
+        env:
+          DATABASE_PATH: ${{ runner.temp }}/import-test.sqlite3
+        run: |
+          python import_agents.py
+
+          python - <<'PY'
+          import json
+          import os
+          import sqlite3
+          from pathlib import Path
+
+          export = json.loads(
+              Path("public/agents.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+
+          conn = sqlite3.connect(
+              os.environ["DATABASE_PATH"]
+          )
+          try:
+              count = conn.execute(
+                  "SELECT COUNT(*) FROM agents"
+              ).fetchone()[0]
+
+              print(f"Exported records: {len(export)}")
+              print(f"Imported records: {count}")
+
+              assert count > 0
+              assert count == len(export)
+
+              print("IMPORT TEST PASSED")
+          finally:
+              conn.close()
+          PY
