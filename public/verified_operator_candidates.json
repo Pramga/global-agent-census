@@ -910,6 +910,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "ddb1e37683871165a124e6f8",
+    "display_name": "docuwriter",
+    "canonical_identity": "glama:tzbo3uz4l0",
+    "primary_endpoint": null,
+    "operator_name": "ai.docuwriter",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "19455dac8aaf9e7540897bbf",
     "display_name": "Edgepedia",
     "canonical_identity": "glama:zmafvtu0of",
@@ -1325,6 +1335,16 @@
     "canonical_identity": "glama:uymib4qz7t",
     "primary_endpoint": null,
     "operator_name": "ai.mailmcp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "fdef2cd108f6ca078642697a",
+    "display_name": "MemeStack",
+    "canonical_identity": "glama:drmf8o3bzb",
+    "primary_endpoint": null,
+    "operator_name": "ai.memestack",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -2261,7 +2281,7 @@
   },
   {
     "agent_id": "a9705b0dae4bd1fe4a77e19f",
-    "display_name": "AgentNexus.App",
+    "display_name": "Agent Nexus",
     "canonical_identity": "glama:pygbjv69pt",
     "primary_endpoint": null,
     "operator_name": "app.agentnexus",
@@ -4640,6 +4660,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "471ad3f52bde0f31dd246c9f",
+    "display_name": "aipozi",
+    "canonical_identity": "glama:vfys3hgjsv",
+    "primary_endpoint": null,
+    "operator_name": "com.aipozi",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "534b68c397a4a56d21330c96",
     "display_name": "AI Rollout Framework",
     "canonical_identity": "glama:p25fxoi76m",
@@ -4685,6 +4715,16 @@
     "canonical_identity": "glama:lzicqvj1ix",
     "primary_endpoint": null,
     "operator_name": "com.alphabridge-mcp.connect",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "3bf0d6b0957ad79a95196721",
+    "display_name": "Alshhbaa Brassware",
+    "canonical_identity": "glama:yx0pavt63l",
+    "primary_endpoint": null,
+    "operator_name": "com.alshhbaa.shop",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4955,46 +4995,6 @@
     "canonical_identity": "glama:ge50fpgxhl",
     "primary_endpoint": null,
     "operator_name": "com.bliahub",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "3436c869c7ee5f089204a50b",
-    "display_name": "BlockVectra: multi-chain RPC & Data API",
-    "canonical_identity": "glama:f8zvdpcoex",
-    "primary_endpoint": null,
-    "operator_name": "com.blockvectra",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "3fdc72286af1a42e20d9ce7d",
-    "display_name": "Deadline Desk",
-    "canonical_identity": "glama:vty7bl5b7l",
-    "primary_endpoint": null,
-    "operator_name": "com.bot2botlabs.deadline",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "b66d29508c4dbd011c3049b4",
-    "display_name": "botcherlor",
-    "canonical_identity": "glama:pak8hgo38y",
-    "primary_endpoint": null,
-    "operator_name": "com.botchelor",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "374bf3dd560abcb18f6eba2c",
-    "display_name": "BotGathering recipes",
-    "canonical_identity": "glama:t6vraxgs53",
-    "primary_endpoint": null,
-    "operator_name": "com.botgathering",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
