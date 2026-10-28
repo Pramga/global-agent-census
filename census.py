@@ -1025,7 +1025,7 @@ def adjudicate_operator_verification(
             SET
                 operator_verification='independently_verified',
                 operator_evidence=?
-            WHERE {" OR ".join(clauses)}
+            WHERE {" AND ".join(clauses)}
             """,
             (evidence_text, *params),
         )
