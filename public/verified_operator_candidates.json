@@ -3843,7 +3843,7 @@
     "agent_id": "a59e58588fe5d126979ed8a1",
     "display_name": "The Agent Commons",
     "canonical_identity": "24522d19-2fb1-49b7-a102-6940b031b9c1",
-    "primary_endpoint": null,
+    "primary_endpoint": "https://ai.affix-io.com/api/a2a",
     "operator_name": "ccd72541-6841-4688-bd5c-099db305812b",
     "operator_domain": null,
     "operator_verification": "unverified",
