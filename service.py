@@ -975,4 +975,4 @@ def app(environ, start_response):
 
 
 # Gunicorn imports this module once with one worker as configured in the deployment files.
-#_start_worker()
+_start_worker()
