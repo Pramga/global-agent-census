@@ -53,6 +53,20 @@ jobs:
               assert count > 0
               assert count == len(export)
 
+              from import_agents import import_agents
+
+              import_agents()
+
+              count_after_second_import = conn.execute(
+                  "SELECT COUNT(*) FROM agents"
+              ).fetchone()[0]
+
+              assert count_after_second_import == count, (
+                  "Repeated import changed the agent count"
+              )
+
+              print("REPEAT IMPORT TEST PASSED")
+
               print("IMPORT TEST PASSED")
           finally:
               conn.close()
