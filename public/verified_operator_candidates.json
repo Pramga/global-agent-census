@@ -30,6 +30,16 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "4a4203424bdf15fec23238d3",
+    "display_name": "AETHER",
+    "canonical_identity": "d36acee2-136c-40c1-831b-9a2e75c59723",
+    "primary_endpoint": "https://angelscohq.com/aether/a2a",
+    "operator_name": "ANGELS.co",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "45326dbf07336728d935e1c7",
     "display_name": "Agent Economy OS 2047 — A2A Commerce Directory",
     "canonical_identity": "a7534921-8f0b-4a61-8324-477c8a87f329",
@@ -3960,6 +3970,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "ec085996acfb6f5387a24568",
+    "display_name": "ROFilter - Reverse Osmosis Design",
+    "canonical_identity": "glama:gqibogfaot",
+    "primary_endpoint": null,
+    "operator_name": "cn.rofilter",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "3dafde318a731cf018def33a",
     "display_name": "BidCatch",
     "canonical_identity": "glama:xmz2g69br8",
@@ -4590,6 +4610,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "27a5a6b3f87643a7786acb93",
+    "display_name": "熔岩 Lava",
+    "canonical_identity": "glama:hjp1najnp9",
+    "primary_endpoint": null,
+    "operator_name": "com.ai-dolphin.lava",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "df4ff506edad3f3678b5ce0c",
     "display_name": "AI Applyd",
     "canonical_identity": "glama:klo7wp2f6k",
@@ -4965,36 +4995,6 @@
     "canonical_identity": "glama:t6vraxgs53",
     "primary_endpoint": null,
     "operator_name": "com.botgathering",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "51e5b8ebd5836776d31319a1",
-    "display_name": "BotGathering recipes",
-    "canonical_identity": "glama:lsh8k170ah",
-    "primary_endpoint": null,
-    "operator_name": "com.botgathering",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "2b19d97ec34a5459ccb8027f",
-    "display_name": "BotKelp",
-    "canonical_identity": "glama:au4x06o09j",
-    "primary_endpoint": null,
-    "operator_name": "com.botkelp",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "b76c312f0cbc792133155d29",
-    "display_name": "Brix Digital Signage",
-    "canonical_identity": "glama:lgw20opvmy",
-    "primary_endpoint": null,
-    "operator_name": "com.brixsignage",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
