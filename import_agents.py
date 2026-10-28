@@ -100,11 +100,14 @@ def import_agents():
                 item.setdefault("metadata_valid", 0)
                 item.setdefault("endpoint_reachable", 0)
 
+                
                 raw = item.get("raw_json")
                 if raw is None:
-    continue
+                    continue
                 if not isinstance(raw, str):
                     item["raw_json"] = json.dumps(
+                        
+
                         raw, ensure_ascii=False
                     )
 
