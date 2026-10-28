@@ -1,5 +1,15 @@
 [
   {
+    "agent_id": "55819ede5baf0d3b7c6dd139",
+    "display_name": "AgentMarket",
+    "canonical_identity": "3d04781a-4b6b-410a-9c05-36cb3571c468",
+    "primary_endpoint": null,
+    "operator_name": "1ad3c5f0-1694-46d3-8450-b910f3e46e63",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "bdd205a56539e4dd40ac5d61",
     "display_name": "Chenfeng AI public-information production",
     "canonical_identity": "7ea79ada-fb3d-432d-a260-bee860466047",
@@ -25,6 +35,16 @@
     "canonical_identity": "a7534921-8f0b-4a61-8324-477c8a87f329",
     "primary_endpoint": "https://jzallxzbbdtelcpabfgr.supabase.co/functions/v1/agent-economy-a2a",
     "operator_name": "Agent Economy OS 2047",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "f7d60648cf36d63aec412e10",
+    "display_name": "Agent Galaxy Directory",
+    "canonical_identity": "eae2bb90-df29-4093-a8c5-5e0538ace2e5",
+    "primary_endpoint": "https://agentgalaxy.dev/api",
+    "operator_name": "Agent Galaxy",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -498,6 +518,16 @@
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
+  },
+  {
+    "agent_id": "7098fe39c4c90351b74d3313",
+    "display_name": "Best AI Search Agency AEO Report",
+    "canonical_identity": "glama:nz0u4vg6d5",
+    "primary_endpoint": null,
+    "operator_name": "ai.aeoengine",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
     "agent_id": "b788848bd6e41ab82c74c692",
@@ -2420,6 +2450,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "e71afce4c470837ec89a1959",
+    "display_name": "LetX",
+    "canonical_identity": "glama:tbfbg64uiq",
+    "primary_endpoint": null,
+    "operator_name": "app.letx",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "77f7d08d19a0f721d2d87af7",
     "display_name": "livediagram",
     "canonical_identity": "glama:qcyprnl9au",
@@ -3305,6 +3345,16 @@
     "canonical_identity": "glama:jv98l0twzb",
     "primary_endpoint": null,
     "operator_name": "app.run.us-central1.agentdiet-72343955726",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "08a9510cae328ec832012fc7",
+    "display_name": "Run it by",
+    "canonical_identity": "glama:ctsx8wc7sf",
+    "primary_endpoint": null,
+    "operator_name": "app.runitby",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -4945,56 +4995,6 @@
     "canonical_identity": "glama:lgw20opvmy",
     "primary_endpoint": null,
     "operator_name": "com.brixsignage",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "23585cbfe3e3d07dcb37ee18",
-    "display_name": "Browse Bridge",
-    "canonical_identity": "glama:hzyvvkxdnp",
-    "primary_endpoint": null,
-    "operator_name": "com.browsebridge",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "0fa1f8712975f77c308e22ff",
-    "display_name": "BrowserPair",
-    "canonical_identity": "glama:s8htz71ksi",
-    "primary_endpoint": null,
-    "operator_name": "com.browserpair.mcp",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "12a25650c5a4b7dbf2f95eaa",
-    "display_name": "UK Leads",
-    "canonical_identity": "glama:jzp9sibuss",
-    "primary_endpoint": null,
-    "operator_name": "com.byhubo.ukleads",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ed891839b3dc32df8727e05e",
-    "display_name": "Calmido Phone Number Lookup",
-    "canonical_identity": "glama:ufnn02k5gx",
-    "primary_endpoint": null,
-    "operator_name": "com.calmido",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "f9d72cbaed0f092ae7a7f6b1",
-    "display_name": "StudioMotion",
-    "canonical_identity": "glama:ao4lmz3hhb",
-    "primary_endpoint": null,
-    "operator_name": "com.cambouch",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
