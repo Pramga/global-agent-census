@@ -145,6 +145,72 @@ def fetch_json(
     return status, data, response_headers
 
 
+def check_mcp_initialize(url: str) -> bool:
+    """Check whether an MCP endpoint accepts initialization."""
+    payload = {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": {
+            "protocolVersion": "2025-03-26",
+            "capabilities": {},
+            "clientInfo": {
+                "name": "GlobalAgentCensus",
+                "version": APP_VERSION,
+            },
+        },
+    }
+
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "User-Agent": USER_AGENT,
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(
+            req, timeout=TIMEOUT_SECONDS
+        ) as response:
+            body = response.read(MAX_BODY_BYTES + 1)
+            if len(body) > MAX_BODY_BYTES:
+                return False
+            if response.status != 200:
+                return False
+            content_type = response.headers.get(
+                "Content-Type", ""
+            ).lower()
+            if "application/json" not in content_type:
+                return False
+            result = json.loads(body.decode("utf-8-sig"))
+            return (
+                isinstance(result, dict)
+                and result.get("jsonrpc") == "2.0"
+                and result.get("id") == 1
+                and isinstance(result.get("result"), dict)
+                and isinstance(
+                    result["result"].get("protocolVersion"), str
+                )
+                and isinstance(
+                    result["result"].get("capabilities"), dict
+                )
+                and isinstance(
+                    result["result"].get("serverInfo"), dict
+                )
+            )
+    except (
+        urllib.error.URLError,
+        OSError,
+        ValueError,
+        UnicodeError,
+        TimeoutError,
+    ):
+        return False
+
 def init_db(conn: sqlite3.Connection) -> None:
     conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA foreign_keys=ON")
