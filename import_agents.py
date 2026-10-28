@@ -61,6 +61,7 @@ def import_agents():
         names = ", ".join(COLUMNS)
 
         
+        
         sql = (
             f"INSERT INTO agents ({names}) "
             f"VALUES ({placeholders}) "
@@ -73,7 +74,12 @@ def import_agents():
                     "first_seen_at",
                 )
             )
+            + " WHERE "
+            + "excluded.last_seen_at IS NOT NULL "
+            + "AND (agents.last_seen_at IS NULL "
+            + "OR excluded.last_seen_at > agents.last_seen_at)"
         )
+
 
 
         imported = 0
