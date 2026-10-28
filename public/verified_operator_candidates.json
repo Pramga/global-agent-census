@@ -3,7 +3,7 @@
     "agent_id": "55819ede5baf0d3b7c6dd139",
     "display_name": "AgentMarket",
     "canonical_identity": "3d04781a-4b6b-410a-9c05-36cb3571c468",
-    "primary_endpoint": null,
+    "primary_endpoint": "https://relayrace.info/agentmarket/a2a/v1/jsonrpc",
     "operator_name": "1ad3c5f0-1694-46d3-8450-b910f3e46e63",
     "operator_domain": null,
     "operator_verification": "unverified",
@@ -4180,6 +4180,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "a3bc7963943b413966677aab",
+    "display_name": "Squish",
+    "canonical_identity": "glama:u8mew8fxzd",
+    "primary_endpoint": null,
+    "operator_name": "co.squish",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "09cabf80b8f64f83b06f5107",
     "display_name": "The Coin Daily Research",
     "canonical_identity": "glama:aou6ivbz7l",
@@ -4900,6 +4910,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "f8a7a3b4885780716b7fe5ba",
+    "display_name": "Aura Historia MCP",
+    "canonical_identity": "glama:ilhhy9p1uk",
+    "primary_endpoint": null,
+    "operator_name": "com.aura-historia.mcp",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "9bd18a185c219380fde91acb",
     "display_name": "AurasPay Merchant MCP",
     "canonical_identity": "glama:pfeag0p04m",
@@ -4975,26 +4995,6 @@
     "canonical_identity": "glama:jl3mds1gjw",
     "primary_endpoint": null,
     "operator_name": "com.bettrails",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "65687d488ff9de1f3bb2204b",
-    "display_name": "Blender Bridge",
-    "canonical_identity": "glama:jlx8aen39n",
-    "primary_endpoint": null,
-    "operator_name": "com.blenderbridge",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "a4234399c19939a1f3c913e2",
-    "display_name": "BLIA — Bank Product Terms",
-    "canonical_identity": "glama:ge50fpgxhl",
-    "primary_endpoint": null,
-    "operator_name": "com.bliahub",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
