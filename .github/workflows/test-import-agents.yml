@@ -66,6 +66,41 @@ jobs:
               )
 
               print("REPEAT IMPORT TEST PASSED")
+              
+              agent_id = conn.execute(
+                  "SELECT agent_id FROM agents LIMIT 1"
+              ).fetchone()[0]
+
+              newer_timestamp = "2099-01-01T00:00:00Z"
+              newer_name = "Protected Newer Record"
+
+              conn.execute(
+                  """
+                  UPDATE agents
+                  SET last_seen_at = ?,
+                      display_name = ?
+                  WHERE agent_id = ?
+                  """,
+                  (newer_timestamp, newer_name, agent_id),
+              )
+              conn.commit()
+
+              import_agents()
+
+              saved = conn.execute(
+                  """
+                  SELECT last_seen_at, display_name
+                  FROM agents
+                  WHERE agent_id = ?
+                  """,
+                  (agent_id,),
+              ).fetchone()
+
+              assert saved == (
+                  newer_timestamp, newer_name
+              ), "Newer agent record was overwritten"
+
+              print("TIMESTAMP PROTECTION TEST PASSED")
 
               print("IMPORT TEST PASSED")
           finally:
