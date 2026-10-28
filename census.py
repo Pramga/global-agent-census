@@ -401,7 +401,7 @@ def a2a_registry_records(source: dict[str, Any]) -> list[dict[str, Any]]:
     base = source.get("base_url", "https://api.a2a-registry.org").rstrip("/")
     seen: dict[str, dict[str, Any]] = {}
     url = base + "/public/agents"
-    _, payload, _ = fetch_json(url)
+    _, payload, _ = fetch_json(url, timeout_seconds=15)
     items = _extract_items(payload, ("agents", "items", "results", "data"))
     for item in items:
         ident = (
