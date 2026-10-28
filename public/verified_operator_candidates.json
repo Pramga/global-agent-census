@@ -13,7 +13,7 @@
     "agent_id": "bdd205a56539e4dd40ac5d61",
     "display_name": "Chenfeng AI public-information production",
     "canonical_identity": "7ea79ada-fb3d-432d-a260-bee860466047",
-    "primary_endpoint": null,
+    "primary_endpoint": "https://chenfengai.cn/a2a",
     "operator_name": "7264fcf6-43a4-43ca-aa99-144edbd3a7ed",
     "operator_domain": null,
     "operator_verification": "unverified",
@@ -285,16 +285,6 @@
     "canonical_identity": "c4933993-a0d6-4560-97f9-29ca01cadf7a",
     "primary_endpoint": "https://localmark.ai/a2a",
     "operator_name": "LocalMark",
-    "operator_domain": null,
-    "operator_verification": "unverified",
-    "operator_evidence": null
-  },
-  {
-    "agent_id": "11146768a67ffee2dbf31455",
-    "display_name": "Lumi Trades",
-    "canonical_identity": "8b984bbc-b6c0-4fdb-a1bb-09487e531c77",
-    "primary_endpoint": "https://api.lumitrades.io/a2a",
-    "operator_name": "Lumi Trades",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -4995,6 +4985,16 @@
     "canonical_identity": "glama:jlx8aen39n",
     "primary_endpoint": null,
     "operator_name": "com.blenderbridge",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "a4234399c19939a1f3c913e2",
+    "display_name": "BLIA — Bank Product Terms",
+    "canonical_identity": "glama:ge50fpgxhl",
+    "primary_endpoint": null,
+    "operator_name": "com.bliahub",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
