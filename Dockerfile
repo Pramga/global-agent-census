@@ -6,7 +6,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     SOURCES_CONFIG=/app/sources.json \
     REFRESH_SECONDS=21600
 WORKDIR /app
-COPY census.py service.py sources.json requirements.txt ./
+
+COPY census.py service.py import_agents.py sources.json requirements.txt ./
+
 COPY site/ ./site/
 COPY public/ ./public/
 RUN pip install --no-cache-dir -r requirements.txt \
