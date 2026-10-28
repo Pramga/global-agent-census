@@ -18,4 +18,5 @@ RUN pip install --no-cache-dir -r requirements.txt \
 USER census
 EXPOSE 8080
 
-CMD ["sh", "-c", "python import_agents.py && exec gunicorn --workers 1 --threads 8 --timeout 120 --bind 0.0.0.0:${PORT:-8080} service:app"]
+
+CMD ["sh", "-c", "exec gunicorn --workers 1 --threads 8 --timeout 120 --bind 0.0.0.0:${PORT:-8080} service:app"]
