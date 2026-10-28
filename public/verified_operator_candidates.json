@@ -1410,6 +1410,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "fac4abd640df045ce5acf583",
+    "display_name": "Novence",
+    "canonical_identity": "glama:a9zv6i44wr",
+    "primary_endpoint": null,
+    "operator_name": "ai.novence",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "890ba18456ee72d72d4395e0",
     "display_name": "Nuira",
     "canonical_identity": "glama:g4sr5r8ax2",
@@ -4985,16 +4995,6 @@
     "canonical_identity": "glama:jlx8aen39n",
     "primary_endpoint": null,
     "operator_name": "com.blenderbridge",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "a4234399c19939a1f3c913e2",
-    "display_name": "BLIA — Bank Product Terms",
-    "canonical_identity": "glama:ge50fpgxhl",
-    "primary_endpoint": null,
-    "operator_name": "com.bliahub",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
