@@ -3980,6 +3980,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "d57fd71b78c2fc1421db5c40",
+    "display_name": "briq",
+    "canonical_identity": "glama:ajratnavha",
+    "primary_endpoint": null,
+    "operator_name": "cloud.briq",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "750d15d9d82ce8a2eb64031a",
     "display_name": "Vigía",
     "canonical_identity": "glama:p011uohl22",
@@ -4985,16 +4995,6 @@
     "canonical_identity": "glama:pfeag0p04m",
     "primary_endpoint": null,
     "operator_name": "com.auraspay",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "6333d8003930bff00ac1d763",
-    "display_name": "Autoview",
-    "canonical_identity": "glama:e367gtiuya",
-    "primary_endpoint": null,
-    "operator_name": "com.autoview",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
