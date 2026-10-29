@@ -911,6 +911,7 @@ def app(environ, start_response):
             log.exception("Authenticated API request failed")
             return _response(start_response, "400 Bad Request", {"error": "invalid_request_or_data_unavailable"})
     
+        
     if path == "/api/counts":
         try:
             conn = _db()
@@ -923,9 +924,9 @@ def app(environ, start_response):
                         Path(__file__).resolve().parent
                         / "public"
                         / "counts.json"
-                    ) 
+                    )
                     if bundled_snapshot.exists():
-                    snapshot_path = bundled_snapshot
+                        snapshot_path = bundled_snapshot
 
                 if snapshot_path.exists():
                     data = json.loads(
@@ -945,6 +946,7 @@ def app(environ, start_response):
                 "503 Service Unavailable",
                 {"error": "census_counts_unavailable"},
             )
+
 
     if path == "/api/agents":
         try:
