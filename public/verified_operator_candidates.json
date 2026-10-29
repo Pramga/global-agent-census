@@ -980,6 +980,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "2d1bbfcbe7dd5b340aca763b",
+    "display_name": "budgetSEO MCP",
+    "canonical_identity": "glama:if4ulbh72z",
+    "primary_endpoint": null,
+    "operator_name": "ai.budgetseo",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "5c072130a34d154fb6e12316",
     "display_name": "BumbleBox",
     "canonical_identity": "glama:hj3q5zq8c3",
@@ -4030,6 +4040,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "b65fd00c07eebfc59aa53b21",
+    "display_name": "Zarok",
+    "canonical_identity": "glama:kyqek5l7vb",
+    "primary_endpoint": null,
+    "operator_name": "app.zarok",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "34ca23c6ad1d8b7184daf3d7",
     "display_name": "screenshot.com.ar",
     "canonical_identity": "glama:plwldubtp8",
@@ -4975,26 +4995,6 @@
     "canonical_identity": "glama:d5b9l6u7lf",
     "primary_endpoint": null,
     "operator_name": "com.accountexecutivejobs",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "13120f8383e27f42ce8ba118",
-    "display_name": "Stablecoin Scanner",
-    "canonical_identity": "glama:qbjl36fcak",
-    "primary_endpoint": null,
-    "operator_name": "com.achivx",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ab2a044c2d56b61f1a4cf5d8",
-    "display_name": "Achriom",
-    "canonical_identity": "glama:hsrn0k2wvk",
-    "primary_endpoint": null,
-    "operator_name": "com.achriom.mcp",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
