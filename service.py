@@ -933,7 +933,7 @@ def app(environ, start_response):
                             snapshot_path.read_text(encoding="utf-8")
                         )
                     else:
-                    data = counts(conn)
+                        data = counts(conn)
 
                     data["service"] = state
                      return _response(start_response, "200 OK", data)
