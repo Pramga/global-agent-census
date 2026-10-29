@@ -1,5 +1,25 @@
 [
   {
+    "agent_id": "79b25ff2be59808c5a16d743",
+    "display_name": "FMCSA Carrier Intelligence",
+    "canonical_identity": "c9030126-e014-44bb-a8db-8fd3d32e04cc",
+    "primary_endpoint": "https://fmcsa-a2a-843680657471.us-central1.run.app/",
+    "operator_name": "07102df5-2954-42eb-8756-0a473ae79ba7",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "7f661f919dbcdf8838d078cb",
+    "display_name": "AEra Agent Gateway",
+    "canonical_identity": "4f2cfdb8-d45d-4a91-ad9d-d86d515b591a",
+    "primary_endpoint": "https://aeralogin.com/api/a2a",
+    "operator_name": "0adac50d-5180-4c68-b72e-7939ee30835e",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "55819ede5baf0d3b7c6dd139",
     "display_name": "AgentMarket",
     "canonical_identity": "3d04781a-4b6b-410a-9c05-36cb3571c468",
@@ -10,11 +30,231 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "42f33bebebae086b4a255fe8",
+    "display_name": "ATLAS",
+    "canonical_identity": "664b3285-9823-4455-9eda-524961d14fd1",
+    "primary_endpoint": "https://atlas-worker.hosamhosaam5.workers.dev/a2a",
+    "operator_name": "1bc0da92-7053-4b0c-9fec-cc0bfc13bf19",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "4ad500b14252d120a103c136",
+    "display_name": "TRDEFI Liquidity",
+    "canonical_identity": "6b6407a2-8991-42d9-9f2d-2b733bdd44ea",
+    "primary_endpoint": "https://yield.trdefi.com/a2a/v1",
+    "operator_name": "21ac739f-fc89-4eee-95f5-d239a436d39d",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "98084b042e3e4eae1178595d",
+    "display_name": "Overwing",
+    "canonical_identity": "d85ca0be-4f70-4fa4-b11c-58a1f41e5676",
+    "primary_endpoint": "https://overwing.ai/a2a",
+    "operator_name": "2a048064-fb3a-4fb2-9a45-616aa3ae1156",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "e57560e9bfb0ae22f18f0a57",
+    "display_name": "objekts visual production router",
+    "canonical_identity": "63356305-e55a-4b85-baf4-817977df22d6",
+    "primary_endpoint": "https://objekts-a2a-compat.onrender.com/a2a",
+    "operator_name": "2bea90e9-af92-4327-88dd-06ffb6e6f595",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "ec391d1150f9c3393e2a5deb",
+    "display_name": "StillOpen",
+    "canonical_identity": "6bbdf9f5-2777-4a0c-80fc-5d5d2e0a1553",
+    "primary_endpoint": "https://stillopen.work/api/v1/a2a",
+    "operator_name": "33b08f90-7199-43d1-a7b9-5aa5f3cf5728",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "36ecbcbce1ad00213fa8e028",
+    "display_name": "TikTok Bridge",
+    "canonical_identity": "86be54d2-4740-4034-a90a-0bcd7540b77d",
+    "primary_endpoint": "https://veredicto.dpdns.org/v1/tiktok/search",
+    "operator_name": "38ce477b-121a-493e-af1d-b375ba1a4b88",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "81fbd69fa70b4b41c6ffcf01",
+    "display_name": "NAIF Gravity SOS — MCP, API, Webhook & JSON Rescue",
+    "canonical_identity": "2f803941-4dda-468d-a7b7-5d4597c068ec",
+    "primary_endpoint": "https://naifgravity.com/a2a/v1",
+    "operator_name": "3a8779ed-f5bd-4608-a680-33ceb11108db",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "24c93b854541a065ca028c1f",
+    "display_name": "GAIP Procurement Evidence Agent",
+    "canonical_identity": "80df5718-eac7-4c81-bc52-3d33f6343c34",
+    "primary_endpoint": "https://www.gaipagents.com/a2a/procurement-verify",
+    "operator_name": "43cc6963-cf30-473f-9378-c241cea88790",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "34f6071a63189fd7890842da",
+    "display_name": "GAIP Witness Agent",
+    "canonical_identity": "e923c3b5-a683-4de0-80fc-967bece26f3f",
+    "primary_endpoint": "https://www.gaipagents.com/a2a/witness-agent",
+    "operator_name": "43cc6963-cf30-473f-9378-c241cea88790",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "67f6c2bce9b9e85ac3b7ba75",
+    "display_name": "GAIP Supplier Watch Agent",
+    "canonical_identity": "178f3ad4-218e-4754-b782-4c7fce07076d",
+    "primary_endpoint": "https://www.gaipagents.com/a2a/supplier-watch",
+    "operator_name": "43cc6963-cf30-473f-9378-c241cea88790",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "6b6e3bda7453308d8c692ac4",
+    "display_name": "GAIP Outcome & Value Agent",
+    "canonical_identity": "0b38b181-1787-4bbc-8bad-464ad4acb722",
+    "primary_endpoint": "https://www.gaipagents.com/a2a/outcome-value",
+    "operator_name": "43cc6963-cf30-473f-9378-c241cea88790",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "9a6c1e81bf01e43b7cb3bb54",
+    "display_name": "GAIP Integration Repair Agent",
+    "canonical_identity": "2a6e1bd6-1850-4adb-b3a6-385aadc4a909",
+    "primary_endpoint": "https://www.gaipagents.com/a2a/integration-repair",
+    "operator_name": "43cc6963-cf30-473f-9378-c241cea88790",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "d922107452df640bdf9f9dc9",
+    "display_name": "GAIP Opportunity Broker",
+    "canonical_identity": "0acaf0f9-04a1-4cc8-b1f4-c93f64481f5d",
+    "primary_endpoint": "https://www.gaipagents.com/a2a/opportunity-broker",
+    "operator_name": "43cc6963-cf30-473f-9378-c241cea88790",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "e386edf87e5d30478612f2fb",
+    "display_name": "GAIP Buyer Assurance Agent",
+    "canonical_identity": "8414a4fc-4b52-4830-b07b-cc80c4fc163e",
+    "primary_endpoint": "https://www.gaipagents.com/a2a/buyer-assurance",
+    "operator_name": "43cc6963-cf30-473f-9378-c241cea88790",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "aca22473b5416fa1a58203df",
+    "display_name": "千里眼 Alpha-Scout 投资情报 Agent 集群",
+    "canonical_identity": "514a393d-a6a5-482f-8af1-6d1f62df258f",
+    "primary_endpoint": "https://web3project.top/a2a/v1",
+    "operator_name": "47f98a85-7243-4ec3-87be-08b1c9fc2d5f",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "e7c9d16a9c1e8d47fc4305b1",
+    "display_name": "firenum.com FIRE Planner",
+    "canonical_identity": "61ddcb2a-5451-4ae5-aa9b-4503b9cb926f",
+    "primary_endpoint": "https://firenum.com/a2a",
+    "operator_name": "528b5397-8aa1-4e16-96ad-7385d97f4b17",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "b411132930a07a5edf31d553",
+    "display_name": "Blockwidth Index — Inference Supply Discovery Agent",
+    "canonical_identity": "771c609e-660c-442b-82be-99139306202d",
+    "primary_endpoint": "https://blockwidth.tech/a2a/v1",
+    "operator_name": "59a22c89-1a07-46cf-b3e4-7a21d092a32e",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "4e5cc316938d5b46b95147ee",
+    "display_name": "Wiggle",
+    "canonical_identity": "d8745dab-6757-447c-bd90-1f28bcc6c4c7",
+    "primary_endpoint": "https://aichatroom.online/a2a",
+    "operator_name": "635be310-41af-4b79-966f-ffcdfb0058de",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "80270339a0e992e9c6d3957e",
+    "display_name": "Degenscan Intel",
+    "canonical_identity": "fba6fdc7-81cb-404a-b7bf-c5f83ca59d74",
+    "primary_endpoint": "https://intel.degenscan.io/a2a",
+    "operator_name": "6ef8cc65-a41a-425e-a5e3-1384f8b714ae",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "bdd205a56539e4dd40ac5d61",
     "display_name": "Chenfeng AI public-information production",
     "canonical_identity": "7ea79ada-fb3d-432d-a260-bee860466047",
     "primary_endpoint": "https://chenfengai.cn/a2a",
     "operator_name": "7264fcf6-43a4-43ca-aa99-144edbd3a7ed",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "c1c5d9e16e7f351f46ce2a0d",
+    "display_name": "ToolsEngg A2A Agent",
+    "canonical_identity": "ced970e9-4259-40f2-b50f-aafed797ff12",
+    "primary_endpoint": "https://toolsengg.com/index.php?route=extension/module/a2a/agent",
+    "operator_name": "766eb756-eb62-497a-9386-43f5a8fbe928",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "fa0bd33c382f8d1e2e70fb25",
+    "display_name": "AfriDebug",
+    "canonical_identity": "79940c28-ec16-407f-9b01-2a61d9169538",
+    "primary_endpoint": "https://afridigital-api.onrender.com/",
+    "operator_name": "7d2fd5a1-817a-414f-9a8a-a91bf1e0b073",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "5de14aeb62bbdce7c16aaeff",
+    "display_name": "InsightBind Sales Agent",
+    "canonical_identity": "bc9768c9-1b64-417e-88a8-f10bdf64d170",
+    "primary_endpoint": null,
+    "operator_name": "81ef413d-0057-4c62-9347-3c98014a149e",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -40,21 +280,21 @@
     "operator_evidence": null
   },
   {
-    "agent_id": "45326dbf07336728d935e1c7",
-    "display_name": "Agent Economy OS 2047 — A2A Commerce Directory",
-    "canonical_identity": "a7534921-8f0b-4a61-8324-477c8a87f329",
-    "primary_endpoint": "https://jzallxzbbdtelcpabfgr.supabase.co/functions/v1/agent-economy-a2a",
-    "operator_name": "Agent Economy OS 2047",
+    "agent_id": "f631926a5520bc8716d553f8",
+    "display_name": "Zambo",
+    "canonical_identity": "7aad378a-9a7e-40cb-97f8-d20386152d67",
+    "primary_endpoint": "https://zambo.dev/mcp",
+    "operator_name": "AV98fIJHYKdsBOR4AdzhAyEXNZoZBos4",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
   },
   {
-    "agent_id": "f7d60648cf36d63aec412e10",
-    "display_name": "Agent Galaxy Directory",
-    "canonical_identity": "eae2bb90-df29-4093-a8c5-5e0538ace2e5",
-    "primary_endpoint": "https://agentgalaxy.dev/api",
-    "operator_name": "Agent Galaxy",
+    "agent_id": "45326dbf07336728d935e1c7",
+    "display_name": "Agent Economy OS 2047 — A2A Commerce Directory",
+    "canonical_identity": "a7534921-8f0b-4a61-8324-477c8a87f329",
+    "primary_endpoint": "https://jzallxzbbdtelcpabfgr.supabase.co/functions/v1/agent-economy-a2a",
+    "operator_name": "Agent Economy OS 2047",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -85,6 +325,26 @@
     "canonical_identity": "c0b6ff1a-a6b7-4ac6-b2bc-31ca60699118",
     "primary_endpoint": "https://lab.ai-andromeda.com/a2a",
     "operator_name": "Andromeda",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "5d82714af9e48eea0ebc9e2c",
+    "display_name": "AustinsDomain Bot HQ",
+    "canonical_identity": "4d4f1043-c715-484e-9fa3-b9baa1fa2f1f",
+    "primary_endpoint": "https://austinsdomain.com/a2a",
+    "operator_name": "AustinsDomain",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "26038df31ea456e8698baf0c",
+    "display_name": "BotsRated",
+    "canonical_identity": "1536c373-cf87-43d4-8a2c-7fcc50efcb81",
+    "primary_endpoint": "https://botsrated.com/a2a",
+    "operator_name": "BotsRated",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -210,6 +470,16 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "f5913e037f03e56495058bdd",
+    "display_name": "Finch Agent Catalog",
+    "canonical_identity": "1953463d-0280-4e08-bfd1-cf67c7a34a08",
+    "primary_endpoint": "https://finch-agent-catalog.finch-catalog-mcp.workers.dev/a2a",
+    "operator_name": "Finch Agent Catalog (community)",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "2da270dcdaa960388c28e8d1",
     "display_name": "FlowFresh: South African export fruit reference data (information only)",
     "canonical_identity": "d8a857e7-c172-42ca-b55a-ac57d70e9748",
@@ -280,11 +550,21 @@
     "operator_evidence": null
   },
   {
-    "agent_id": "db5a372f47d5c79aaf8705b1",
-    "display_name": "LocalMark Directory Agent",
-    "canonical_identity": "c4933993-a0d6-4560-97f9-29ca01cadf7a",
-    "primary_endpoint": "https://localmark.ai/a2a",
-    "operator_name": "LocalMark",
+    "agent_id": "6c9cc96d402dd08ca61bd463",
+    "display_name": "Loppee",
+    "canonical_identity": "acbd02b7-13fc-429c-bca1-a78b93da5a2d",
+    "primary_endpoint": "https://a2a.loppee.com/a2a",
+    "operator_name": "Loppee Inc",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "11146768a67ffee2dbf31455",
+    "display_name": "Lumi Trades",
+    "canonical_identity": "8b984bbc-b6c0-4fdb-a1bb-09487e531c77",
+    "primary_endpoint": "https://api.lumitrades.io/a2a",
+    "operator_name": "Lumi Trades",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -480,11 +760,41 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "a90f7f1052bd8ec9e5db0e6a",
+    "display_name": "Visit Keswick",
+    "canonical_identity": "f704eeef-5349-492f-b181-550e802457c3",
+    "primary_endpoint": "https://visitkeswick.com/api/registry/a2a",
+    "operator_name": "Visit Keswick",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "a15accc0768a1a9f65f5368c",
     "display_name": "XEVITY Company Intelligence Agent",
     "canonical_identity": "aaa77b35-eb80-43b8-bfbc-67f6a24fc5ab",
     "primary_endpoint": "https://xevity-infra.dev/a2a",
     "operator_name": "XEVITY",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "8bb1b4b84ef56ce8bfbcbb71",
+    "display_name": "AQL PropertyCheck — Physical check of one exact address",
+    "canonical_identity": "5803827f-1740-4193-b82a-0699f587a1df",
+    "primary_endpoint": "https://agents.alphaquantlabs.ai/a2a",
+    "operator_name": "a1518b07-2777-4e0b-95e8-e1401aae9567",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "c46c36e925c61779b8ecbf70",
+    "display_name": "VM3 Public USDC Receipt Evidence QA",
+    "canonical_identity": "ac27d81a-1267-4f19-a991-cb24b90e79ae",
+    "primary_endpoint": "https://api.soul.mds.markets/v1/soul/vm3-usdc-receipt-qa/agent.json",
+    "operator_name": "a6b0fbfd-b7d0-4868-970d-43f5f322faf0",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -565,6 +875,16 @@
     "canonical_identity": "glama:zduih24dmc",
     "primary_endpoint": null,
     "operator_name": "ai.agentplaybooks",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "ded29038a5add2e7e60785ae",
+    "display_name": "AkaPhone",
+    "canonical_identity": "glama:t11w6ov9ne",
+    "primary_endpoint": null,
+    "operator_name": "ai.akaphone",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -1460,6 +1780,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "d269d7134bd104903d6feeb7",
+    "display_name": "Onepin",
+    "canonical_identity": "glama:jzcjny0uyr",
+    "primary_endpoint": null,
+    "operator_name": "ai.onepin",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "ad282f8285ad0b0413f54004",
     "display_name": "OpenMark",
     "canonical_identity": "glama:ndbu7liuts",
@@ -1575,6 +1905,16 @@
     "canonical_identity": "glama:so1j233pb9",
     "primary_endpoint": null,
     "operator_name": "ai.povver",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "fb8d21c7f0e5e65c6dda777e",
+    "display_name": "ProductNow",
+    "canonical_identity": "glama:deauofqcep",
+    "primary_endpoint": null,
+    "operator_name": "ai.productnow",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -2395,6 +2735,16 @@
     "canonical_identity": "glama:yhp7nf4oc1",
     "primary_endpoint": null,
     "operator_name": "app.cleannotes",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "1a90e4061ca3af61616c6125",
+    "display_name": "Remote Desktop Commander",
+    "canonical_identity": "glama:n5yz05d4jz",
+    "primary_endpoint": null,
+    "operator_name": "app.desktopcommander",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
@@ -3720,6 +4070,26 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "4ad28c51a3ff696da9367167",
+    "display_name": "Zinvyl Fixed-Scope Qualification Agent",
+    "canonical_identity": "3417fdb9-47d5-4a2f-84b8-cb0c5ef0d872",
+    "primary_endpoint": "https://zinvyl.com/marketplace/a2a",
+    "operator_name": "b81bb849-cb6f-4589-b65a-c2881f47c0b4",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "9becf15a378d66cc6259907d",
+    "display_name": "WariqueAI Marketplace Agent",
+    "canonical_identity": "1f3b1736-6d51-46d0-b060-a3ed62fe890f",
+    "primary_endpoint": "https://market.warique.pe/a2a",
+    "operator_name": "baf2bf92-4e1b-43e4-aef5-a1fd59eda2d1",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "6ec3c6027688c200ef6251c3",
     "display_name": "aidministratie.be",
     "canonical_identity": "glama:nsy3371dr5",
@@ -3820,6 +4190,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "e870dcdd12b826fe176610f0",
+    "display_name": "Emissary",
+    "canonical_identity": "7b22da4d-1bde-47d6-9164-df49852876ce",
+    "primary_endpoint": "https://emissaryproject.org/",
+    "operator_name": "c855f165-dac6-4a74-bffc-2d6f11a45c1a",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "fccc3d1598a72004fa3cf5c8",
     "display_name": "AssetLab",
     "canonical_identity": "glama:vj1aah2v1t",
@@ -3858,6 +4238,16 @@
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
+    "agent_id": "d5fc7f863c8563467366d92d",
+    "display_name": "Sara L. Nelson",
+    "canonical_identity": "e44b00da-2069-4458-99ff-e160b2e08a01",
+    "primary_endpoint": "https://saralorettanelson.com/api/intake",
+    "operator_name": "cb6d44b6-b758-4535-b5b0-cd785ec25151",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
   },
   {
     "agent_id": "63feca1f6c3db88d862ea4ea",
@@ -4530,6 +4920,16 @@
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
   },
   {
+    "agent_id": "68f228e4691599a73df5bff5",
+    "display_name": "LivePage · 活页",
+    "canonical_identity": "glama:npqrmtdcuk",
+    "primary_endpoint": null,
+    "operator_name": "com.24haowan",
+    "operator_domain": null,
+    "operator_verification": "source_claim",
+    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
+  },
+  {
     "agent_id": "02ce076a87e0f24452c2d5e5",
     "display_name": "2extract",
     "canonical_identity": "glama:fkkdy26fmf",
@@ -4595,406 +4995,6 @@
     "canonical_identity": "glama:hsrn0k2wvk",
     "primary_endpoint": null,
     "operator_name": "com.achriom.mcp",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "80d928088e802dac1fbcf0fb",
-    "display_name": "ActivitySmith",
-    "canonical_identity": "glama:aqhxafppdh",
-    "primary_endpoint": null,
-    "operator_name": "com.activitysmith",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "6f45392ab9ae3a68942776a4",
-    "display_name": "AdaptlyPost",
-    "canonical_identity": "glama:y8mx4zu7n6",
-    "primary_endpoint": null,
-    "operator_name": "com.adaptlypost",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "20fe49faeffd3b3155df1061",
-    "display_name": "Leadgen ONRC Romania",
-    "canonical_identity": "glama:cxsnrwbmg5",
-    "primary_endpoint": null,
-    "operator_name": "com.adrianhomelab",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "9debd6c33e5d06b8b86abb4b",
-    "display_name": "ADF: EU/UK Tenders, EU Law, Funding, Medicines, Shortages, Recalls, Sanctions, CVE, CERT, Holidays",
-    "canonical_identity": "glama:q71zfb8c5g",
-    "primary_endpoint": null,
-    "operator_name": "com.agentdatafeed",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "c80320048ebb823d34d46401",
-    "display_name": "Agentic Finance Graph",
-    "canonical_identity": "glama:apagbnlr0f",
-    "primary_endpoint": null,
-    "operator_name": "com.agenticfinancegraph",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "0737027facb54c7232103f0d",
-    "display_name": "agentleFS",
-    "canonical_identity": "glama:otsbz2edk8",
-    "primary_endpoint": null,
-    "operator_name": "com.agentlefs",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "934cbae670076b16b7ca0277",
-    "display_name": "Agent Paywire library",
-    "canonical_identity": "glama:akph0ced6a",
-    "primary_endpoint": null,
-    "operator_name": "com.agentpaywire",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "7b493ec31abf823111af51ad",
-    "display_name": "Agent Revenue Network",
-    "canonical_identity": "glama:xvrnqmeahy",
-    "primary_endpoint": null,
-    "operator_name": "com.agentrevenuenetwork",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "2d526e9fb93188b03c0887cb",
-    "display_name": "Agent Stack Directory",
-    "canonical_identity": "glama:j1gs4xaa9g",
-    "primary_endpoint": null,
-    "operator_name": "com.agentstackdirectory",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "cee582f979c7abc2434355a3",
-    "display_name": "Agent Traffic Lab",
-    "canonical_identity": "glama:ekidnp35z9",
-    "primary_endpoint": null,
-    "operator_name": "com.agenttrafficlab",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "297a5590e52595e86c55b4e5",
-    "display_name": "Agorean",
-    "canonical_identity": "glama:b3hy2lt9v3",
-    "primary_endpoint": null,
-    "operator_name": "com.agorean",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "27a5a6b3f87643a7786acb93",
-    "display_name": "熔岩 Lava",
-    "canonical_identity": "glama:hjp1najnp9",
-    "primary_endpoint": null,
-    "operator_name": "com.ai-dolphin.lava",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "df4ff506edad3f3678b5ce0c",
-    "display_name": "AI Applyd",
-    "canonical_identity": "glama:klo7wp2f6k",
-    "primary_endpoint": null,
-    "operator_name": "com.aiapplyd",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "0b06c21709b975436912f099",
-    "display_name": "AIm Workout Journal",
-    "canonical_identity": "glama:f6wduvpw52",
-    "primary_endpoint": null,
-    "operator_name": "com.aim-journal",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "471ad3f52bde0f31dd246c9f",
-    "display_name": "aipozi",
-    "canonical_identity": "glama:vfys3hgjsv",
-    "primary_endpoint": null,
-    "operator_name": "com.aipozi",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "534b68c397a4a56d21330c96",
-    "display_name": "AI Rollout Framework",
-    "canonical_identity": "glama:p25fxoi76m",
-    "primary_endpoint": null,
-    "operator_name": "com.airolloutframework",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "4d21497a899c497f469e9093",
-    "display_name": "Airparser",
-    "canonical_identity": "glama:p20li3n556",
-    "primary_endpoint": null,
-    "operator_name": "com.airparser",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "06745db011e78b3bb5cfeed7",
-    "display_name": "Airport Pickups London",
-    "canonical_identity": "glama:pzr8ddgn3t",
-    "primary_endpoint": null,
-    "operator_name": "com.airport-pickups-london",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "a976d4373227143344453890",
-    "display_name": "AIS Trail",
-    "canonical_identity": "glama:kzz0gsblh0",
-    "primary_endpoint": null,
-    "operator_name": "com.aistrail",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ddcf631209bb0bdcac7672a4",
-    "display_name": "AlphaBridge MCP for WordPress",
-    "canonical_identity": "glama:lzicqvj1ix",
-    "primary_endpoint": null,
-    "operator_name": "com.alphabridge-mcp.connect",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "3bf0d6b0957ad79a95196721",
-    "display_name": "Alshhbaa Brassware",
-    "canonical_identity": "glama:yx0pavt63l",
-    "primary_endpoint": null,
-    "operator_name": "com.alshhbaa.shop",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "635b84b8188672da85c3a140",
-    "display_name": "Ampworth documents",
-    "canonical_identity": "glama:ugzpz24ic3",
-    "primary_endpoint": null,
-    "operator_name": "com.ampworth",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "a73d83bade55113497aba5eb",
-    "display_name": "Ampworth",
-    "canonical_identity": "glama:jnjs7mgrrr",
-    "primary_endpoint": null,
-    "operator_name": "com.ampworth",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "b373100a8f1a29222aeb84df",
-    "display_name": "Ampworth calculators",
-    "canonical_identity": "glama:u0euwvlgmj",
-    "primary_endpoint": null,
-    "operator_name": "com.ampworth",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "6ea3128fe6badc77b7a5c246",
-    "display_name": "AnchoredIP",
-    "canonical_identity": "glama:rffxo7xg7e",
-    "primary_endpoint": null,
-    "operator_name": "com.anchoredip",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "13493eae1068224e0593278d",
-    "display_name": "AppClap",
-    "canonical_identity": "glama:pbwrbb2gby",
-    "primary_endpoint": null,
-    "operator_name": "com.app-clap",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "6a578ec7f3f27bd137538f5c",
-    "display_name": "Argosor — Unified SEO, SERP, Clean Markdown & GEO (AI Citation Visibility) MCP Server",
-    "canonical_identity": "glama:n6d9kri28j",
-    "primary_endpoint": null,
-    "operator_name": "com.argosor",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "ff32b4460b36982c05290e7a",
-    "display_name": "Ariadne Nexus Quantitative Engine",
-    "canonical_identity": "glama:nbrcgqwxlt",
-    "primary_endpoint": null,
-    "operator_name": "com.ariadnenexus",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "06fd52724f11ff6276d7dfab",
-    "display_name": "arkerah",
-    "canonical_identity": "glama:a3vocg9tip",
-    "primary_endpoint": null,
-    "operator_name": "com.arkerah",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "d1613186a7a51b987328cd9c",
-    "display_name": "Artifact Publisher",
-    "canonical_identity": "glama:ly0zoxi5wv",
-    "primary_endpoint": null,
-    "operator_name": "com.artifactpublisher",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "b8557f7e96984af3ff121ed8",
-    "display_name": "opencode-workbench",
-    "canonical_identity": "glama:mxlqsky9yp",
-    "primary_endpoint": null,
-    "operator_name": "com.ascent-partners",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "c0965a7c434fa1beeca94613",
-    "display_name": "ESG Hub MCP Server",
-    "canonical_identity": "glama:l6i0v1pmv0",
-    "primary_endpoint": null,
-    "operator_name": "com.ascent-partners",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "44fbb92f687de9d4befc4353",
-    "display_name": "Asia Pulse",
-    "canonical_identity": "glama:jf31v607l9",
-    "primary_endpoint": null,
-    "operator_name": "com.asia-pulse",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "98604b6cf0643ecf05cd2311",
-    "display_name": "Assetfy",
-    "canonical_identity": "glama:q0zl0l2h9f",
-    "primary_endpoint": null,
-    "operator_name": "com.assetfy",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "62f5a7dd0016533e9906a26f",
-    "display_name": "Asterwise",
-    "canonical_identity": "glama:sl4heriwvu",
-    "primary_endpoint": null,
-    "operator_name": "com.asterwise",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "42016d321743e9d08cab2b8c",
-    "display_name": "AstralRead",
-    "canonical_identity": "glama:wao0yw227h",
-    "primary_endpoint": null,
-    "operator_name": "com.astralread",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "684c67c1b6928b034897afe7",
-    "display_name": "Atimeüs",
-    "canonical_identity": "glama:hcysaewcc4",
-    "primary_endpoint": null,
-    "operator_name": "com.atimeus",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "113439b368f1917eb35dccf9",
-    "display_name": "AttachPage",
-    "canonical_identity": "glama:xynw18nl60",
-    "primary_endpoint": null,
-    "operator_name": "com.attachpage",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "f8a7a3b4885780716b7fe5ba",
-    "display_name": "Aura Historia MCP",
-    "canonical_identity": "glama:ilhhy9p1uk",
-    "primary_endpoint": null,
-    "operator_name": "com.aura-historia.mcp",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "9bd18a185c219380fde91acb",
-    "display_name": "AurasPay Merchant MCP",
-    "canonical_identity": "glama:pfeag0p04m",
-    "primary_endpoint": null,
-    "operator_name": "com.auraspay",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
