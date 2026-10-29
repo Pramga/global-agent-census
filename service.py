@@ -912,21 +912,21 @@ def app(environ, start_response):
             return _response(start_response, "400 Bad Request", {"error": "invalid_request_or_data_unavailable"})
     
     if path == "/api/counts":
+    try:
+        conn = _db()
         try:
-            conn = _db()
-            try:
                 
             state = _public_run_state()
             snapshot_path = Path(OUTPUT_DIR) / "counts.json"
 
             if not snapshot_path.exists():
-                bundled_snapshot = (
+                    bundled_snapshot = (
                     Path(__file__).resolve().parent
                     / "public"
                     / "counts.json"
-                )
-                if bundled_snapshot.exists():
-                    snapshot_path = bundled_snapshot
+                    )
+                    if bundled_snapshot.exists():
+                        snapshot_path = bundled_snapshot
 
             if snapshot_path.exists():
                 data = json.loads(
