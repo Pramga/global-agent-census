@@ -918,12 +918,12 @@ def app(environ, start_response):
                 state = _public_run_state()
                 snapshot_path = Path(OUTPUT_DIR) / "counts.json"
 
-                if not snapshot_path.exists():
+               if not snapshot_path.exists():
                     bundled_snapshot = (
                         Path(__file__).resolve().parent
                         / "public"
                         / "counts.json"
-                    ) 
+                    )
                     if bundled_snapshot.exists():
                         snapshot_path = bundled_snapshot
 
