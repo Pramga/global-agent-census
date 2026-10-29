@@ -936,7 +936,7 @@ def app(environ, start_response):
                         data = counts(conn)
 
                     data["service"] = state
-                     return _response(start_response, "200 OK", data)
+                    return _response(start_response, "200 OK", data)
             finally:
                 conn.close()
         except Exception:
