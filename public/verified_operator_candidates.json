@@ -70,6 +70,16 @@
     "operator_evidence": null
   },
   {
+    "agent_id": "bbc38c8bbe17bfa646d73eb5",
+    "display_name": "Paimon",
+    "canonical_identity": "ce355758-be98-4258-b99a-ab2208ad7bb9",
+    "primary_endpoint": null,
+    "operator_name": "2fa63231-65a3-4b35-ab58-f5d878311ad2",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
     "agent_id": "ec391d1150f9c3393e2a5deb",
     "display_name": "StillOpen",
     "canonical_identity": "6bbdf9f5-2777-4a0c-80fc-5d5d2e0a1553",
@@ -310,16 +320,6 @@
     "operator_evidence": null
   },
   {
-    "agent_id": "d93ca60a74c53782174003bd",
-    "display_name": "World Bank Indicators (Data API)",
-    "canonical_identity": "7d13b816-7f2a-4eb3-9736-1914fef5eae4",
-    "primary_endpoint": "https://agentbazaar.tech/a2a/connectors/worldbank",
-    "operator_name": "AgentBazaar",
-    "operator_domain": null,
-    "operator_verification": "unverified",
-    "operator_evidence": null
-  },
-  {
     "agent_id": "c94d603087048742bdcc8419",
     "display_name": "Andromeda Agent Lab",
     "canonical_identity": "c0b6ff1a-a6b7-4ac6-b2bc-31ca60699118",
@@ -525,6 +525,16 @@
     "canonical_identity": "add51cac-77dd-49e9-9641-fb8912658b5d",
     "primary_endpoint": "https://api.inamprotocol.org/a2a",
     "operator_name": "INAM Protocol",
+    "operator_domain": null,
+    "operator_verification": "unverified",
+    "operator_evidence": null
+  },
+  {
+    "agent_id": "d93ca60a74c53782174003bd",
+    "display_name": "World Bank Indicators (Data API)",
+    "canonical_identity": "7d13b816-7f2a-4eb3-9736-1914fef5eae4",
+    "primary_endpoint": "https://agentbazaar.tech/a2a/connectors/worldbank",
+    "operator_name": "JNK Corp.",
     "operator_domain": null,
     "operator_verification": "unverified",
     "operator_evidence": null
@@ -981,7 +991,7 @@
   },
   {
     "agent_id": "2d1bbfcbe7dd5b340aca763b",
-    "display_name": "budgetSEO MCP",
+    "display_name": "budgetSEO",
     "canonical_identity": "glama:if4ulbh72z",
     "primary_endpoint": null,
     "operator_name": "ai.budgetseo",
@@ -4985,16 +4995,6 @@
     "canonical_identity": "glama:x8oa7qqscl",
     "primary_endpoint": null,
     "operator_name": "com.a1000watts",
-    "operator_domain": null,
-    "operator_verification": "source_claim",
-    "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
-  },
-  {
-    "agent_id": "3ceee35997297034e40730e0",
-    "display_name": "Account Executive Jobs",
-    "canonical_identity": "glama:d5b9l6u7lf",
-    "primary_endpoint": null,
-    "operator_name": "com.accountexecutivejobs",
     "operator_domain": null,
     "operator_verification": "source_claim",
     "operator_evidence": "Listed in Glama directory; operator not independently verified by this census"
