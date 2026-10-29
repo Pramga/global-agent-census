@@ -924,7 +924,7 @@ def app(environ, start_response):
                         / "public"
                         / "counts.json"
                     ) 
-                if bundled_snapshot.exists():
+                    if bundled_snapshot.exists():
                     snapshot_path = bundled_snapshot
 
                 if snapshot_path.exists():
