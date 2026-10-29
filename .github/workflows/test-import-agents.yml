@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Check Python syntax
+        run: python -m py_compile service.py
+
       - name: Test importer in temporary database
         env:
           DATABASE_PATH: ${{ runner.temp }}/import-test.sqlite3
